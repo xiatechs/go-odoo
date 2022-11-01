@@ -1,7 +1,7 @@
 package odoo
 
 import (
-	"fmt"
+	"log"
 	"time"
 )
 
@@ -14,7 +14,7 @@ import (
 func (c *Client) GetProductsCreatedAfter(t time.Time) ([]byte, error) {
 	criteria := NewCriteria()
 	dtLayout := "2006-01-02 15:04:05"
-	fmt.Printf("Looking for products created after %s", t.Format(dtLayout))
+	log.Printf("Looking for products created after %s", t.Format(dtLayout))
 	criteria.Add("create_date", ">=", t.Format(dtLayout))
 
 	return c.SearchReadJSON(ProductProductModel, criteria, NewOptions())
