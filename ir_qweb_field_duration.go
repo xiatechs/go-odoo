@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldDuration(id int64) (*IrQwebFieldDuration, error) 
 	if iqfds != nil && len(*iqfds) > 0 {
 		return &((*iqfds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.duration not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.duration not found", id)
 }
 
 // GetIrQwebFieldDurations gets ir.qweb.field.duration existing records.

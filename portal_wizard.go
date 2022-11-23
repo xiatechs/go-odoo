@@ -63,7 +63,7 @@ func (c *Client) GetPortalWizard(id int64) (*PortalWizard, error) {
 	if pws != nil && len(*pws) > 0 {
 		return &((*pws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of portal.wizard not found", id)
+	return nil, fmt.Errorf("id %v of portal.wizard not found", id)
 }
 
 // GetPortalWizards gets portal.wizard existing records.

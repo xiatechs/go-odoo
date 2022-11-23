@@ -63,7 +63,7 @@ func (c *Client) GetBusBus(id int64) (*BusBus, error) {
 	if bbs != nil && len(*bbs) > 0 {
 		return &((*bbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of bus.bus not found", id)
+	return nil, fmt.Errorf("id %v of bus.bus not found", id)
 }
 
 // GetBusBuss gets bus.bus existing records.

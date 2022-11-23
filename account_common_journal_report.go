@@ -67,7 +67,7 @@ func (c *Client) GetAccountCommonJournalReport(id int64) (*AccountCommonJournalR
 	if acjrs != nil && len(*acjrs) > 0 {
 		return &((*acjrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.common.journal.report not found", id)
+	return nil, fmt.Errorf("id %v of account.common.journal.report not found", id)
 }
 
 // GetAccountCommonJournalReports gets account.common.journal.report existing records.

@@ -60,7 +60,7 @@ func (c *Client) GetAccountRoot(id int64) (*AccountRoot, error) {
 	if ars != nil && len(*ars) > 0 {
 		return &((*ars)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.root not found", id)
+	return nil, fmt.Errorf("id %v of account.root not found", id)
 }
 
 // GetAccountRoots gets account.root existing records.

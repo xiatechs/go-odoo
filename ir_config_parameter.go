@@ -63,7 +63,7 @@ func (c *Client) GetIrConfigParameter(id int64) (*IrConfigParameter, error) {
 	if ics != nil && len(*ics) > 0 {
 		return &((*ics)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.config_parameter not found", id)
+	return nil, fmt.Errorf("id %v of ir.config_parameter not found", id)
 }
 
 // GetIrConfigParameters gets ir.config_parameter existing records.

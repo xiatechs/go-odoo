@@ -65,7 +65,7 @@ func (c *Client) GetAccountTaxReport(id int64) (*AccountTaxReport, error) {
 	if atrs != nil && len(*atrs) > 0 {
 		return &((*atrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.tax.report not found", id)
+	return nil, fmt.Errorf("id %v of account.tax.report not found", id)
 }
 
 // GetAccountTaxReports gets account.tax.report existing records.

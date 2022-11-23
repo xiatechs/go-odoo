@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldMonetary(id int64) (*IrQwebFieldMonetary, error) 
 	if iqfms != nil && len(*iqfms) > 0 {
 		return &((*iqfms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.monetary not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.monetary not found", id)
 }
 
 // GetIrQwebFieldMonetarys gets ir.qweb.field.monetary existing records.

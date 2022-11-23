@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsCharStillreadonly(id int64) (*BaseImpor
 	if btmcss != nil && len(*btmcss) > 0 {
 		return &((*btmcss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.char.stillreadonly not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.char.stillreadonly not found", id)
 }
 
 // GetBaseImportTestsModelsCharStillreadonlys gets base_import.tests.models.char.stillreadonly existing records.

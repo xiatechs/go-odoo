@@ -71,7 +71,7 @@ func (c *Client) GetIrModuleCategory(id int64) (*IrModuleCategory, error) {
 	if imcs != nil && len(*imcs) > 0 {
 		return &((*imcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.module.category not found", id)
+	return nil, fmt.Errorf("id %v of ir.module.category not found", id)
 }
 
 // GetIrModuleCategorys gets ir.module.category existing records.

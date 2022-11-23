@@ -63,7 +63,7 @@ func (c *Client) GetUtmMedium(id int64) (*UtmMedium, error) {
 	if ums != nil && len(*ums) > 0 {
 		return &((*ums)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of utm.medium not found", id)
+	return nil, fmt.Errorf("id %v of utm.medium not found", id)
 }
 
 // GetUtmMediums gets utm.medium existing records.

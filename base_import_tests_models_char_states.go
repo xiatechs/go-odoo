@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsCharStates(id int64) (*BaseImportTestsM
 	if btmcss != nil && len(*btmcss) > 0 {
 		return &((*btmcss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.char.states not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.char.states not found", id)
 }
 
 // GetBaseImportTestsModelsCharStatess gets base_import.tests.models.char.states existing records.

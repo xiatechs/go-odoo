@@ -58,7 +58,7 @@ func (c *Client) GetResUsersApikeysShow(id int64) (*ResUsersApikeysShow, error) 
 	if ruass != nil && len(*ruass) > 0 {
 		return &((*ruass)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.users.apikeys.show not found", id)
+	return nil, fmt.Errorf("id %v of res.users.apikeys.show not found", id)
 }
 
 // GetResUsersApikeysShows gets res.users.apikeys.show existing records.

@@ -112,7 +112,7 @@ func (c *Client) GetMailChannel(id int64) (*MailChannel, error) {
 	if mcs != nil && len(*mcs) > 0 {
 		return &((*mcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.channel not found", id)
+	return nil, fmt.Errorf("id %v of mail.channel not found", id)
 }
 
 // GetMailChannels gets mail.channel existing records.

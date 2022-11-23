@@ -58,7 +58,7 @@ func (c *Client) GetSnailmailConfirm(id int64) (*SnailmailConfirm, error) {
 	if scs != nil && len(*scs) > 0 {
 		return &((*scs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of snailmail.confirm not found", id)
+	return nil, fmt.Errorf("id %v of snailmail.confirm not found", id)
 }
 
 // GetSnailmailConfirms gets snailmail.confirm existing records.

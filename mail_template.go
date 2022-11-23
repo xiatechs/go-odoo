@@ -85,7 +85,7 @@ func (c *Client) GetMailTemplate(id int64) (*MailTemplate, error) {
 	if mts != nil && len(*mts) > 0 {
 		return &((*mts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.template not found", id)
+	return nil, fmt.Errorf("id %v of mail.template not found", id)
 }
 
 // GetMailTemplates gets mail.template existing records.

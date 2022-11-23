@@ -57,7 +57,7 @@ func (c *Client) GetFormatAddressMixin(id int64) (*FormatAddressMixin, error) {
 	if fams != nil && len(*fams) > 0 {
 		return &((*fams)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of format.address.mixin not found", id)
+	return nil, fmt.Errorf("id %v of format.address.mixin not found", id)
 }
 
 // GetFormatAddressMixins gets format.address.mixin existing records.

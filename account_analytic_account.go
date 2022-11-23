@@ -87,7 +87,7 @@ func (c *Client) GetAccountAnalyticAccount(id int64) (*AccountAnalyticAccount, e
 	if aaas != nil && len(*aaas) > 0 {
 		return &((*aaas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.analytic.account not found", id)
+	return nil, fmt.Errorf("id %v of account.analytic.account not found", id)
 }
 
 // GetAccountAnalyticAccounts gets account.analytic.account existing records.

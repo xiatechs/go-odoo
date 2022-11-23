@@ -66,7 +66,7 @@ func (c *Client) GetAccountCommonReport(id int64) (*AccountCommonReport, error) 
 	if acrs != nil && len(*acrs) > 0 {
 		return &((*acrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.common.report not found", id)
+	return nil, fmt.Errorf("id %v of account.common.report not found", id)
 }
 
 // GetAccountCommonReports gets account.common.report existing records.

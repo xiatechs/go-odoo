@@ -66,7 +66,7 @@ func (c *Client) GetIrDefault(id int64) (*IrDefault, error) {
 	if IDs != nil && len(*IDs) > 0 {
 		return &((*IDs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.default not found", id)
+	return nil, fmt.Errorf("id %v of ir.default not found", id)
 }
 
 // GetIrDefaults gets ir.default existing records.

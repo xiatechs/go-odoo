@@ -61,7 +61,7 @@ func (c *Client) GetResourceMixin(id int64) (*ResourceMixin, error) {
 	if rms != nil && len(*rms) > 0 {
 		return &((*rms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of resource.mixin not found", id)
+	return nil, fmt.Errorf("id %v of resource.mixin not found", id)
 }
 
 // GetResourceMixins gets resource.mixin existing records.

@@ -66,7 +66,7 @@ func (c *Client) GetSmsResend(id int64) (*SmsResend, error) {
 	if srs != nil && len(*srs) > 0 {
 		return &((*srs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sms.resend not found", id)
+	return nil, fmt.Errorf("id %v of sms.resend not found", id)
 }
 
 // GetSmsResends gets sms.resend existing records.

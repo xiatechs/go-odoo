@@ -63,7 +63,7 @@ func (c *Client) GetDecimalPrecision(id int64) (*DecimalPrecision, error) {
 	if dps != nil && len(*dps) > 0 {
 		return &((*dps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of decimal.precision not found", id)
+	return nil, fmt.Errorf("id %v of decimal.precision not found", id)
 }
 
 // GetDecimalPrecisions gets decimal.precision existing records.

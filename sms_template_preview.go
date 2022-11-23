@@ -67,7 +67,7 @@ func (c *Client) GetSmsTemplatePreview(id int64) (*SmsTemplatePreview, error) {
 	if stps != nil && len(*stps) > 0 {
 		return &((*stps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sms.template.preview not found", id)
+	return nil, fmt.Errorf("id %v of sms.template.preview not found", id)
 }
 
 // GetSmsTemplatePreviews gets sms.template.preview existing records.

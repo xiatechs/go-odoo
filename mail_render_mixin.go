@@ -63,7 +63,7 @@ func (c *Client) GetMailRenderMixin(id int64) (*MailRenderMixin, error) {
 	if mrms != nil && len(*mrms) > 0 {
 		return &((*mrms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.render.mixin not found", id)
+	return nil, fmt.Errorf("id %v of mail.render.mixin not found", id)
 }
 
 // GetMailRenderMixins gets mail.render.mixin existing records.

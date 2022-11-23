@@ -82,7 +82,7 @@ func (c *Client) GetMailActivity(id int64) (*MailActivity, error) {
 	if mas != nil && len(*mas) > 0 {
 		return &((*mas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.activity not found", id)
+	return nil, fmt.Errorf("id %v of mail.activity not found", id)
 }
 
 // GetMailActivitys gets mail.activity existing records.

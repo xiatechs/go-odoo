@@ -74,7 +74,7 @@ func (c *Client) GetProductTemplateAttributeValue(id int64) (*ProductTemplateAtt
 	if ptavs != nil && len(*ptavs) > 0 {
 		return &((*ptavs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.template.attribute.value not found", id)
+	return nil, fmt.Errorf("id %v of product.template.attribute.value not found", id)
 }
 
 // GetProductTemplateAttributeValues gets product.template.attribute.value existing records.

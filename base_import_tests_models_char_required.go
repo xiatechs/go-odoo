@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsCharRequired(id int64) (*BaseImportTest
 	if btmcrs != nil && len(*btmcrs) > 0 {
 		return &((*btmcrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.char.required not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.char.required not found", id)
 }
 
 // GetBaseImportTestsModelsCharRequireds gets base_import.tests.models.char.required existing records.

@@ -101,7 +101,7 @@ func (c *Client) GetMailMessage(id int64) (*MailMessage, error) {
 	if mms != nil && len(*mms) > 0 {
 		return &((*mms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.message not found", id)
+	return nil, fmt.Errorf("id %v of mail.message not found", id)
 }
 
 // GetMailMessages gets mail.message existing records.

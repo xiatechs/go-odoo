@@ -95,7 +95,7 @@ func (c *Client) GetAccountReconcileModel(id int64) (*AccountReconcileModel, err
 	if arms != nil && len(*arms) > 0 {
 		return &((*arms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.reconcile.model not found", id)
+	return nil, fmt.Errorf("id %v of account.reconcile.model not found", id)
 }
 
 // GetAccountReconcileModels gets account.reconcile.model existing records.

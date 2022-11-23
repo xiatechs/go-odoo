@@ -63,7 +63,7 @@ func (c *Client) GetSaleOrderCancel(id int64) (*SaleOrderCancel, error) {
 	if socs != nil && len(*socs) > 0 {
 		return &((*socs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.order.cancel not found", id)
+	return nil, fmt.Errorf("id %v of sale.order.cancel not found", id)
 }
 
 // GetSaleOrderCancels gets sale.order.cancel existing records.

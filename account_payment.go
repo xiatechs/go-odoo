@@ -199,7 +199,7 @@ func (c *Client) GetAccountPayment(id int64) (*AccountPayment, error) {
 	if aps != nil && len(*aps) > 0 {
 		return &((*aps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.payment not found", id)
+	return nil, fmt.Errorf("id %v of account.payment not found", id)
 }
 
 // GetAccountPayments gets account.payment existing records.

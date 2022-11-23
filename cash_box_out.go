@@ -63,7 +63,7 @@ func (c *Client) GetCashBoxOut(id int64) (*CashBoxOut, error) {
 	if cbos != nil && len(*cbos) > 0 {
 		return &((*cbos)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of cash.box.out not found", id)
+	return nil, fmt.Errorf("id %v of cash.box.out not found", id)
 }
 
 // GetCashBoxOuts gets cash.box.out existing records.

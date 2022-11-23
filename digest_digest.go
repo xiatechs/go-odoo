@@ -78,7 +78,7 @@ func (c *Client) GetDigestDigest(id int64) (*DigestDigest, error) {
 	if dds != nil && len(*dds) > 0 {
 		return &((*dds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of digest.digest not found", id)
+	return nil, fmt.Errorf("id %v of digest.digest not found", id)
 }
 
 // GetDigestDigests gets digest.digest existing records.

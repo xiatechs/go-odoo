@@ -66,7 +66,7 @@ func (c *Client) GetAccountCashboxLine(id int64) (*AccountCashboxLine, error) {
 	if acls != nil && len(*acls) > 0 {
 		return &((*acls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.cashbox.line not found", id)
+	return nil, fmt.Errorf("id %v of account.cashbox.line not found", id)
 }
 
 // GetAccountCashboxLines gets account.cashbox.line existing records.

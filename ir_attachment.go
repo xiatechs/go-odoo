@@ -85,7 +85,7 @@ func (c *Client) GetIrAttachment(id int64) (*IrAttachment, error) {
 	if ias != nil && len(*ias) > 0 {
 		return &((*ias)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.attachment not found", id)
+	return nil, fmt.Errorf("id %v of ir.attachment not found", id)
 }
 
 // GetIrAttachments gets ir.attachment existing records.

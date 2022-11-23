@@ -74,7 +74,7 @@ func (c *Client) GetIrSequence(id int64) (*IrSequence, error) {
 	if iss != nil && len(*iss) > 0 {
 		return &((*iss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.sequence not found", id)
+	return nil, fmt.Errorf("id %v of ir.sequence not found", id)
 }
 
 // GetIrSequences gets ir.sequence existing records.

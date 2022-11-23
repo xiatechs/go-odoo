@@ -61,7 +61,7 @@ func (c *Client) GetAccountBankStatementClosebalance(id int64) (*AccountBankStat
 	if abscs != nil && len(*abscs) > 0 {
 		return &((*abscs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.bank.statement.closebalance not found", id)
+	return nil, fmt.Errorf("id %v of account.bank.statement.closebalance not found", id)
 }
 
 // GetAccountBankStatementClosebalances gets account.bank.statement.closebalance existing records.

@@ -94,7 +94,7 @@ func (c *Client) GetCrmTeam(id int64) (*CrmTeam, error) {
 	if cts != nil && len(*cts) > 0 {
 		return &((*cts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of crm.team not found", id)
+	return nil, fmt.Errorf("id %v of crm.team not found", id)
 }
 
 // GetCrmTeams gets crm.team existing records.

@@ -64,7 +64,7 @@ func (c *Client) GetIapAccount(id int64) (*IapAccount, error) {
 	if ias != nil && len(*ias) > 0 {
 		return &((*ias)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of iap.account not found", id)
+	return nil, fmt.Errorf("id %v of iap.account not found", id)
 }
 
 // GetIapAccounts gets iap.account existing records.

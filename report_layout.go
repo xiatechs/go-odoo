@@ -66,7 +66,7 @@ func (c *Client) GetReportLayout(id int64) (*ReportLayout, error) {
 	if rls != nil && len(*rls) > 0 {
 		return &((*rls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of report.layout not found", id)
+	return nil, fmt.Errorf("id %v of report.layout not found", id)
 }
 
 // GetReportLayouts gets report.layout existing records.

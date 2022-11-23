@@ -63,7 +63,7 @@ func (c *Client) GetBaseImportTestsModelsO2MChild(id int64) (*BaseImportTestsMod
 	if btmocs != nil && len(*btmocs) > 0 {
 		return &((*btmocs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.o2m.child not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.o2m.child not found", id)
 }
 
 // GetBaseImportTestsModelsO2MChilds gets base_import.tests.models.o2m.child existing records.

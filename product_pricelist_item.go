@@ -84,7 +84,7 @@ func (c *Client) GetProductPricelistItem(id int64) (*ProductPricelistItem, error
 	if ppis != nil && len(*ppis) > 0 {
 		return &((*ppis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.pricelist.item not found", id)
+	return nil, fmt.Errorf("id %v of product.pricelist.item not found", id)
 }
 
 // GetProductPricelistItems gets product.pricelist.item existing records.

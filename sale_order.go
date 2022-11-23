@@ -136,7 +136,7 @@ func (c *Client) GetSaleOrder(id int64) (*SaleOrder, error) {
 	if sos != nil && len(*sos) > 0 {
 		return &((*sos)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.order not found", id)
+	return nil, fmt.Errorf("id %v of sale.order not found", id)
 }
 
 // GetSaleOrders gets sale.order existing records.

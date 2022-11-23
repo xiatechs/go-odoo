@@ -184,7 +184,7 @@ func (c *Client) GetAccountBankStatementLine(id int64) (*AccountBankStatementLin
 	if absls != nil && len(*absls) > 0 {
 		return &((*absls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.bank.statement.line not found", id)
+	return nil, fmt.Errorf("id %v of account.bank.statement.line not found", id)
 }
 
 // GetAccountBankStatementLines gets account.bank.statement.line existing records.

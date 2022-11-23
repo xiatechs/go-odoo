@@ -69,7 +69,7 @@ func (c *Client) GetAccountResequenceWizard(id int64) (*AccountResequenceWizard,
 	if arws != nil && len(*arws) > 0 {
 		return &((*arws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.resequence.wizard not found", id)
+	return nil, fmt.Errorf("id %v of account.resequence.wizard not found", id)
 }
 
 // GetAccountResequenceWizards gets account.resequence.wizard existing records.

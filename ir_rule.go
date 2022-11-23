@@ -71,7 +71,7 @@ func (c *Client) GetIrRule(id int64) (*IrRule, error) {
 	if irs != nil && len(*irs) > 0 {
 		return &((*irs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.rule not found", id)
+	return nil, fmt.Errorf("id %v of ir.rule not found", id)
 }
 
 // GetIrRules gets ir.rule existing records.

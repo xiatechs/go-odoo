@@ -72,7 +72,7 @@ func (c *Client) GetSmsTemplate(id int64) (*SmsTemplate, error) {
 	if sts != nil && len(*sts) > 0 {
 		return &((*sts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sms.template not found", id)
+	return nil, fmt.Errorf("id %v of sms.template not found", id)
 }
 
 // GetSmsTemplates gets sms.template existing records.

@@ -66,7 +66,7 @@ func (c *Client) GetAccountAccountType(id int64) (*AccountAccountType, error) {
 	if aats != nil && len(*aats) > 0 {
 		return &((*aats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.account.type not found", id)
+	return nil, fmt.Errorf("id %v of account.account.type not found", id)
 }
 
 // GetAccountAccountTypes gets account.account.type existing records.

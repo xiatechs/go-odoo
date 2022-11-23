@@ -93,7 +93,7 @@ func (c *Client) GetIrActionsServer(id int64) (*IrActionsServer, error) {
 	if iass != nil && len(*iass) > 0 {
 		return &((*iass)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.server not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.server not found", id)
 }
 
 // GetIrActionsServers gets ir.actions.server existing records.

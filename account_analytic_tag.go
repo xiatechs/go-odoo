@@ -67,7 +67,7 @@ func (c *Client) GetAccountAnalyticTag(id int64) (*AccountAnalyticTag, error) {
 	if aats != nil && len(*aats) > 0 {
 		return &((*aats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.analytic.tag not found", id)
+	return nil, fmt.Errorf("id %v of account.analytic.tag not found", id)
 }
 
 // GetAccountAnalyticTags gets account.analytic.tag existing records.

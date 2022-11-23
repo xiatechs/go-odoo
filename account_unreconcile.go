@@ -61,7 +61,7 @@ func (c *Client) GetAccountUnreconcile(id int64) (*AccountUnreconcile, error) {
 	if aus != nil && len(*aus) > 0 {
 		return &((*aus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.unreconcile not found", id)
+	return nil, fmt.Errorf("id %v of account.unreconcile not found", id)
 }
 
 // GetAccountUnreconciles gets account.unreconcile existing records.

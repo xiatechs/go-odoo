@@ -76,7 +76,7 @@ func (c *Client) GetAccountFiscalPosition(id int64) (*AccountFiscalPosition, err
 	if afps != nil && len(*afps) > 0 {
 		return &((*afps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.fiscal.position not found", id)
+	return nil, fmt.Errorf("id %v of account.fiscal.position not found", id)
 }
 
 // GetAccountFiscalPositions gets account.fiscal.position existing records.

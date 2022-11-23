@@ -72,7 +72,7 @@ func (c *Client) GetAccountPartialReconcile(id int64) (*AccountPartialReconcile,
 	if aprs != nil && len(*aprs) > 0 {
 		return &((*aprs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.partial.reconcile not found", id)
+	return nil, fmt.Errorf("id %v of account.partial.reconcile not found", id)
 }
 
 // GetAccountPartialReconciles gets account.partial.reconcile existing records.

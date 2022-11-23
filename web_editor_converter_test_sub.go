@@ -62,7 +62,7 @@ func (c *Client) GetWebEditorConverterTestSub(id int64) (*WebEditorConverterTest
 	if wctss != nil && len(*wctss) > 0 {
 		return &((*wctss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of web_editor.converter.test.sub not found", id)
+	return nil, fmt.Errorf("id %v of web_editor.converter.test.sub not found", id)
 }
 
 // GetWebEditorConverterTestSubs gets web_editor.converter.test.sub existing records.

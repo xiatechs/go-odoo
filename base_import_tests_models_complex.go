@@ -67,7 +67,7 @@ func (c *Client) GetBaseImportTestsModelsComplex(id int64) (*BaseImportTestsMode
 	if btmcs != nil && len(*btmcs) > 0 {
 		return &((*btmcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.complex not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.complex not found", id)
 }
 
 // GetBaseImportTestsModelsComplexs gets base_import.tests.models.complex existing records.

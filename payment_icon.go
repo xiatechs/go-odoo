@@ -65,7 +65,7 @@ func (c *Client) GetPaymentIcon(id int64) (*PaymentIcon, error) {
 	if pis != nil && len(*pis) > 0 {
 		return &((*pis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of payment.icon not found", id)
+	return nil, fmt.Errorf("id %v of payment.icon not found", id)
 }
 
 // GetPaymentIcons gets payment.icon existing records.

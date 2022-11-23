@@ -64,7 +64,7 @@ func (c *Client) GetBaseLanguageInstall(id int64) (*BaseLanguageInstall, error) 
 	if blis != nil && len(*blis) > 0 {
 		return &((*blis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.language.install not found", id)
+	return nil, fmt.Errorf("id %v of base.language.install not found", id)
 }
 
 // GetBaseLanguageInstalls gets base.language.install existing records.

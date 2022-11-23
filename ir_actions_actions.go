@@ -68,7 +68,7 @@ func (c *Client) GetIrActionsActions(id int64) (*IrActionsActions, error) {
 	if iaas != nil && len(*iaas) > 0 {
 		return &((*iaas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.actions not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.actions not found", id)
 }
 
 // GetIrActionsActionss gets ir.actions.actions existing records.

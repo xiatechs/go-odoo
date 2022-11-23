@@ -68,7 +68,7 @@ func (c *Client) GetResourceCalendarLeaves(id int64) (*ResourceCalendarLeaves, e
 	if rcls != nil && len(*rcls) > 0 {
 		return &((*rcls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of resource.calendar.leaves not found", id)
+	return nil, fmt.Errorf("id %v of resource.calendar.leaves not found", id)
 }
 
 // GetResourceCalendarLeavess gets resource.calendar.leaves existing records.

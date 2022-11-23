@@ -72,7 +72,7 @@ func (c *Client) GetIrUiMenu(id int64) (*IrUiMenu, error) {
 	if iums != nil && len(*iums) > 0 {
 		return &((*iums)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.ui.menu not found", id)
+	return nil, fmt.Errorf("id %v of ir.ui.menu not found", id)
 }
 
 // GetIrUiMenus gets ir.ui.menu existing records.

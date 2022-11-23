@@ -67,7 +67,7 @@ func (c *Client) GetMailActivityMixin(id int64) (*MailActivityMixin, error) {
 	if mams != nil && len(*mams) > 0 {
 		return &((*mams)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.activity.mixin not found", id)
+	return nil, fmt.Errorf("id %v of mail.activity.mixin not found", id)
 }
 
 // GetMailActivityMixins gets mail.activity.mixin existing records.

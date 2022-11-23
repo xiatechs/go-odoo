@@ -90,7 +90,7 @@ func (c *Client) GetIrModuleModule(id int64) (*IrModuleModule, error) {
 	if imms != nil && len(*imms) > 0 {
 		return &((*imms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.module.module not found", id)
+	return nil, fmt.Errorf("id %v of ir.module.module not found", id)
 }
 
 // GetIrModuleModules gets ir.module.module existing records.

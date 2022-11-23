@@ -70,7 +70,7 @@ func (c *Client) GetIrActionsActUrl(id int64) (*IrActionsActUrl, error) {
 	if iaas != nil && len(*iaas) > 0 {
 		return &((*iaas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.act_url not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.act_url not found", id)
 }
 
 // GetIrActionsActUrls gets ir.actions.act_url existing records.

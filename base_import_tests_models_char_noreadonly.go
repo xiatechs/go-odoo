@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsCharNoreadonly(id int64) (*BaseImportTe
 	if btmcns != nil && len(*btmcns) > 0 {
 		return &((*btmcns)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.char.noreadonly not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.char.noreadonly not found", id)
 }
 
 // GetBaseImportTestsModelsCharNoreadonlys gets base_import.tests.models.char.noreadonly existing records.

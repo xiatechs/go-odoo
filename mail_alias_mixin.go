@@ -72,7 +72,7 @@ func (c *Client) GetMailAliasMixin(id int64) (*MailAliasMixin, error) {
 	if mams != nil && len(*mams) > 0 {
 		return &((*mams)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.alias.mixin not found", id)
+	return nil, fmt.Errorf("id %v of mail.alias.mixin not found", id)
 }
 
 // GetMailAliasMixins gets mail.alias.mixin existing records.

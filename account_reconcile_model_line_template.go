@@ -69,7 +69,7 @@ func (c *Client) GetAccountReconcileModelLineTemplate(id int64) (*AccountReconci
 	if armlts != nil && len(*armlts) > 0 {
 		return &((*armlts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.reconcile.model.line.template not found", id)
+	return nil, fmt.Errorf("id %v of account.reconcile.model.line.template not found", id)
 }
 
 // GetAccountReconcileModelLineTemplates gets account.reconcile.model.line.template existing records.

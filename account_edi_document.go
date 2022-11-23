@@ -68,7 +68,7 @@ func (c *Client) GetAccountEdiDocument(id int64) (*AccountEdiDocument, error) {
 	if aeds != nil && len(*aeds) > 0 {
 		return &((*aeds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.edi.document not found", id)
+	return nil, fmt.Errorf("id %v of account.edi.document not found", id)
 }
 
 // GetAccountEdiDocuments gets account.edi.document existing records.

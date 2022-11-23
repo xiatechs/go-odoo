@@ -68,7 +68,7 @@ func (c *Client) GetAccountPaymentTermLine(id int64) (*AccountPaymentTermLine, e
 	if aptls != nil && len(*aptls) > 0 {
 		return &((*aptls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.payment.term.line not found", id)
+	return nil, fmt.Errorf("id %v of account.payment.term.line not found", id)
 }
 
 // GetAccountPaymentTermLines gets account.payment.term.line existing records.

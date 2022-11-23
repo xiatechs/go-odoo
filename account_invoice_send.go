@@ -99,7 +99,7 @@ func (c *Client) GetAccountInvoiceSend(id int64) (*AccountInvoiceSend, error) {
 	if aiss != nil && len(*aiss) > 0 {
 		return &((*aiss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.invoice.send not found", id)
+	return nil, fmt.Errorf("id %v of account.invoice.send not found", id)
 }
 
 // GetAccountInvoiceSends gets account.invoice.send existing records.

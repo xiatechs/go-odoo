@@ -83,7 +83,7 @@ func (c *Client) GetBaseDocumentLayout(id int64) (*BaseDocumentLayout, error) {
 	if bdls != nil && len(*bdls) > 0 {
 		return &((*bdls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.document.layout not found", id)
+	return nil, fmt.Errorf("id %v of base.document.layout not found", id)
 }
 
 // GetBaseDocumentLayouts gets base.document.layout existing records.

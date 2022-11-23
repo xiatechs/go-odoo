@@ -62,7 +62,7 @@ func (c *Client) GetBaseUpdateTranslations(id int64) (*BaseUpdateTranslations, e
 	if buts != nil && len(*buts) > 0 {
 		return &((*buts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.update.translations not found", id)
+	return nil, fmt.Errorf("id %v of base.update.translations not found", id)
 }
 
 // GetBaseUpdateTranslationss gets base.update.translations existing records.

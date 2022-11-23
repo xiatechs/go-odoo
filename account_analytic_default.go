@@ -71,7 +71,7 @@ func (c *Client) GetAccountAnalyticDefault(id int64) (*AccountAnalyticDefault, e
 	if aads != nil && len(*aads) > 0 {
 		return &((*aads)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.analytic.default not found", id)
+	return nil, fmt.Errorf("id %v of account.analytic.default not found", id)
 }
 
 // GetAccountAnalyticDefaults gets account.analytic.default existing records.

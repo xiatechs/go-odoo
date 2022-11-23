@@ -83,7 +83,7 @@ func (c *Client) GetIrActionsActWindow(id int64) (*IrActionsActWindow, error) {
 	if iaas != nil && len(*iaas) > 0 {
 		return &((*iaas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.act_window not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.act_window not found", id)
 }
 
 // GetIrActionsActWindows gets ir.actions.act_window existing records.

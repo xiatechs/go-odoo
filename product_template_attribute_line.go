@@ -66,7 +66,7 @@ func (c *Client) GetProductTemplateAttributeLine(id int64) (*ProductTemplateAttr
 	if ptals != nil && len(*ptals) > 0 {
 		return &((*ptals)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.template.attribute.line not found", id)
+	return nil, fmt.Errorf("id %v of product.template.attribute.line not found", id)
 }
 
 // GetProductTemplateAttributeLines gets product.template.attribute.line existing records.

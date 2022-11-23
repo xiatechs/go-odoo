@@ -69,7 +69,7 @@ func (c *Client) GetMailNotification(id int64) (*MailNotification, error) {
 	if mns != nil && len(*mns) > 0 {
 		return &((*mns)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.notification not found", id)
+	return nil, fmt.Errorf("id %v of mail.notification not found", id)
 }
 
 // GetMailNotifications gets mail.notification existing records.

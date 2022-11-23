@@ -66,7 +66,7 @@ func (c *Client) GetAccountGroupTemplate(id int64) (*AccountGroupTemplate, error
 	if agts != nil && len(*agts) > 0 {
 		return &((*agts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.group.template not found", id)
+	return nil, fmt.Errorf("id %v of account.group.template not found", id)
 }
 
 // GetAccountGroupTemplates gets account.group.template existing records.

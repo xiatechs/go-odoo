@@ -62,7 +62,7 @@ func (c *Client) GetUomCategory(id int64) (*UomCategory, error) {
 	if ucs != nil && len(*ucs) > 0 {
 		return &((*ucs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of uom.category not found", id)
+	return nil, fmt.Errorf("id %v of uom.category not found", id)
 }
 
 // GetUomCategorys gets uom.category existing records.

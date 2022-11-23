@@ -72,7 +72,7 @@ func (c *Client) GetReportAllChannelsSales(id int64) (*ReportAllChannelsSales, e
 	if racss != nil && len(*racss) > 0 {
 		return &((*racss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of report.all.channels.sales not found", id)
+	return nil, fmt.Errorf("id %v of report.all.channels.sales not found", id)
 }
 
 // GetReportAllChannelsSaless gets report.all.channels.sales existing records.

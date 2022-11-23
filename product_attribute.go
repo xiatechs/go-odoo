@@ -69,7 +69,7 @@ func (c *Client) GetProductAttribute(id int64) (*ProductAttribute, error) {
 	if pas != nil && len(*pas) > 0 {
 		return &((*pas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.attribute not found", id)
+	return nil, fmt.Errorf("id %v of product.attribute not found", id)
 }
 
 // GetProductAttributes gets product.attribute existing records.

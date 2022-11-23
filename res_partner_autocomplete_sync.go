@@ -63,7 +63,7 @@ func (c *Client) GetResPartnerAutocompleteSync(id int64) (*ResPartnerAutocomplet
 	if rpass != nil && len(*rpass) > 0 {
 		return &((*rpass)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.partner.autocomplete.sync not found", id)
+	return nil, fmt.Errorf("id %v of res.partner.autocomplete.sync not found", id)
 }
 
 // GetResPartnerAutocompleteSyncs gets res.partner.autocomplete.sync existing records.

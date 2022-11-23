@@ -69,7 +69,7 @@ func (c *Client) GetIrModelAccess(id int64) (*IrModelAccess, error) {
 	if imas != nil && len(*imas) > 0 {
 		return &((*imas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.model.access not found", id)
+	return nil, fmt.Errorf("id %v of ir.model.access not found", id)
 }
 
 // GetIrModelAccesss gets ir.model.access existing records.

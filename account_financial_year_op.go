@@ -66,7 +66,7 @@ func (c *Client) GetAccountFinancialYearOp(id int64) (*AccountFinancialYearOp, e
 	if afyos != nil && len(*afyos) > 0 {
 		return &((*afyos)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.financial.year.op not found", id)
+	return nil, fmt.Errorf("id %v of account.financial.year.op not found", id)
 }
 
 // GetAccountFinancialYearOps gets account.financial.year.op existing records.

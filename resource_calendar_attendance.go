@@ -74,7 +74,7 @@ func (c *Client) GetResourceCalendarAttendance(id int64) (*ResourceCalendarAtten
 	if rcas != nil && len(*rcas) > 0 {
 		return &((*rcas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of resource.calendar.attendance not found", id)
+	return nil, fmt.Errorf("id %v of resource.calendar.attendance not found", id)
 }
 
 // GetResourceCalendarAttendances gets resource.calendar.attendance existing records.

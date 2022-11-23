@@ -64,7 +64,7 @@ func (c *Client) GetAccountIncoterms(id int64) (*AccountIncoterms, error) {
 	if ais != nil && len(*ais) > 0 {
 		return &((*ais)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.incoterms not found", id)
+	return nil, fmt.Errorf("id %v of account.incoterms not found", id)
 }
 
 // GetAccountIncotermss gets account.incoterms existing records.

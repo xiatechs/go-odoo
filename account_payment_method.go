@@ -65,7 +65,7 @@ func (c *Client) GetAccountPaymentMethod(id int64) (*AccountPaymentMethod, error
 	if apms != nil && len(*apms) > 0 {
 		return &((*apms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.payment.method not found", id)
+	return nil, fmt.Errorf("id %v of account.payment.method not found", id)
 }
 
 // GetAccountPaymentMethods gets account.payment.method existing records.

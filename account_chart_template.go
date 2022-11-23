@@ -92,7 +92,7 @@ func (c *Client) GetAccountChartTemplate(id int64) (*AccountChartTemplate, error
 	if acts != nil && len(*acts) > 0 {
 		return &((*acts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.chart.template not found", id)
+	return nil, fmt.Errorf("id %v of account.chart.template not found", id)
 }
 
 // GetAccountChartTemplates gets account.chart.template existing records.

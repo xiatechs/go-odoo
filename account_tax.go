@@ -82,7 +82,7 @@ func (c *Client) GetAccountTax(id int64) (*AccountTax, error) {
 	if ats != nil && len(*ats) > 0 {
 		return &((*ats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.tax not found", id)
+	return nil, fmt.Errorf("id %v of account.tax not found", id)
 }
 
 // GetAccountTaxs gets account.tax existing records.

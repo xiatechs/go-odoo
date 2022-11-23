@@ -62,7 +62,7 @@ func (c *Client) GetChangePasswordWizard(id int64) (*ChangePasswordWizard, error
 	if cpws != nil && len(*cpws) > 0 {
 		return &((*cpws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of change.password.wizard not found", id)
+	return nil, fmt.Errorf("id %v of change.password.wizard not found", id)
 }
 
 // GetChangePasswordWizards gets change.password.wizard existing records.

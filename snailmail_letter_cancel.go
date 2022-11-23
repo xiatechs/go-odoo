@@ -63,7 +63,7 @@ func (c *Client) GetSnailmailLetterCancel(id int64) (*SnailmailLetterCancel, err
 	if slcs != nil && len(*slcs) > 0 {
 		return &((*slcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of snailmail.letter.cancel not found", id)
+	return nil, fmt.Errorf("id %v of snailmail.letter.cancel not found", id)
 }
 
 // GetSnailmailLetterCancels gets snailmail.letter.cancel existing records.

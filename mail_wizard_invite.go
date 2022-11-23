@@ -67,7 +67,7 @@ func (c *Client) GetMailWizardInvite(id int64) (*MailWizardInvite, error) {
 	if mwis != nil && len(*mwis) > 0 {
 		return &((*mwis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.wizard.invite not found", id)
+	return nil, fmt.Errorf("id %v of mail.wizard.invite not found", id)
 }
 
 // GetMailWizardInvites gets mail.wizard.invite existing records.

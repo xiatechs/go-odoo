@@ -114,7 +114,7 @@ func (c *Client) GetMailMail(id int64) (*MailMail, error) {
 	if mms != nil && len(*mms) > 0 {
 		return &((*mms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.mail not found", id)
+	return nil, fmt.Errorf("id %v of mail.mail not found", id)
 }
 
 // GetMailMails gets mail.mail existing records.

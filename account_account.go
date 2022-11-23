@@ -81,7 +81,7 @@ func (c *Client) GetAccountAccount(id int64) (*AccountAccount, error) {
 	if aas != nil && len(*aas) > 0 {
 		return &((*aas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.account not found", id)
+	return nil, fmt.Errorf("id %v of account.account not found", id)
 }
 
 // GetAccountAccounts gets account.account existing records.

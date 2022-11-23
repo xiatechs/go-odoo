@@ -63,7 +63,7 @@ func (c *Client) GetUtmStage(id int64) (*UtmStage, error) {
 	if uss != nil && len(*uss) > 0 {
 		return &((*uss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of utm.stage not found", id)
+	return nil, fmt.Errorf("id %v of utm.stage not found", id)
 }
 
 // GetUtmStages gets utm.stage existing records.

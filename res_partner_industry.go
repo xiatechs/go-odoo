@@ -64,7 +64,7 @@ func (c *Client) GetResPartnerIndustry(id int64) (*ResPartnerIndustry, error) {
 	if rpis != nil && len(*rpis) > 0 {
 		return &((*rpis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.partner.industry not found", id)
+	return nil, fmt.Errorf("id %v of res.partner.industry not found", id)
 }
 
 // GetResPartnerIndustrys gets res.partner.industry existing records.

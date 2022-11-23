@@ -74,7 +74,7 @@ func (c *Client) GetIrActionsClient(id int64) (*IrActionsClient, error) {
 	if iacs != nil && len(*iacs) > 0 {
 		return &((*iacs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.client not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.client not found", id)
 }
 
 // GetIrActionsClients gets ir.actions.client existing records.

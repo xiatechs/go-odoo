@@ -68,7 +68,7 @@ func (c *Client) GetAccountAccountTag(id int64) (*AccountAccountTag, error) {
 	if aats != nil && len(*aats) > 0 {
 		return &((*aats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.account.tag not found", id)
+	return nil, fmt.Errorf("id %v of account.account.tag not found", id)
 }
 
 // GetAccountAccountTags gets account.account.tag existing records.

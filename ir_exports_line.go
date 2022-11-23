@@ -63,7 +63,7 @@ func (c *Client) GetIrExportsLine(id int64) (*IrExportsLine, error) {
 	if iels != nil && len(*iels) > 0 {
 		return &((*iels)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.exports.line not found", id)
+	return nil, fmt.Errorf("id %v of ir.exports.line not found", id)
 }
 
 // GetIrExportsLines gets ir.exports.line existing records.

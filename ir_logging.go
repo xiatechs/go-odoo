@@ -69,7 +69,7 @@ func (c *Client) GetIrLogging(id int64) (*IrLogging, error) {
 	if ils != nil && len(*ils) > 0 {
 		return &((*ils)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.logging not found", id)
+	return nil, fmt.Errorf("id %v of ir.logging not found", id)
 }
 
 // GetIrLoggings gets ir.logging existing records.

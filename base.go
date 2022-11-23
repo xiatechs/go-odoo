@@ -57,7 +57,7 @@ func (c *Client) GetBase(id int64) (*Base, error) {
 	if bs != nil && len(*bs) > 0 {
 		return &((*bs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base not found", id)
+	return nil, fmt.Errorf("id %v of base not found", id)
 }
 
 // GetBases gets base existing records.

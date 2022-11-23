@@ -64,7 +64,7 @@ func (c *Client) GetIrDemoFailure(id int64) (*IrDemoFailure, error) {
 	if IDs != nil && len(*IDs) > 0 {
 		return &((*IDs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.demo_failure not found", id)
+	return nil, fmt.Errorf("id %v of ir.demo_failure not found", id)
 }
 
 // GetIrDemoFailures gets ir.demo_failure existing records.

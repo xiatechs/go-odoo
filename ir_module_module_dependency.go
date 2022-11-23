@@ -66,7 +66,7 @@ func (c *Client) GetIrModuleModuleDependency(id int64) (*IrModuleModuleDependenc
 	if immds != nil && len(*immds) > 0 {
 		return &((*immds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.module.module.dependency not found", id)
+	return nil, fmt.Errorf("id %v of ir.module.module.dependency not found", id)
 }
 
 // GetIrModuleModuleDependencys gets ir.module.module.dependency existing records.

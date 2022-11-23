@@ -67,7 +67,7 @@ func (c *Client) GetBaseLanguageExport(id int64) (*BaseLanguageExport, error) {
 	if bles != nil && len(*bles) > 0 {
 		return &((*bles)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.language.export not found", id)
+	return nil, fmt.Errorf("id %v of base.language.export not found", id)
 }
 
 // GetBaseLanguageExports gets base.language.export existing records.

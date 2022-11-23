@@ -57,7 +57,7 @@ func (c *Client) GetReportAccountReportJournal(id int64) (*ReportAccountReportJo
 	if rars != nil && len(*rars) > 0 {
 		return &((*rars)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of report.account.report_journal not found", id)
+	return nil, fmt.Errorf("id %v of report.account.report_journal not found", id)
 }
 
 // GetReportAccountReportJournals gets report.account.report_journal existing records.

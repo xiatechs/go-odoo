@@ -68,7 +68,7 @@ func (c *Client) GetProductPackaging(id int64) (*ProductPackaging, error) {
 	if pps != nil && len(*pps) > 0 {
 		return &((*pps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.packaging not found", id)
+	return nil, fmt.Errorf("id %v of product.packaging not found", id)
 }
 
 // GetProductPackagings gets product.packaging existing records.

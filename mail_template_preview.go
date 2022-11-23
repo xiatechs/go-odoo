@@ -76,7 +76,7 @@ func (c *Client) GetMailTemplatePreview(id int64) (*MailTemplatePreview, error) 
 	if mtps != nil && len(*mtps) > 0 {
 		return &((*mtps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.template.preview not found", id)
+	return nil, fmt.Errorf("id %v of mail.template.preview not found", id)
 }
 
 // GetMailTemplatePreviews gets mail.template.preview existing records.

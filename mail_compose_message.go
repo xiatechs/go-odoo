@@ -87,7 +87,7 @@ func (c *Client) GetMailComposeMessage(id int64) (*MailComposeMessage, error) {
 	if mcms != nil && len(*mcms) > 0 {
 		return &((*mcms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.compose.message not found", id)
+	return nil, fmt.Errorf("id %v of mail.compose.message not found", id)
 }
 
 // GetMailComposeMessages gets mail.compose.message existing records.

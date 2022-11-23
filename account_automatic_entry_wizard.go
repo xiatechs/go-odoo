@@ -76,7 +76,7 @@ func (c *Client) GetAccountAutomaticEntryWizard(id int64) (*AccountAutomaticEntr
 	if aaews != nil && len(*aaews) > 0 {
 		return &((*aaews)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.automatic.entry.wizard not found", id)
+	return nil, fmt.Errorf("id %v of account.automatic.entry.wizard not found", id)
 }
 
 // GetAccountAutomaticEntryWizards gets account.automatic.entry.wizard existing records.

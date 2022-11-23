@@ -155,7 +155,7 @@ func (c *Client) GetProductProduct(id int64) (*ProductProduct, error) {
 	if pps != nil && len(*pps) > 0 {
 		return &((*pps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.product not found", id)
+	return nil, fmt.Errorf("id %v of product.product not found", id)
 }
 
 // GetProductProducts gets product.product existing records.

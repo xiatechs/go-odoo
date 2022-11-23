@@ -63,7 +63,7 @@ func (c *Client) GetResPartnerTitle(id int64) (*ResPartnerTitle, error) {
 	if rpts != nil && len(*rpts) > 0 {
 		return &((*rpts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.partner.title not found", id)
+	return nil, fmt.Errorf("id %v of res.partner.title not found", id)
 }
 
 // GetResPartnerTitles gets res.partner.title existing records.

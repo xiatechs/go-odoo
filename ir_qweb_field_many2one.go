@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldMany2One(id int64) (*IrQwebFieldMany2One, error) 
 	if iqfms != nil && len(*iqfms) > 0 {
 		return &((*iqfms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.many2one not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.many2one not found", id)
 }
 
 // GetIrQwebFieldMany2Ones gets ir.qweb.field.many2one existing records.

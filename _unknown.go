@@ -57,7 +57,7 @@ func (c *Client) GetUnknown(id int64) (*Unknown, error) {
 	if _s != nil && len(*_s) > 0 {
 		return &((*_s)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of _unknown not found", id)
+	return nil, fmt.Errorf("id %v of _unknown not found", id)
 }
 
 // GetUnknowns gets _unknown existing records.

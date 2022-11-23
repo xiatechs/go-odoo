@@ -66,7 +66,7 @@ func (c *Client) GetIrTranslation(id int64) (*IrTranslation, error) {
 	if its != nil && len(*its) > 0 {
 		return &((*its)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.translation not found", id)
+	return nil, fmt.Errorf("id %v of ir.translation not found", id)
 }
 
 // GetIrTranslations gets ir.translation existing records.

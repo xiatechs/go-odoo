@@ -65,7 +65,7 @@ func (c *Client) GetBaseModuleUninstall(id int64) (*BaseModuleUninstall, error) 
 	if bmus != nil && len(*bmus) > 0 {
 		return &((*bmus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.module.uninstall not found", id)
+	return nil, fmt.Errorf("id %v of base.module.uninstall not found", id)
 }
 
 // GetBaseModuleUninstalls gets base.module.uninstall existing records.

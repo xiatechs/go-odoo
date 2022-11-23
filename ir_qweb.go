@@ -57,7 +57,7 @@ func (c *Client) GetIrQweb(id int64) (*IrQweb, error) {
 	if iqs != nil && len(*iqs) > 0 {
 		return &((*iqs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb not found", id)
 }
 
 // GetIrQwebs gets ir.qweb existing records.

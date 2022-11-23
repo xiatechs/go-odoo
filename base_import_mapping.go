@@ -64,7 +64,7 @@ func (c *Client) GetBaseImportMapping(id int64) (*BaseImportMapping, error) {
 	if bms != nil && len(*bms) > 0 {
 		return &((*bms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.mapping not found", id)
+	return nil, fmt.Errorf("id %v of base_import.mapping not found", id)
 }
 
 // GetBaseImportMappings gets base_import.mapping existing records.

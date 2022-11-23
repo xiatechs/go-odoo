@@ -65,7 +65,7 @@ func (c *Client) GetMailShortcode(id int64) (*MailShortcode, error) {
 	if mss != nil && len(*mss) > 0 {
 		return &((*mss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.shortcode not found", id)
+	return nil, fmt.Errorf("id %v of mail.shortcode not found", id)
 }
 
 // GetMailShortcodes gets mail.shortcode existing records.

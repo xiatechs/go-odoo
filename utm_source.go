@@ -62,7 +62,7 @@ func (c *Client) GetUtmSource(id int64) (*UtmSource, error) {
 	if uss != nil && len(*uss) > 0 {
 		return &((*uss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of utm.source not found", id)
+	return nil, fmt.Errorf("id %v of utm.source not found", id)
 }
 
 // GetUtmSources gets utm.source existing records.

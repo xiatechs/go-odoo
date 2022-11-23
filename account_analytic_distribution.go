@@ -65,7 +65,7 @@ func (c *Client) GetAccountAnalyticDistribution(id int64) (*AccountAnalyticDistr
 	if aads != nil && len(*aads) > 0 {
 		return &((*aads)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.analytic.distribution not found", id)
+	return nil, fmt.Errorf("id %v of account.analytic.distribution not found", id)
 }
 
 // GetAccountAnalyticDistributions gets account.analytic.distribution existing records.

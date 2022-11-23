@@ -64,7 +64,7 @@ func (c *Client) GetBaseImportTestsModelsPreview(id int64) (*BaseImportTestsMode
 	if btmps != nil && len(*btmps) > 0 {
 		return &((*btmps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.preview not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.preview not found", id)
 }
 
 // GetBaseImportTestsModelsPreviews gets base_import.tests.models.preview existing records.

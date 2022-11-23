@@ -68,7 +68,7 @@ func (c *Client) GetIrActionsActWindowClose(id int64) (*IrActionsActWindowClose,
 	if iaas != nil && len(*iaas) > 0 {
 		return &((*iaas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.act_window_close not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.act_window_close not found", id)
 }
 
 // GetIrActionsActWindowCloses gets ir.actions.act_window_close existing records.

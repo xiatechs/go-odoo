@@ -66,7 +66,7 @@ func (c *Client) GetAccountBankStatementCashbox(id int64) (*AccountBankStatement
 	if abscs != nil && len(*abscs) > 0 {
 		return &((*abscs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.bank.statement.cashbox not found", id)
+	return nil, fmt.Errorf("id %v of account.bank.statement.cashbox not found", id)
 }
 
 // GetAccountBankStatementCashboxs gets account.bank.statement.cashbox existing records.

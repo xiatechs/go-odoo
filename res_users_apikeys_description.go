@@ -62,7 +62,7 @@ func (c *Client) GetResUsersApikeysDescription(id int64) (*ResUsersApikeysDescri
 	if ruads != nil && len(*ruads) > 0 {
 		return &((*ruads)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.users.apikeys.description not found", id)
+	return nil, fmt.Errorf("id %v of res.users.apikeys.description not found", id)
 }
 
 // GetResUsersApikeysDescriptions gets res.users.apikeys.description existing records.

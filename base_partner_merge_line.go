@@ -64,7 +64,7 @@ func (c *Client) GetBasePartnerMergeLine(id int64) (*BasePartnerMergeLine, error
 	if bpmls != nil && len(*bpmls) > 0 {
 		return &((*bpmls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.partner.merge.line not found", id)
+	return nil, fmt.Errorf("id %v of base.partner.merge.line not found", id)
 }
 
 // GetBasePartnerMergeLines gets base.partner.merge.line existing records.

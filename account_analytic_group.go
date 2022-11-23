@@ -68,7 +68,7 @@ func (c *Client) GetAccountAnalyticGroup(id int64) (*AccountAnalyticGroup, error
 	if aags != nil && len(*aags) > 0 {
 		return &((*aags)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.analytic.group not found", id)
+	return nil, fmt.Errorf("id %v of account.analytic.group not found", id)
 }
 
 // GetAccountAnalyticGroups gets account.analytic.group existing records.

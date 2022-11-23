@@ -57,7 +57,7 @@ func (c *Client) GetSmsApi(id int64) (*SmsApi, error) {
 	if sas != nil && len(*sas) > 0 {
 		return &((*sas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sms.api not found", id)
+	return nil, fmt.Errorf("id %v of sms.api not found", id)
 }
 
 // GetSmsApis gets sms.api existing records.

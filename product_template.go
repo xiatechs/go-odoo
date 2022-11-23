@@ -143,7 +143,7 @@ func (c *Client) GetProductTemplate(id int64) (*ProductTemplate, error) {
 	if pts != nil && len(*pts) > 0 {
 		return &((*pts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.template not found", id)
+	return nil, fmt.Errorf("id %v of product.template not found", id)
 }
 
 // GetProductTemplates gets product.template existing records.

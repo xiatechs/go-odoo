@@ -71,7 +71,7 @@ func (c *Client) GetSaleAdvancePaymentInv(id int64) (*SaleAdvancePaymentInv, err
 	if sapis != nil && len(*sapis) > 0 {
 		return &((*sapis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.advance.payment.inv not found", id)
+	return nil, fmt.Errorf("id %v of sale.advance.payment.inv not found", id)
 }
 
 // GetSaleAdvancePaymentInvs gets sale.advance.payment.inv existing records.

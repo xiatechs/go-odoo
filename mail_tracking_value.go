@@ -79,7 +79,7 @@ func (c *Client) GetMailTrackingValue(id int64) (*MailTrackingValue, error) {
 	if mtvs != nil && len(*mtvs) > 0 {
 		return &((*mtvs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.tracking.value not found", id)
+	return nil, fmt.Errorf("id %v of mail.tracking.value not found", id)
 }
 
 // GetMailTrackingValues gets mail.tracking.value existing records.

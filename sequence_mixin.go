@@ -59,7 +59,7 @@ func (c *Client) GetSequenceMixin(id int64) (*SequenceMixin, error) {
 	if sms != nil && len(*sms) > 0 {
 		return &((*sms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sequence.mixin not found", id)
+	return nil, fmt.Errorf("id %v of sequence.mixin not found", id)
 }
 
 // GetSequenceMixins gets sequence.mixin existing records.

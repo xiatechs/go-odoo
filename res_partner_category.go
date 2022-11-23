@@ -68,7 +68,7 @@ func (c *Client) GetResPartnerCategory(id int64) (*ResPartnerCategory, error) {
 	if rpcs != nil && len(*rpcs) > 0 {
 		return &((*rpcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.partner.category not found", id)
+	return nil, fmt.Errorf("id %v of res.partner.category not found", id)
 }
 
 // GetResPartnerCategorys gets res.partner.category existing records.

@@ -63,7 +63,7 @@ func (c *Client) GetPhoneBlacklistRemove(id int64) (*PhoneBlacklistRemove, error
 	if pbrs != nil && len(*pbrs) > 0 {
 		return &((*pbrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of phone.blacklist.remove not found", id)
+	return nil, fmt.Errorf("id %v of phone.blacklist.remove not found", id)
 }
 
 // GetPhoneBlacklistRemoves gets phone.blacklist.remove existing records.

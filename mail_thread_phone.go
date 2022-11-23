@@ -76,7 +76,7 @@ func (c *Client) GetMailThreadPhone(id int64) (*MailThreadPhone, error) {
 	if mtps != nil && len(*mtps) > 0 {
 		return &((*mtps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.thread.phone not found", id)
+	return nil, fmt.Errorf("id %v of mail.thread.phone not found", id)
 }
 
 // GetMailThreadPhones gets mail.thread.phone existing records.

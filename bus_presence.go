@@ -61,7 +61,7 @@ func (c *Client) GetBusPresence(id int64) (*BusPresence, error) {
 	if bps != nil && len(*bps) > 0 {
 		return &((*bps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of bus.presence not found", id)
+	return nil, fmt.Errorf("id %v of bus.presence not found", id)
 }
 
 // GetBusPresences gets bus.presence existing records.

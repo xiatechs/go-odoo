@@ -172,7 +172,7 @@ func (c *Client) GetAccountMove(id int64) (*AccountMove, error) {
 	if ams != nil && len(*ams) > 0 {
 		return &((*ams)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.move not found", id)
+	return nil, fmt.Errorf("id %v of account.move not found", id)
 }
 
 // GetAccountMoves gets account.move existing records.

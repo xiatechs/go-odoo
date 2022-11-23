@@ -90,7 +90,7 @@ func (c *Client) GetAccountTourUploadBill(id int64) (*AccountTourUploadBill, err
 	if atubs != nil && len(*atubs) > 0 {
 		return &((*atubs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.tour.upload.bill not found", id)
+	return nil, fmt.Errorf("id %v of account.tour.upload.bill not found", id)
 }
 
 // GetAccountTourUploadBills gets account.tour.upload.bill existing records.

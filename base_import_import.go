@@ -65,7 +65,7 @@ func (c *Client) GetBaseImportImport(id int64) (*BaseImportImport, error) {
 	if bis != nil && len(*bis) > 0 {
 		return &((*bis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.import not found", id)
+	return nil, fmt.Errorf("id %v of base_import.import not found", id)
 }
 
 // GetBaseImportImports gets base_import.import existing records.

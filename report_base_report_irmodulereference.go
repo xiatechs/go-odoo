@@ -57,7 +57,7 @@ func (c *Client) GetReportBaseReportIrmodulereference(id int64) (*ReportBaseRepo
 	if rbrs != nil && len(*rbrs) > 0 {
 		return &((*rbrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of report.base.report_irmodulereference not found", id)
+	return nil, fmt.Errorf("id %v of report.base.report_irmodulereference not found", id)
 }
 
 // GetReportBaseReportIrmodulereferences gets report.base.report_irmodulereference existing records.

@@ -69,7 +69,7 @@ func (c *Client) GetResourceResource(id int64) (*ResourceResource, error) {
 	if rrs != nil && len(*rrs) > 0 {
 		return &((*rrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of resource.resource not found", id)
+	return nil, fmt.Errorf("id %v of resource.resource not found", id)
 }
 
 // GetResourceResources gets resource.resource existing records.

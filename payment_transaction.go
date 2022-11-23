@@ -94,7 +94,7 @@ func (c *Client) GetPaymentTransaction(id int64) (*PaymentTransaction, error) {
 	if pts != nil && len(*pts) > 0 {
 		return &((*pts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of payment.transaction not found", id)
+	return nil, fmt.Errorf("id %v of payment.transaction not found", id)
 }
 
 // GetPaymentTransactions gets payment.transaction existing records.

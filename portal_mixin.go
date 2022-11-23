@@ -60,7 +60,7 @@ func (c *Client) GetPortalMixin(id int64) (*PortalMixin, error) {
 	if pms != nil && len(*pms) > 0 {
 		return &((*pms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of portal.mixin not found", id)
+	return nil, fmt.Errorf("id %v of portal.mixin not found", id)
 }
 
 // GetPortalMixins gets portal.mixin existing records.

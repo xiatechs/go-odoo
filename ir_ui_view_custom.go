@@ -64,7 +64,7 @@ func (c *Client) GetIrUiViewCustom(id int64) (*IrUiViewCustom, error) {
 	if iuvcs != nil && len(*iuvcs) > 0 {
 		return &((*iuvcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.ui.view.custom not found", id)
+	return nil, fmt.Errorf("id %v of ir.ui.view.custom not found", id)
 }
 
 // GetIrUiViewCustoms gets ir.ui.view.custom existing records.

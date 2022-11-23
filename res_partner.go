@@ -186,7 +186,7 @@ func (c *Client) GetResPartner(id int64) (*ResPartner, error) {
 	if rps != nil && len(*rps) > 0 {
 		return &((*rps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.partner not found", id)
+	return nil, fmt.Errorf("id %v of res.partner not found", id)
 }
 
 // GetResPartners gets res.partner existing records.

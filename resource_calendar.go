@@ -71,7 +71,7 @@ func (c *Client) GetResourceCalendar(id int64) (*ResourceCalendar, error) {
 	if rcs != nil && len(*rcs) > 0 {
 		return &((*rcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of resource.calendar not found", id)
+	return nil, fmt.Errorf("id %v of resource.calendar not found", id)
 }
 
 // GetResourceCalendars gets resource.calendar existing records.

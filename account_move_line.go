@@ -120,7 +120,7 @@ func (c *Client) GetAccountMoveLine(id int64) (*AccountMoveLine, error) {
 	if amls != nil && len(*amls) > 0 {
 		return &((*amls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.move.line not found", id)
+	return nil, fmt.Errorf("id %v of account.move.line not found", id)
 }
 
 // GetAccountMoveLines gets account.move.line existing records.

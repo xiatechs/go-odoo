@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsM2ORelated(id int64) (*BaseImportTestsM
 	if btmmrs != nil && len(*btmmrs) > 0 {
 		return &((*btmmrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.m2o.related not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.m2o.related not found", id)
 }
 
 // GetBaseImportTestsModelsM2ORelateds gets base_import.tests.models.m2o.related existing records.

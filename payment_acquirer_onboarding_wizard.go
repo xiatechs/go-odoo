@@ -73,7 +73,7 @@ func (c *Client) GetPaymentAcquirerOnboardingWizard(id int64) (*PaymentAcquirerO
 	if paows != nil && len(*paows) > 0 {
 		return &((*paows)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of payment.acquirer.onboarding.wizard not found", id)
+	return nil, fmt.Errorf("id %v of payment.acquirer.onboarding.wizard not found", id)
 }
 
 // GetPaymentAcquirerOnboardingWizards gets payment.acquirer.onboarding.wizard existing records.

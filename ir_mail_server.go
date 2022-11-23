@@ -70,7 +70,7 @@ func (c *Client) GetIrMailServer(id int64) (*IrMailServer, error) {
 	if ims != nil && len(*ims) > 0 {
 		return &((*ims)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.mail_server not found", id)
+	return nil, fmt.Errorf("id %v of ir.mail_server not found", id)
 }
 
 // GetIrMailServers gets ir.mail_server existing records.

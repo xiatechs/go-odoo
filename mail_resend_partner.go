@@ -67,7 +67,7 @@ func (c *Client) GetMailResendPartner(id int64) (*MailResendPartner, error) {
 	if mrps != nil && len(*mrps) > 0 {
 		return &((*mrps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.resend.partner not found", id)
+	return nil, fmt.Errorf("id %v of mail.resend.partner not found", id)
 }
 
 // GetMailResendPartners gets mail.resend.partner existing records.

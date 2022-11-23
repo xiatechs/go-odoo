@@ -66,7 +66,7 @@ func (c *Client) GetResourceTest(id int64) (*ResourceTest, error) {
 	if rts != nil && len(*rts) > 0 {
 		return &((*rts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of resource.test not found", id)
+	return nil, fmt.Errorf("id %v of resource.test not found", id)
 }
 
 // GetResourceTests gets resource.test existing records.

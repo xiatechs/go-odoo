@@ -78,7 +78,7 @@ func (c *Client) GetFetchmailServer(id int64) (*FetchmailServer, error) {
 	if fss != nil && len(*fss) > 0 {
 		return &((*fss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of fetchmail.server not found", id)
+	return nil, fmt.Errorf("id %v of fetchmail.server not found", id)
 }
 
 // GetFetchmailServers gets fetchmail.server existing records.

@@ -63,7 +63,7 @@ func (c *Client) GetIrDemoFailureWizard(id int64) (*IrDemoFailureWizard, error) 
 	if idws != nil && len(*idws) > 0 {
 		return &((*idws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.demo_failure.wizard not found", id)
+	return nil, fmt.Errorf("id %v of ir.demo_failure.wizard not found", id)
 }
 
 // GetIrDemoFailureWizards gets ir.demo_failure.wizard existing records.

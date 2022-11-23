@@ -63,7 +63,7 @@ func (c *Client) GetUtmTag(id int64) (*UtmTag, error) {
 	if uts != nil && len(*uts) > 0 {
 		return &((*uts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of utm.tag not found", id)
+	return nil, fmt.Errorf("id %v of utm.tag not found", id)
 }
 
 // GetUtmTags gets utm.tag existing records.

@@ -168,7 +168,7 @@ func (c *Client) GetResCompany(id int64) (*ResCompany, error) {
 	if rcs != nil && len(*rcs) > 0 {
 		return &((*rcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.company not found", id)
+	return nil, fmt.Errorf("id %v of res.company not found", id)
 }
 
 // GetResCompanys gets res.company existing records.

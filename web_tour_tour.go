@@ -59,7 +59,7 @@ func (c *Client) GetWebTourTour(id int64) (*WebTourTour, error) {
 	if wts != nil && len(*wts) > 0 {
 		return &((*wts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of web_tour.tour not found", id)
+	return nil, fmt.Errorf("id %v of web_tour.tour not found", id)
 }
 
 // GetWebTourTours gets web_tour.tour existing records.

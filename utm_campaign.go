@@ -71,7 +71,7 @@ func (c *Client) GetUtmCampaign(id int64) (*UtmCampaign, error) {
 	if ucs != nil && len(*ucs) > 0 {
 		return &((*ucs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of utm.campaign not found", id)
+	return nil, fmt.Errorf("id %v of utm.campaign not found", id)
 }
 
 // GetUtmCampaigns gets utm.campaign existing records.

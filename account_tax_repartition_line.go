@@ -73,7 +73,7 @@ func (c *Client) GetAccountTaxRepartitionLine(id int64) (*AccountTaxRepartitionL
 	if atrls != nil && len(*atrls) > 0 {
 		return &((*atrls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.tax.repartition.line not found", id)
+	return nil, fmt.Errorf("id %v of account.tax.repartition.line not found", id)
 }
 
 // GetAccountTaxRepartitionLines gets account.tax.repartition.line existing records.

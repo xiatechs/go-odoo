@@ -74,7 +74,7 @@ func (c *Client) GetAccountFiscalPositionTemplate(id int64) (*AccountFiscalPosit
 	if afpts != nil && len(*afpts) > 0 {
 		return &((*afpts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.fiscal.position.template not found", id)
+	return nil, fmt.Errorf("id %v of account.fiscal.position.template not found", id)
 }
 
 // GetAccountFiscalPositionTemplates gets account.fiscal.position.template existing records.

@@ -65,7 +65,7 @@ func (c *Client) GetProductAttributeCustomValue(id int64) (*ProductAttributeCust
 	if pacvs != nil && len(*pacvs) > 0 {
 		return &((*pacvs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.attribute.custom.value not found", id)
+	return nil, fmt.Errorf("id %v of product.attribute.custom.value not found", id)
 }
 
 // GetProductAttributeCustomValues gets product.attribute.custom.value existing records.

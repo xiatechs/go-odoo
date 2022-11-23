@@ -71,7 +71,7 @@ func (c *Client) GetTaxAdjustmentsWizard(id int64) (*TaxAdjustmentsWizard, error
 	if taws != nil && len(*taws) > 0 {
 		return &((*taws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of tax.adjustments.wizard not found", id)
+	return nil, fmt.Errorf("id %v of tax.adjustments.wizard not found", id)
 }
 
 // GetTaxAdjustmentsWizards gets tax.adjustments.wizard existing records.

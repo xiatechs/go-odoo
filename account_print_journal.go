@@ -68,7 +68,7 @@ func (c *Client) GetAccountPrintJournal(id int64) (*AccountPrintJournal, error) 
 	if apjs != nil && len(*apjs) > 0 {
 		return &((*apjs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.print.journal not found", id)
+	return nil, fmt.Errorf("id %v of account.print.journal not found", id)
 }
 
 // GetAccountPrintJournals gets account.print.journal existing records.

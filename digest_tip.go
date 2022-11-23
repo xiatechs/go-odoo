@@ -66,7 +66,7 @@ func (c *Client) GetDigestTip(id int64) (*DigestTip, error) {
 	if dts != nil && len(*dts) > 0 {
 		return &((*dts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of digest.tip not found", id)
+	return nil, fmt.Errorf("id %v of digest.tip not found", id)
 }
 
 // GetDigestTips gets digest.tip existing records.

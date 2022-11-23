@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldContact(id int64) (*IrQwebFieldContact, error) {
 	if iqfcs != nil && len(*iqfcs) > 0 {
 		return &((*iqfcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.contact not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.contact not found", id)
 }
 
 // GetIrQwebFieldContacts gets ir.qweb.field.contact existing records.

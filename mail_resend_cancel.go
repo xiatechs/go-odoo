@@ -63,7 +63,7 @@ func (c *Client) GetMailResendCancel(id int64) (*MailResendCancel, error) {
 	if mrcs != nil && len(*mrcs) > 0 {
 		return &((*mrcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.resend.cancel not found", id)
+	return nil, fmt.Errorf("id %v of mail.resend.cancel not found", id)
 }
 
 // GetMailResendCancels gets mail.resend.cancel existing records.

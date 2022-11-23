@@ -57,7 +57,7 @@ func (c *Client) GetMailBot(id int64) (*MailBot, error) {
 	if mbs != nil && len(*mbs) > 0 {
 		return &((*mbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.bot not found", id)
+	return nil, fmt.Errorf("id %v of mail.bot not found", id)
 }
 
 // GetMailBots gets mail.bot existing records.

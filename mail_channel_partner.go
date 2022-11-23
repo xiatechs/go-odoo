@@ -70,7 +70,7 @@ func (c *Client) GetMailChannelPartner(id int64) (*MailChannelPartner, error) {
 	if mcps != nil && len(*mcps) > 0 {
 		return &((*mcps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.channel.partner not found", id)
+	return nil, fmt.Errorf("id %v of mail.channel.partner not found", id)
 }
 
 // GetMailChannelPartners gets mail.channel.partner existing records.

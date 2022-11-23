@@ -79,7 +79,7 @@ func (c *Client) GetIrActionsReport(id int64) (*IrActionsReport, error) {
 	if iars != nil && len(*iars) > 0 {
 		return &((*iars)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.report not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.report not found", id)
 }
 
 // GetIrActionsReports gets ir.actions.report existing records.

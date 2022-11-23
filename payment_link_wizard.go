@@ -72,7 +72,7 @@ func (c *Client) GetPaymentLinkWizard(id int64) (*PaymentLinkWizard, error) {
 	if plws != nil && len(*plws) > 0 {
 		return &((*plws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of payment.link.wizard not found", id)
+	return nil, fmt.Errorf("id %v of payment.link.wizard not found", id)
 }
 
 // GetPaymentLinkWizards gets payment.link.wizard existing records.

@@ -71,7 +71,7 @@ func (c *Client) GetAccountAccountTemplate(id int64) (*AccountAccountTemplate, e
 	if aats != nil && len(*aats) > 0 {
 		return &((*aats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.account.template not found", id)
+	return nil, fmt.Errorf("id %v of account.account.template not found", id)
 }
 
 // GetAccountAccountTemplates gets account.account.template existing records.

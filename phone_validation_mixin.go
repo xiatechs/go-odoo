@@ -57,7 +57,7 @@ func (c *Client) GetPhoneValidationMixin(id int64) (*PhoneValidationMixin, error
 	if pvms != nil && len(*pvms) > 0 {
 		return &((*pvms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of phone.validation.mixin not found", id)
+	return nil, fmt.Errorf("id %v of phone.validation.mixin not found", id)
 }
 
 // GetPhoneValidationMixins gets phone.validation.mixin existing records.

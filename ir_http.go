@@ -57,7 +57,7 @@ func (c *Client) GetIrHttp(id int64) (*IrHttp, error) {
 	if ihs != nil && len(*ihs) > 0 {
 		return &((*ihs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.http not found", id)
+	return nil, fmt.Errorf("id %v of ir.http not found", id)
 }
 
 // GetIrHttps gets ir.http existing records.

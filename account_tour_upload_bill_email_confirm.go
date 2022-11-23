@@ -62,7 +62,7 @@ func (c *Client) GetAccountTourUploadBillEmailConfirm(id int64) (*AccountTourUpl
 	if atubecs != nil && len(*atubecs) > 0 {
 		return &((*atubecs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.tour.upload.bill.email.confirm not found", id)
+	return nil, fmt.Errorf("id %v of account.tour.upload.bill.email.confirm not found", id)
 }
 
 // GetAccountTourUploadBillEmailConfirms gets account.tour.upload.bill.email.confirm existing records.

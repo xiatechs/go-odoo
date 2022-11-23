@@ -84,7 +84,7 @@ func (c *Client) GetSmsComposer(id int64) (*SmsComposer, error) {
 	if scs != nil && len(*scs) > 0 {
 		return &((*scs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sms.composer not found", id)
+	return nil, fmt.Errorf("id %v of sms.composer not found", id)
 }
 
 // GetSmsComposers gets sms.composer existing records.

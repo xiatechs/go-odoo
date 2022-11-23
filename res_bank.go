@@ -72,7 +72,7 @@ func (c *Client) GetResBank(id int64) (*ResBank, error) {
 	if rbs != nil && len(*rbs) > 0 {
 		return &((*rbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.bank not found", id)
+	return nil, fmt.Errorf("id %v of res.bank not found", id)
 }
 
 // GetResBanks gets res.bank existing records.

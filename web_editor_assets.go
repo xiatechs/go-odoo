@@ -57,7 +57,7 @@ func (c *Client) GetWebEditorAssets(id int64) (*WebEditorAssets, error) {
 	if was != nil && len(*was) > 0 {
 		return &((*was)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of web_editor.assets not found", id)
+	return nil, fmt.Errorf("id %v of web_editor.assets not found", id)
 }
 
 // GetWebEditorAssetss gets web_editor.assets existing records.

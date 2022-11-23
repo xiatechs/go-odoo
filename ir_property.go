@@ -72,7 +72,7 @@ func (c *Client) GetIrProperty(id int64) (*IrProperty, error) {
 	if ips != nil && len(*ips) > 0 {
 		return &((*ips)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.property not found", id)
+	return nil, fmt.Errorf("id %v of ir.property not found", id)
 }
 
 // GetIrPropertys gets ir.property existing records.

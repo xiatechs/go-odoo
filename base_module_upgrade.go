@@ -62,7 +62,7 @@ func (c *Client) GetBaseModuleUpgrade(id int64) (*BaseModuleUpgrade, error) {
 	if bmus != nil && len(*bmus) > 0 {
 		return &((*bmus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.module.upgrade not found", id)
+	return nil, fmt.Errorf("id %v of base.module.upgrade not found", id)
 }
 
 // GetBaseModuleUpgrades gets base.module.upgrade existing records.

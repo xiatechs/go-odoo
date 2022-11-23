@@ -75,7 +75,7 @@ func (c *Client) GetResPartnerBank(id int64) (*ResPartnerBank, error) {
 	if rpbs != nil && len(*rpbs) > 0 {
 		return &((*rpbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.partner.bank not found", id)
+	return nil, fmt.Errorf("id %v of res.partner.bank not found", id)
 }
 
 // GetResPartnerBanks gets res.partner.bank existing records.

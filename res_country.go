@@ -74,7 +74,7 @@ func (c *Client) GetResCountry(id int64) (*ResCountry, error) {
 	if rcs != nil && len(*rcs) > 0 {
 		return &((*rcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.country not found", id)
+	return nil, fmt.Errorf("id %v of res.country not found", id)
 }
 
 // GetResCountrys gets res.country existing records.

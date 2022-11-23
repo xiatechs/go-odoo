@@ -196,7 +196,7 @@ func (c *Client) GetResConfigSettings(id int64) (*ResConfigSettings, error) {
 	if rcss != nil && len(*rcss) > 0 {
 		return &((*rcss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.config.settings not found", id)
+	return nil, fmt.Errorf("id %v of res.config.settings not found", id)
 }
 
 // GetResConfigSettingss gets res.config.settings existing records.

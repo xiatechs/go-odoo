@@ -57,7 +57,7 @@ func (c *Client) GetIrFieldsConverter(id int64) (*IrFieldsConverter, error) {
 	if ifcs != nil && len(*ifcs) > 0 {
 		return &((*ifcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.fields.converter not found", id)
+	return nil, fmt.Errorf("id %v of ir.fields.converter not found", id)
 }
 
 // GetIrFieldsConverters gets ir.fields.converter existing records.

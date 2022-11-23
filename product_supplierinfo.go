@@ -76,7 +76,7 @@ func (c *Client) GetProductSupplierinfo(id int64) (*ProductSupplierinfo, error) 
 	if pss != nil && len(*pss) > 0 {
 		return &((*pss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.supplierinfo not found", id)
+	return nil, fmt.Errorf("id %v of product.supplierinfo not found", id)
 }
 
 // GetProductSupplierinfos gets product.supplierinfo existing records.

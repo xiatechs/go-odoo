@@ -95,7 +95,7 @@ func (c *Client) GetIrModelFields(id int64) (*IrModelFields, error) {
 	if imfs != nil && len(*imfs) > 0 {
 		return &((*imfs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.model.fields not found", id)
+	return nil, fmt.Errorf("id %v of ir.model.fields not found", id)
 }
 
 // GetIrModelFieldss gets ir.model.fields existing records.

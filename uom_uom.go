@@ -68,7 +68,7 @@ func (c *Client) GetUomUom(id int64) (*UomUom, error) {
 	if uus != nil && len(*uus) > 0 {
 		return &((*uus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of uom.uom not found", id)
+	return nil, fmt.Errorf("id %v of uom.uom not found", id)
 }
 
 // GetUomUoms gets uom.uom existing records.

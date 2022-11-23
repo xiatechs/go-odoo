@@ -65,7 +65,7 @@ func (c *Client) GetIrModuleModuleExclusion(id int64) (*IrModuleModuleExclusion,
 	if immes != nil && len(*immes) > 0 {
 		return &((*immes)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.module.module.exclusion not found", id)
+	return nil, fmt.Errorf("id %v of ir.module.module.exclusion not found", id)
 }
 
 // GetIrModuleModuleExclusions gets ir.module.module.exclusion existing records.

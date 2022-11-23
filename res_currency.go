@@ -73,7 +73,7 @@ func (c *Client) GetResCurrency(id int64) (*ResCurrency, error) {
 	if rcs != nil && len(*rcs) > 0 {
 		return &((*rcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.currency not found", id)
+	return nil, fmt.Errorf("id %v of res.currency not found", id)
 }
 
 // GetResCurrencys gets res.currency existing records.

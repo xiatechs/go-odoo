@@ -98,7 +98,7 @@ func (c *Client) GetPaymentAcquirer(id int64) (*PaymentAcquirer, error) {
 	if pas != nil && len(*pas) > 0 {
 		return &((*pas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of payment.acquirer not found", id)
+	return nil, fmt.Errorf("id %v of payment.acquirer not found", id)
 }
 
 // GetPaymentAcquirers gets payment.acquirer existing records.

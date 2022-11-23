@@ -68,7 +68,7 @@ func (c *Client) GetIrModelData(id int64) (*IrModelData, error) {
 	if imds != nil && len(*imds) > 0 {
 		return &((*imds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.model.data not found", id)
+	return nil, fmt.Errorf("id %v of ir.model.data not found", id)
 }
 
 // GetIrModelDatas gets ir.model.data existing records.

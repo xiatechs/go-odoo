@@ -65,7 +65,7 @@ func (c *Client) GetAccountJournalGroup(id int64) (*AccountJournalGroup, error) 
 	if ajgs != nil && len(*ajgs) > 0 {
 		return &((*ajgs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.journal.group not found", id)
+	return nil, fmt.Errorf("id %v of account.journal.group not found", id)
 }
 
 // GetAccountJournalGroups gets account.journal.group existing records.

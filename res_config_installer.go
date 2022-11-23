@@ -61,7 +61,7 @@ func (c *Client) GetResConfigInstaller(id int64) (*ResConfigInstaller, error) {
 	if rcis != nil && len(*rcis) > 0 {
 		return &((*rcis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.config.installer not found", id)
+	return nil, fmt.Errorf("id %v of res.config.installer not found", id)
 }
 
 // GetResConfigInstallers gets res.config.installer existing records.

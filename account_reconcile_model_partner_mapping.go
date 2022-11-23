@@ -65,7 +65,7 @@ func (c *Client) GetAccountReconcileModelPartnerMapping(id int64) (*AccountRecon
 	if armpms != nil && len(*armpms) > 0 {
 		return &((*armpms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.reconcile.model.partner.mapping not found", id)
+	return nil, fmt.Errorf("id %v of account.reconcile.model.partner.mapping not found", id)
 }
 
 // GetAccountReconcileModelPartnerMappings gets account.reconcile.model.partner.mapping existing records.

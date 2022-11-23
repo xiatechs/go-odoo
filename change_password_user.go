@@ -65,7 +65,7 @@ func (c *Client) GetChangePasswordUser(id int64) (*ChangePasswordUser, error) {
 	if cpus != nil && len(*cpus) > 0 {
 		return &((*cpus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of change.password.user not found", id)
+	return nil, fmt.Errorf("id %v of change.password.user not found", id)
 }
 
 // GetChangePasswordUsers gets change.password.user existing records.

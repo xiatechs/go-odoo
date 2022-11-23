@@ -65,7 +65,7 @@ func (c *Client) GetMailFollowers(id int64) (*MailFollowers, error) {
 	if mfs != nil && len(*mfs) > 0 {
 		return &((*mfs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.followers not found", id)
+	return nil, fmt.Errorf("id %v of mail.followers not found", id)
 }
 
 // GetMailFollowerss gets mail.followers existing records.

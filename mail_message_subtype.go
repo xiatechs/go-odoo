@@ -70,7 +70,7 @@ func (c *Client) GetMailMessageSubtype(id int64) (*MailMessageSubtype, error) {
 	if mmss != nil && len(*mmss) > 0 {
 		return &((*mmss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.message.subtype not found", id)
+	return nil, fmt.Errorf("id %v of mail.message.subtype not found", id)
 }
 
 // GetMailMessageSubtypes gets mail.message.subtype existing records.

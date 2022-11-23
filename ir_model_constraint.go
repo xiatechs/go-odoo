@@ -67,7 +67,7 @@ func (c *Client) GetIrModelConstraint(id int64) (*IrModelConstraint, error) {
 	if imcs != nil && len(*imcs) > 0 {
 		return &((*imcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.model.constraint not found", id)
+	return nil, fmt.Errorf("id %v of ir.model.constraint not found", id)
 }
 
 // GetIrModelConstraints gets ir.model.constraint existing records.

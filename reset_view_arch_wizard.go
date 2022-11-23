@@ -68,7 +68,7 @@ func (c *Client) GetResetViewArchWizard(id int64) (*ResetViewArchWizard, error) 
 	if rvaws != nil && len(*rvaws) > 0 {
 		return &((*rvaws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of reset.view.arch.wizard not found", id)
+	return nil, fmt.Errorf("id %v of reset.view.arch.wizard not found", id)
 }
 
 // GetResetViewArchWizards gets reset.view.arch.wizard existing records.

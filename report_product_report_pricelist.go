@@ -57,7 +57,7 @@ func (c *Client) GetReportProductReportPricelist(id int64) (*ReportProductReport
 	if rprs != nil && len(*rprs) > 0 {
 		return &((*rprs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of report.product.report_pricelist not found", id)
+	return nil, fmt.Errorf("id %v of report.product.report_pricelist not found", id)
 }
 
 // GetReportProductReportPricelists gets report.product.report_pricelist existing records.

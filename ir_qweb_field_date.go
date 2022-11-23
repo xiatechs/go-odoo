@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldDate(id int64) (*IrQwebFieldDate, error) {
 	if iqfds != nil && len(*iqfds) > 0 {
 		return &((*iqfds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.date not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.date not found", id)
 }
 
 // GetIrQwebFieldDates gets ir.qweb.field.date existing records.

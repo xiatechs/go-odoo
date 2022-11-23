@@ -63,7 +63,7 @@ func (c *Client) GetWizardIrModelMenuCreate(id int64) (*WizardIrModelMenuCreate,
 	if wimmcs != nil && len(*wimmcs) > 0 {
 		return &((*wimmcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of wizard.ir.model.menu.create not found", id)
+	return nil, fmt.Errorf("id %v of wizard.ir.model.menu.create not found", id)
 }
 
 // GetWizardIrModelMenuCreates gets wizard.ir.model.menu.create existing records.

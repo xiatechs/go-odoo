@@ -68,7 +68,7 @@ func (c *Client) GetAccountCashRounding(id int64) (*AccountCashRounding, error) 
 	if acrs != nil && len(*acrs) > 0 {
 		return &((*acrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.cash.rounding not found", id)
+	return nil, fmt.Errorf("id %v of account.cash.rounding not found", id)
 }
 
 // GetAccountCashRoundings gets account.cash.rounding existing records.

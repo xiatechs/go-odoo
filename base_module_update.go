@@ -64,7 +64,7 @@ func (c *Client) GetBaseModuleUpdate(id int64) (*BaseModuleUpdate, error) {
 	if bmus != nil && len(*bmus) > 0 {
 		return &((*bmus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.module.update not found", id)
+	return nil, fmt.Errorf("id %v of base.module.update not found", id)
 }
 
 // GetBaseModuleUpdates gets base.module.update existing records.

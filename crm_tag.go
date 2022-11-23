@@ -63,7 +63,7 @@ func (c *Client) GetCrmTag(id int64) (*CrmTag, error) {
 	if cts != nil && len(*cts) > 0 {
 		return &((*cts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of crm.tag not found", id)
+	return nil, fmt.Errorf("id %v of crm.tag not found", id)
 }
 
 // GetCrmTags gets crm.tag existing records.

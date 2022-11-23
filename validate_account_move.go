@@ -62,7 +62,7 @@ func (c *Client) GetValidateAccountMove(id int64) (*ValidateAccountMove, error) 
 	if vams != nil && len(*vams) > 0 {
 		return &((*vams)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of validate.account.move not found", id)
+	return nil, fmt.Errorf("id %v of validate.account.move not found", id)
 }
 
 // GetValidateAccountMoves gets validate.account.move existing records.

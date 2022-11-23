@@ -73,7 +73,7 @@ func (c *Client) GetMailThreadCc(id int64) (*MailThreadCc, error) {
 	if mtcs != nil && len(*mtcs) > 0 {
 		return &((*mtcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.thread.cc not found", id)
+	return nil, fmt.Errorf("id %v of mail.thread.cc not found", id)
 }
 
 // GetMailThreadCcs gets mail.thread.cc existing records.

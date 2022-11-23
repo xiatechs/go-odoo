@@ -136,7 +136,7 @@ func (c *Client) GetAccountJournal(id int64) (*AccountJournal, error) {
 	if ajs != nil && len(*ajs) > 0 {
 		return &((*ajs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.journal not found", id)
+	return nil, fmt.Errorf("id %v of account.journal not found", id)
 }
 
 // GetAccountJournals gets account.journal existing records.

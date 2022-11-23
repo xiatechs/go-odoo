@@ -66,7 +66,7 @@ func (c *Client) GetAccountTaxGroup(id int64) (*AccountTaxGroup, error) {
 	if atgs != nil && len(*atgs) > 0 {
 		return &((*atgs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.tax.group not found", id)
+	return nil, fmt.Errorf("id %v of account.tax.group not found", id)
 }
 
 // GetAccountTaxGroups gets account.tax.group existing records.

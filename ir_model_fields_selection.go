@@ -65,7 +65,7 @@ func (c *Client) GetIrModelFieldsSelection(id int64) (*IrModelFieldsSelection, e
 	if imfss != nil && len(*imfss) > 0 {
 		return &((*imfss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.model.fields.selection not found", id)
+	return nil, fmt.Errorf("id %v of ir.model.fields.selection not found", id)
 }
 
 // GetIrModelFieldsSelections gets ir.model.fields.selection existing records.

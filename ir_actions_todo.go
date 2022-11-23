@@ -65,7 +65,7 @@ func (c *Client) GetIrActionsTodo(id int64) (*IrActionsTodo, error) {
 	if iats != nil && len(*iats) > 0 {
 		return &((*iats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.todo not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.todo not found", id)
 }
 
 // GetIrActionsTodos gets ir.actions.todo existing records.

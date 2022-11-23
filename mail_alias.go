@@ -71,7 +71,7 @@ func (c *Client) GetMailAlias(id int64) (*MailAlias, error) {
 	if mas != nil && len(*mas) > 0 {
 		return &((*mas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.alias not found", id)
+	return nil, fmt.Errorf("id %v of mail.alias not found", id)
 }
 
 // GetMailAliass gets mail.alias existing records.

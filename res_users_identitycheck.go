@@ -63,7 +63,7 @@ func (c *Client) GetResUsersIdentitycheck(id int64) (*ResUsersIdentitycheck, err
 	if ruis != nil && len(*ruis) > 0 {
 		return &((*ruis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.users.identitycheck not found", id)
+	return nil, fmt.Errorf("id %v of res.users.identitycheck not found", id)
 }
 
 // GetResUsersIdentitychecks gets res.users.identitycheck existing records.

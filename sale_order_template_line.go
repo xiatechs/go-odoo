@@ -70,7 +70,7 @@ func (c *Client) GetSaleOrderTemplateLine(id int64) (*SaleOrderTemplateLine, err
 	if sotls != nil && len(*sotls) > 0 {
 		return &((*sotls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.order.template.line not found", id)
+	return nil, fmt.Errorf("id %v of sale.order.template.line not found", id)
 }
 
 // GetSaleOrderTemplateLines gets sale.order.template.line existing records.

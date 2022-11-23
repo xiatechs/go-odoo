@@ -69,7 +69,7 @@ func (c *Client) GetProductCategory(id int64) (*ProductCategory, error) {
 	if pcs != nil && len(*pcs) > 0 {
 		return &((*pcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.category not found", id)
+	return nil, fmt.Errorf("id %v of product.category not found", id)
 }
 
 // GetProductCategorys gets product.category existing records.

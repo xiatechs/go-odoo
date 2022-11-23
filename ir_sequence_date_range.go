@@ -66,7 +66,7 @@ func (c *Client) GetIrSequenceDateRange(id int64) (*IrSequenceDateRange, error) 
 	if isds != nil && len(*isds) > 0 {
 		return &((*isds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.sequence.date_range not found", id)
+	return nil, fmt.Errorf("id %v of ir.sequence.date_range not found", id)
 }
 
 // GetIrSequenceDateRanges gets ir.sequence.date_range existing records.

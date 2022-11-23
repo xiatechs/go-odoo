@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldRelative(id int64) (*IrQwebFieldRelative, error) 
 	if iqfrs != nil && len(*iqfrs) > 0 {
 		return &((*iqfrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.relative not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.relative not found", id)
 }
 
 // GetIrQwebFieldRelatives gets ir.qweb.field.relative existing records.

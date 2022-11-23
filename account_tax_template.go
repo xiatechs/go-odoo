@@ -79,7 +79,7 @@ func (c *Client) GetAccountTaxTemplate(id int64) (*AccountTaxTemplate, error) {
 	if atts != nil && len(*atts) > 0 {
 		return &((*atts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.tax.template not found", id)
+	return nil, fmt.Errorf("id %v of account.tax.template not found", id)
 }
 
 // GetAccountTaxTemplates gets account.tax.template existing records.

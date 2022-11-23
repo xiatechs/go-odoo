@@ -77,7 +77,7 @@ func (c *Client) GetReportPaperformat(id int64) (*ReportPaperformat, error) {
 	if rps != nil && len(*rps) > 0 {
 		return &((*rps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of report.paperformat not found", id)
+	return nil, fmt.Errorf("id %v of report.paperformat not found", id)
 }
 
 // GetReportPaperformats gets report.paperformat existing records.

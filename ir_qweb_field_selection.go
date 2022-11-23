@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldSelection(id int64) (*IrQwebFieldSelection, error
 	if iqfss != nil && len(*iqfss) > 0 {
 		return &((*iqfss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.selection not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.selection not found", id)
 }
 
 // GetIrQwebFieldSelections gets ir.qweb.field.selection existing records.

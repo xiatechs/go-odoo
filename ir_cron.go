@@ -104,7 +104,7 @@ func (c *Client) GetIrCron(id int64) (*IrCron, error) {
 	if ics != nil && len(*ics) > 0 {
 		return &((*ics)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.cron not found", id)
+	return nil, fmt.Errorf("id %v of ir.cron not found", id)
 }
 
 // GetIrCrons gets ir.cron existing records.

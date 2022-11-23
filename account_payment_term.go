@@ -67,7 +67,7 @@ func (c *Client) GetAccountPaymentTerm(id int64) (*AccountPaymentTerm, error) {
 	if apts != nil && len(*apts) > 0 {
 		return &((*apts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.payment.term not found", id)
+	return nil, fmt.Errorf("id %v of account.payment.term not found", id)
 }
 
 // GetAccountPaymentTerms gets account.payment.term existing records.

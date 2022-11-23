@@ -70,7 +70,7 @@ func (c *Client) GetPaymentToken(id int64) (*PaymentToken, error) {
 	if pts != nil && len(*pts) > 0 {
 		return &((*pts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of payment.token not found", id)
+	return nil, fmt.Errorf("id %v of payment.token not found", id)
 }
 
 // GetPaymentTokens gets payment.token existing records.

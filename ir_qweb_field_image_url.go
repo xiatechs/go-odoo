@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldImageUrl(id int64) (*IrQwebFieldImageUrl, error) 
 	if iqfis != nil && len(*iqfis) > 0 {
 		return &((*iqfis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.image_url not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.image_url not found", id)
 }
 
 // GetIrQwebFieldImageUrls gets ir.qweb.field.image_url existing records.

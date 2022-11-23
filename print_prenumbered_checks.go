@@ -62,7 +62,7 @@ func (c *Client) GetPrintPrenumberedChecks(id int64) (*PrintPrenumberedChecks, e
 	if ppcs != nil && len(*ppcs) > 0 {
 		return &((*ppcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of print.prenumbered.checks not found", id)
+	return nil, fmt.Errorf("id %v of print.prenumbered.checks not found", id)
 }
 
 // GetPrintPrenumberedCheckss gets print.prenumbered.checks existing records.

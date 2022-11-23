@@ -66,7 +66,7 @@ func (c *Client) GetIrActionsActWindowView(id int64) (*IrActionsActWindowView, e
 	if iaavs != nil && len(*iaavs) > 0 {
 		return &((*iaavs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.actions.act_window.view not found", id)
+	return nil, fmt.Errorf("id %v of ir.actions.act_window.view not found", id)
 }
 
 // GetIrActionsActWindowViews gets ir.actions.act_window.view existing records.

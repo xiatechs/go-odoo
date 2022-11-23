@@ -71,7 +71,7 @@ func (c *Client) GetSaleOrderTemplate(id int64) (*SaleOrderTemplate, error) {
 	if sots != nil && len(*sots) > 0 {
 		return &((*sots)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.order.template not found", id)
+	return nil, fmt.Errorf("id %v of sale.order.template not found", id)
 }
 
 // GetSaleOrderTemplates gets sale.order.template existing records.

@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldFloat(id int64) (*IrQwebFieldFloat, error) {
 	if iqffs != nil && len(*iqffs) > 0 {
 		return &((*iqffs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.float not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.float not found", id)
 }
 
 // GetIrQwebFieldFloats gets ir.qweb.field.float existing records.

@@ -57,7 +57,7 @@ func (c *Client) GetReportAccountReportInvoiceWithPayments(id int64) (*ReportAcc
 	if rars != nil && len(*rars) > 0 {
 		return &((*rars)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of report.account.report_invoice_with_payments not found", id)
+	return nil, fmt.Errorf("id %v of report.account.report_invoice_with_payments not found", id)
 }
 
 // GetReportAccountReportInvoiceWithPaymentss gets report.account.report_invoice_with_payments existing records.

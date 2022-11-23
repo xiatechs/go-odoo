@@ -69,7 +69,7 @@ func (c *Client) GetProductAttributeValue(id int64) (*ProductAttributeValue, err
 	if pavs != nil && len(*pavs) > 0 {
 		return &((*pavs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.attribute.value not found", id)
+	return nil, fmt.Errorf("id %v of product.attribute.value not found", id)
 }
 
 // GetProductAttributeValues gets product.attribute.value existing records.

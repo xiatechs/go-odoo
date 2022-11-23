@@ -72,7 +72,7 @@ func (c *Client) GetSaleOrderOption(id int64) (*SaleOrderOption, error) {
 	if soos != nil && len(*soos) > 0 {
 		return &((*soos)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.order.option not found", id)
+	return nil, fmt.Errorf("id %v of sale.order.option not found", id)
 }
 
 // GetSaleOrderOptions gets sale.order.option existing records.

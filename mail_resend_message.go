@@ -66,7 +66,7 @@ func (c *Client) GetMailResendMessage(id int64) (*MailResendMessage, error) {
 	if mrms != nil && len(*mrms) > 0 {
 		return &((*mrms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.resend.message not found", id)
+	return nil, fmt.Errorf("id %v of mail.resend.message not found", id)
 }
 
 // GetMailResendMessages gets mail.resend.message existing records.

@@ -64,7 +64,7 @@ func (c *Client) GetIrExports(id int64) (*IrExports, error) {
 	if ies != nil && len(*ies) > 0 {
 		return &((*ies)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.exports not found", id)
+	return nil, fmt.Errorf("id %v of ir.exports not found", id)
 }
 
 // GetIrExportss gets ir.exports existing records.

@@ -81,7 +81,7 @@ func (c *Client) GetIrUiView(id int64) (*IrUiView, error) {
 	if iuvs != nil && len(*iuvs) > 0 {
 		return &((*iuvs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.ui.view not found", id)
+	return nil, fmt.Errorf("id %v of ir.ui.view not found", id)
 }
 
 // GetIrUiViews gets ir.ui.view existing records.

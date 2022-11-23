@@ -92,7 +92,7 @@ func (c *Client) GetAccountPaymentRegister(id int64) (*AccountPaymentRegister, e
 	if aprs != nil && len(*aprs) > 0 {
 		return &((*aprs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.payment.register not found", id)
+	return nil, fmt.Errorf("id %v of account.payment.register not found", id)
 }
 
 // GetAccountPaymentRegisters gets account.payment.register existing records.

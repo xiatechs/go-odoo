@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldMany2Many(id int64) (*IrQwebFieldMany2Many, error
 	if iqfms != nil && len(*iqfms) > 0 {
 		return &((*iqfms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.many2many not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.many2many not found", id)
 }
 
 // GetIrQwebFieldMany2Manys gets ir.qweb.field.many2many existing records.

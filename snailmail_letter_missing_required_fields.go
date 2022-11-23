@@ -69,7 +69,7 @@ func (c *Client) GetSnailmailLetterMissingRequiredFields(id int64) (*SnailmailLe
 	if slmrfs != nil && len(*slmrfs) > 0 {
 		return &((*slmrfs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of snailmail.letter.missing.required.fields not found", id)
+	return nil, fmt.Errorf("id %v of snailmail.letter.missing.required.fields not found", id)
 }
 
 // GetSnailmailLetterMissingRequiredFieldss gets snailmail.letter.missing.required.fields existing records.

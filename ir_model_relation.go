@@ -64,7 +64,7 @@ func (c *Client) GetIrModelRelation(id int64) (*IrModelRelation, error) {
 	if imrs != nil && len(*imrs) > 0 {
 		return &((*imrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.model.relation not found", id)
+	return nil, fmt.Errorf("id %v of ir.model.relation not found", id)
 }
 
 // GetIrModelRelations gets ir.model.relation existing records.

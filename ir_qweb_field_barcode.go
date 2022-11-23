@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldBarcode(id int64) (*IrQwebFieldBarcode, error) {
 	if iqfbs != nil && len(*iqfbs) > 0 {
 		return &((*iqfbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.barcode not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.barcode not found", id)
 }
 
 // GetIrQwebFieldBarcodes gets ir.qweb.field.barcode existing records.

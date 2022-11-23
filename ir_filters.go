@@ -70,7 +70,7 @@ func (c *Client) GetIrFilters(id int64) (*IrFilters, error) {
 	if IFs != nil && len(*IFs) > 0 {
 		return &((*IFs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.filters not found", id)
+	return nil, fmt.Errorf("id %v of ir.filters not found", id)
 }
 
 // GetIrFilterss gets ir.filters existing records.

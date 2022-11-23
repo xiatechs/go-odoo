@@ -75,7 +75,7 @@ func (c *Client) GetResLang(id int64) (*ResLang, error) {
 	if rls != nil && len(*rls) > 0 {
 		return &((*rls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.lang not found", id)
+	return nil, fmt.Errorf("id %v of res.lang not found", id)
 }
 
 // GetResLangs gets res.lang existing records.

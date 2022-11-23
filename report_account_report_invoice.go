@@ -57,7 +57,7 @@ func (c *Client) GetReportAccountReportInvoice(id int64) (*ReportAccountReportIn
 	if rars != nil && len(*rars) > 0 {
 		return &((*rars)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of report.account.report_invoice not found", id)
+	return nil, fmt.Errorf("id %v of report.account.report_invoice not found", id)
 }
 
 // GetReportAccountReportInvoices gets report.account.report_invoice existing records.

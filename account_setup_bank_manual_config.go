@@ -79,7 +79,7 @@ func (c *Client) GetAccountSetupBankManualConfig(id int64) (*AccountSetupBankMan
 	if asbmcs != nil && len(*asbmcs) > 0 {
 		return &((*asbmcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.setup.bank.manual.config not found", id)
+	return nil, fmt.Errorf("id %v of account.setup.bank.manual.config not found", id)
 }
 
 // GetAccountSetupBankManualConfigs gets account.setup.bank.manual.config existing records.

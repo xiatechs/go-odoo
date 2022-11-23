@@ -64,7 +64,7 @@ func (c *Client) GetBaseImportTestsModelsFloat(id int64) (*BaseImportTestsModels
 	if btmfs != nil && len(*btmfs) > 0 {
 		return &((*btmfs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base_import.tests.models.float not found", id)
+	return nil, fmt.Errorf("id %v of base_import.tests.models.float not found", id)
 }
 
 // GetBaseImportTestsModelsFloats gets base_import.tests.models.float existing records.

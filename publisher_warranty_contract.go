@@ -57,7 +57,7 @@ func (c *Client) GetPublisherWarrantyContract(id int64) (*PublisherWarrantyContr
 	if pcs != nil && len(*pcs) > 0 {
 		return &((*pcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of publisher_warranty.contract not found", id)
+	return nil, fmt.Errorf("id %v of publisher_warranty.contract not found", id)
 }
 
 // GetPublisherWarrantyContracts gets publisher_warranty.contract existing records.

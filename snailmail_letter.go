@@ -85,7 +85,7 @@ func (c *Client) GetSnailmailLetter(id int64) (*SnailmailLetter, error) {
 	if sls != nil && len(*sls) > 0 {
 		return &((*sls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of snailmail.letter not found", id)
+	return nil, fmt.Errorf("id %v of snailmail.letter not found", id)
 }
 
 // GetSnailmailLetters gets snailmail.letter existing records.

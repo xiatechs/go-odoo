@@ -66,7 +66,7 @@ func (c *Client) GetAuthTotpWizard(id int64) (*AuthTotpWizard, error) {
 	if aws != nil && len(*aws) > 0 {
 		return &((*aws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of auth_totp.wizard not found", id)
+	return nil, fmt.Errorf("id %v of auth_totp.wizard not found", id)
 }
 
 // GetAuthTotpWizards gets auth_totp.wizard existing records.

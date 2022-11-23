@@ -66,7 +66,7 @@ func (c *Client) GetBaseLanguageImport(id int64) (*BaseLanguageImport, error) {
 	if blis != nil && len(*blis) > 0 {
 		return &((*blis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.language.import not found", id)
+	return nil, fmt.Errorf("id %v of base.language.import not found", id)
 }
 
 // GetBaseLanguageImports gets base.language.import existing records.

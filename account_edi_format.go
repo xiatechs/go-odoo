@@ -63,7 +63,7 @@ func (c *Client) GetAccountEdiFormat(id int64) (*AccountEdiFormat, error) {
 	if aefs != nil && len(*aefs) > 0 {
 		return &((*aefs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.edi.format not found", id)
+	return nil, fmt.Errorf("id %v of account.edi.format not found", id)
 }
 
 // GetAccountEdiFormats gets account.edi.format existing records.

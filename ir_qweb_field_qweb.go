@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldQweb(id int64) (*IrQwebFieldQweb, error) {
 	if iqfqs != nil && len(*iqfqs) > 0 {
 		return &((*iqfqs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.qweb not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.qweb not found", id)
 }
 
 // GetIrQwebFieldQwebs gets ir.qweb.field.qweb existing records.

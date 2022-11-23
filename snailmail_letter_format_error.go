@@ -63,7 +63,7 @@ func (c *Client) GetSnailmailLetterFormatError(id int64) (*SnailmailLetterFormat
 	if slfes != nil && len(*slfes) > 0 {
 		return &((*slfes)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of snailmail.letter.format.error not found", id)
+	return nil, fmt.Errorf("id %v of snailmail.letter.format.error not found", id)
 }
 
 // GetSnailmailLetterFormatErrors gets snailmail.letter.format.error existing records.

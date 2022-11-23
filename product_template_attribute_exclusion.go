@@ -64,7 +64,7 @@ func (c *Client) GetProductTemplateAttributeExclusion(id int64) (*ProductTemplat
 	if ptaes != nil && len(*ptaes) > 0 {
 		return &((*ptaes)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of product.template.attribute.exclusion not found", id)
+	return nil, fmt.Errorf("id %v of product.template.attribute.exclusion not found", id)
 }
 
 // GetProductTemplateAttributeExclusions gets product.template.attribute.exclusion existing records.

@@ -70,7 +70,7 @@ func (c *Client) GetAccountTaxRepartitionLineTemplate(id int64) (*AccountTaxRepa
 	if atrlts != nil && len(*atrlts) > 0 {
 		return &((*atrlts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.tax.repartition.line.template not found", id)
+	return nil, fmt.Errorf("id %v of account.tax.repartition.line.template not found", id)
 }
 
 // GetAccountTaxRepartitionLineTemplates gets account.tax.repartition.line.template existing records.

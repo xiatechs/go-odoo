@@ -103,7 +103,7 @@ func (c *Client) GetSaleOrderLine(id int64) (*SaleOrderLine, error) {
 	if sols != nil && len(*sols) > 0 {
 		return &((*sols)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.order.line not found", id)
+	return nil, fmt.Errorf("id %v of sale.order.line not found", id)
 }
 
 // GetSaleOrderLines gets sale.order.line existing records.

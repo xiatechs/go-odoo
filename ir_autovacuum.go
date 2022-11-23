@@ -57,7 +57,7 @@ func (c *Client) GetIrAutovacuum(id int64) (*IrAutovacuum, error) {
 	if ias != nil && len(*ias) > 0 {
 		return &((*ias)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.autovacuum not found", id)
+	return nil, fmt.Errorf("id %v of ir.autovacuum not found", id)
 }
 
 // GetIrAutovacuums gets ir.autovacuum existing records.

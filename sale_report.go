@@ -90,7 +90,7 @@ func (c *Client) GetSaleReport(id int64) (*SaleReport, error) {
 	if srs != nil && len(*srs) > 0 {
 		return &((*srs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.report not found", id)
+	return nil, fmt.Errorf("id %v of sale.report not found", id)
 }
 
 // GetSaleReports gets sale.report existing records.

@@ -75,7 +75,7 @@ func (c *Client) GetMailThreadBlacklist(id int64) (*MailThreadBlacklist, error) 
 	if mtbs != nil && len(*mtbs) > 0 {
 		return &((*mtbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.thread.blacklist not found", id)
+	return nil, fmt.Errorf("id %v of mail.thread.blacklist not found", id)
 }
 
 // GetMailThreadBlacklists gets mail.thread.blacklist existing records.

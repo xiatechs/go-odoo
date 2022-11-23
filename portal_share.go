@@ -67,7 +67,7 @@ func (c *Client) GetPortalShare(id int64) (*PortalShare, error) {
 	if pss != nil && len(*pss) > 0 {
 		return &((*pss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of portal.share not found", id)
+	return nil, fmt.Errorf("id %v of portal.share not found", id)
 }
 
 // GetPortalShares gets portal.share existing records.

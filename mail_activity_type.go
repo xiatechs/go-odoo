@@ -82,7 +82,7 @@ func (c *Client) GetMailActivityType(id int64) (*MailActivityType, error) {
 	if mats != nil && len(*mats) > 0 {
 		return &((*mats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.activity.type not found", id)
+	return nil, fmt.Errorf("id %v of mail.activity.type not found", id)
 }
 
 // GetMailActivityTypes gets mail.activity.type existing records.

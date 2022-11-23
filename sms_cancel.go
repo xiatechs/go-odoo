@@ -63,7 +63,7 @@ func (c *Client) GetSmsCancel(id int64) (*SmsCancel, error) {
 	if scs != nil && len(*scs) > 0 {
 		return &((*scs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sms.cancel not found", id)
+	return nil, fmt.Errorf("id %v of sms.cancel not found", id)
 }
 
 // GetSmsCancels gets sms.cancel existing records.

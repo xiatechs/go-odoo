@@ -65,7 +65,7 @@ func (c *Client) GetResCurrencyRate(id int64) (*ResCurrencyRate, error) {
 	if rcrs != nil && len(*rcrs) > 0 {
 		return &((*rcrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.currency.rate not found", id)
+	return nil, fmt.Errorf("id %v of res.currency.rate not found", id)
 }
 
 // GetResCurrencyRates gets res.currency.rate existing records.

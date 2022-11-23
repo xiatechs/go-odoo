@@ -63,7 +63,7 @@ func (c *Client) GetSnailmailConfirmInvoice(id int64) (*SnailmailConfirmInvoice,
 	if scis != nil && len(*scis) > 0 {
 		return &((*scis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of snailmail.confirm.invoice not found", id)
+	return nil, fmt.Errorf("id %v of snailmail.confirm.invoice not found", id)
 }
 
 // GetSnailmailConfirmInvoices gets snailmail.confirm.invoice existing records.

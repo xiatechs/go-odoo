@@ -61,7 +61,7 @@ func (c *Client) GetResUsersLog(id int64) (*ResUsersLog, error) {
 	if ruls != nil && len(*ruls) > 0 {
 		return &((*ruls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.users.log not found", id)
+	return nil, fmt.Errorf("id %v of res.users.log not found", id)
 }
 
 // GetResUsersLogs gets res.users.log existing records.

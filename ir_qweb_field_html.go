@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldHtml(id int64) (*IrQwebFieldHtml, error) {
 	if iqfhs != nil && len(*iqfhs) > 0 {
 		return &((*iqfhs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.html not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.html not found", id)
 }
 
 // GetIrQwebFieldHtmls gets ir.qweb.field.html existing records.

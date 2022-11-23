@@ -73,7 +73,7 @@ func (c *Client) GetSalePaymentAcquirerOnboardingWizard(id int64) (*SalePaymentA
 	if spaows != nil && len(*spaows) > 0 {
 		return &((*spaows)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sale.payment.acquirer.onboarding.wizard not found", id)
+	return nil, fmt.Errorf("id %v of sale.payment.acquirer.onboarding.wizard not found", id)
 }
 
 // GetSalePaymentAcquirerOnboardingWizards gets sale.payment.acquirer.onboarding.wizard existing records.

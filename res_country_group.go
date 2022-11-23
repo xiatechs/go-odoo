@@ -64,7 +64,7 @@ func (c *Client) GetResCountryGroup(id int64) (*ResCountryGroup, error) {
 	if rcgs != nil && len(*rcgs) > 0 {
 		return &((*rcgs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.country.group not found", id)
+	return nil, fmt.Errorf("id %v of res.country.group not found", id)
 }
 
 // GetResCountryGroups gets res.country.group existing records.

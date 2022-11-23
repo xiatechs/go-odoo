@@ -78,7 +78,7 @@ func (c *Client) GetAccountReconcileModelLine(id int64) (*AccountReconcileModelL
 	if armls != nil && len(*armls) > 0 {
 		return &((*armls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.reconcile.model.line not found", id)
+	return nil, fmt.Errorf("id %v of account.reconcile.model.line not found", id)
 }
 
 // GetAccountReconcileModelLines gets account.reconcile.model.line existing records.

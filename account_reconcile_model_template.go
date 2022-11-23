@@ -90,7 +90,7 @@ func (c *Client) GetAccountReconcileModelTemplate(id int64) (*AccountReconcileMo
 	if armts != nil && len(*armts) > 0 {
 		return &((*armts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.reconcile.model.template not found", id)
+	return nil, fmt.Errorf("id %v of account.reconcile.model.template not found", id)
 }
 
 // GetAccountReconcileModelTemplates gets account.reconcile.model.template existing records.

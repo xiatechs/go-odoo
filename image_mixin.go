@@ -62,7 +62,7 @@ func (c *Client) GetImageMixin(id int64) (*ImageMixin, error) {
 	if ims != nil && len(*ims) > 0 {
 		return &((*ims)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of image.mixin not found", id)
+	return nil, fmt.Errorf("id %v of image.mixin not found", id)
 }
 
 // GetImageMixins gets image.mixin existing records.

@@ -72,7 +72,7 @@ func (c *Client) GetAccountMoveReversal(id int64) (*AccountMoveReversal, error) 
 	if amrs != nil && len(*amrs) > 0 {
 		return &((*amrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.move.reversal not found", id)
+	return nil, fmt.Errorf("id %v of account.move.reversal not found", id)
 }
 
 // GetAccountMoveReversals gets account.move.reversal existing records.

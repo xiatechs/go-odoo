@@ -63,7 +63,7 @@ func (c *Client) GetMailBlacklistRemove(id int64) (*MailBlacklistRemove, error) 
 	if mbrs != nil && len(*mbrs) > 0 {
 		return &((*mbrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of mail.blacklist.remove not found", id)
+	return nil, fmt.Errorf("id %v of mail.blacklist.remove not found", id)
 }
 
 // GetMailBlacklistRemoves gets mail.blacklist.remove existing records.

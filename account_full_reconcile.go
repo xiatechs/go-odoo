@@ -65,7 +65,7 @@ func (c *Client) GetAccountFullReconcile(id int64) (*AccountFullReconcile, error
 	if afrs != nil && len(*afrs) > 0 {
 		return &((*afrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of account.full.reconcile not found", id)
+	return nil, fmt.Errorf("id %v of account.full.reconcile not found", id)
 }
 
 // GetAccountFullReconciles gets account.full.reconcile existing records.

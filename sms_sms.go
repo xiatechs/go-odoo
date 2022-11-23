@@ -67,7 +67,7 @@ func (c *Client) GetSmsSms(id int64) (*SmsSms, error) {
 	if sss != nil && len(*sss) > 0 {
 		return &((*sss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of sms.sms not found", id)
+	return nil, fmt.Errorf("id %v of sms.sms not found", id)
 }
 
 // GetSmsSmss gets sms.sms existing records.

@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldFloatTime(id int64) (*IrQwebFieldFloatTime, error
 	if iqffs != nil && len(*iqffs) > 0 {
 		return &((*iqffs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.qweb.field.float_time not found", id)
+	return nil, fmt.Errorf("id %v of ir.qweb.field.float_time not found", id)
 }
 
 // GetIrQwebFieldFloatTimes gets ir.qweb.field.float_time existing records.

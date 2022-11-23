@@ -215,7 +215,7 @@ func (c *Client) GetResUsers(id int64) (*ResUsers, error) {
 	if rus != nil && len(*rus) > 0 {
 		return &((*rus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of res.users not found", id)
+	return nil, fmt.Errorf("id %v of res.users not found", id)
 }
 
 // GetResUserss gets res.users existing records.

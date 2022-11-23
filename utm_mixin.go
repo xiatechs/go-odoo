@@ -60,7 +60,7 @@ func (c *Client) GetUtmMixin(id int64) (*UtmMixin, error) {
 	if ums != nil && len(*ums) > 0 {
 		return &((*ums)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of utm.mixin not found", id)
+	return nil, fmt.Errorf("id %v of utm.mixin not found", id)
 }
 
 // GetUtmMixins gets utm.mixin existing records.

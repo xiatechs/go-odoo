@@ -66,7 +66,7 @@ func (c *Client) GetIrServerObjectLines(id int64) (*IrServerObjectLines, error) 
 	if isols != nil && len(*isols) > 0 {
 		return &((*isols)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of ir.server.object.lines not found", id)
+	return nil, fmt.Errorf("id %v of ir.server.object.lines not found", id)
 }
 
 // GetIrServerObjectLiness gets ir.server.object.lines existing records.

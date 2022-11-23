@@ -75,7 +75,7 @@ func (c *Client) GetBasePartnerMergeAutomaticWizard(id int64) (*BasePartnerMerge
 	if bpmaws != nil && len(*bpmaws) > 0 {
 		return &((*bpmaws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of base.partner.merge.automatic.wizard not found", id)
+	return nil, fmt.Errorf("id %v of base.partner.merge.automatic.wizard not found", id)
 }
 
 // GetBasePartnerMergeAutomaticWizards gets base.partner.merge.automatic.wizard existing records.

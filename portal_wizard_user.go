@@ -66,7 +66,7 @@ func (c *Client) GetPortalWizardUser(id int64) (*PortalWizardUser, error) {
 	if pwus != nil && len(*pwus) > 0 {
 		return &((*pwus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %V of portal.wizard.user not found", id)
+	return nil, fmt.Errorf("id %v of portal.wizard.user not found", id)
 }
 
 // GetPortalWizardUsers gets portal.wizard.user existing records.
