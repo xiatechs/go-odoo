@@ -38,7 +38,7 @@ func (c *Client) UpdateBaseImportTestsModelsCharStates(btmcs *BaseImportTestsMod
 }
 
 // UpdateBaseImportTestsModelsCharStatess updates existing base_import.tests.models.char.states records.
-// All records (represented by ids) will be updated by btmcs values.
+// All records (represented by IDs) will be updated by btmcs values.
 func (c *Client) UpdateBaseImportTestsModelsCharStatess(ids []int64, btmcs *BaseImportTestsModelsCharStates) error {
 	return c.Update(BaseImportTestsModelsCharStatesModel, ids, btmcs)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsCharStates(id int64) (*BaseImportTestsM
 	if btmcss != nil && len(*btmcss) > 0 {
 		return &((*btmcss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of base_import.tests.models.char.states not found", id)
+	return nil, fmt.Errorf("id %V of base_import.tests.models.char.states not found", id)
 }
 
 // GetBaseImportTestsModelsCharStatess gets base_import.tests.models.char.states existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindBaseImportTestsModelsCharStatess(criteria *Criteria, option
 	return btmcss, nil
 }
 
-// FindBaseImportTestsModelsCharStatesIds finds records ids by querying it
+// FindBaseImportTestsModelsCharStatesIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBaseImportTestsModelsCharStatesIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BaseImportTestsModelsCharStatesModel, criteria, options)

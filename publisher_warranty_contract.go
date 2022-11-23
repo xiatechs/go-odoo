@@ -33,7 +33,7 @@ func (c *Client) UpdatePublisherWarrantyContract(pc *PublisherWarrantyContract) 
 }
 
 // UpdatePublisherWarrantyContracts updates existing publisher_warranty.contract records.
-// All records (represented by ids) will be updated by pc values.
+// All records (represented by IDs) will be updated by pc values.
 func (c *Client) UpdatePublisherWarrantyContracts(ids []int64, pc *PublisherWarrantyContract) error {
 	return c.Update(PublisherWarrantyContractModel, ids, pc)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetPublisherWarrantyContract(id int64) (*PublisherWarrantyContr
 	if pcs != nil && len(*pcs) > 0 {
 		return &((*pcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of publisher_warranty.contract not found", id)
+	return nil, fmt.Errorf("id %V of publisher_warranty.contract not found", id)
 }
 
 // GetPublisherWarrantyContracts gets publisher_warranty.contract existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindPublisherWarrantyContracts(criteria *Criteria, options *Opt
 	return pcs, nil
 }
 
-// FindPublisherWarrantyContractIds finds records ids by querying it
+// FindPublisherWarrantyContractIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindPublisherWarrantyContractIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(PublisherWarrantyContractModel, criteria, options)

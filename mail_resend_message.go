@@ -42,7 +42,7 @@ func (c *Client) UpdateMailResendMessage(mrm *MailResendMessage) error {
 }
 
 // UpdateMailResendMessages updates existing mail.resend.message records.
-// All records (represented by ids) will be updated by mrm values.
+// All records (represented by IDs) will be updated by mrm values.
 func (c *Client) UpdateMailResendMessages(ids []int64, mrm *MailResendMessage) error {
 	return c.Update(MailResendMessageModel, ids, mrm)
 }
@@ -66,7 +66,7 @@ func (c *Client) GetMailResendMessage(id int64) (*MailResendMessage, error) {
 	if mrms != nil && len(*mrms) > 0 {
 		return &((*mrms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.resend.message not found", id)
+	return nil, fmt.Errorf("id %V of mail.resend.message not found", id)
 }
 
 // GetMailResendMessages gets mail.resend.message existing records.
@@ -100,7 +100,7 @@ func (c *Client) FindMailResendMessages(criteria *Criteria, options *Options) (*
 	return mrms, nil
 }
 
-// FindMailResendMessageIds finds records ids by querying it
+// FindMailResendMessageIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailResendMessageIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailResendMessageModel, criteria, options)

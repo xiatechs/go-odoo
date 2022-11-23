@@ -45,7 +45,7 @@ func (c *Client) UpdateIrLogging(il *IrLogging) error {
 }
 
 // UpdateIrLoggings updates existing ir.logging records.
-// All records (represented by ids) will be updated by il values.
+// All records (represented by IDs) will be updated by il values.
 func (c *Client) UpdateIrLoggings(ids []int64, il *IrLogging) error {
 	return c.Update(IrLoggingModel, ids, il)
 }
@@ -69,7 +69,7 @@ func (c *Client) GetIrLogging(id int64) (*IrLogging, error) {
 	if ils != nil && len(*ils) > 0 {
 		return &((*ils)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.logging not found", id)
+	return nil, fmt.Errorf("id %V of ir.logging not found", id)
 }
 
 // GetIrLoggings gets ir.logging existing records.
@@ -103,7 +103,7 @@ func (c *Client) FindIrLoggings(criteria *Criteria, options *Options) (*IrLoggin
 	return ils, nil
 }
 
-// FindIrLoggingIds finds records ids by querying it
+// FindIrLoggingIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrLoggingIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrLoggingModel, criteria, options)

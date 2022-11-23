@@ -50,7 +50,7 @@ func (c *Client) UpdateProductTemplateAttributeValue(ptav *ProductTemplateAttrib
 }
 
 // UpdateProductTemplateAttributeValues updates existing product.template.attribute.value records.
-// All records (represented by ids) will be updated by ptav values.
+// All records (represented by IDs) will be updated by ptav values.
 func (c *Client) UpdateProductTemplateAttributeValues(ids []int64, ptav *ProductTemplateAttributeValue) error {
 	return c.Update(ProductTemplateAttributeValueModel, ids, ptav)
 }
@@ -74,7 +74,7 @@ func (c *Client) GetProductTemplateAttributeValue(id int64) (*ProductTemplateAtt
 	if ptavs != nil && len(*ptavs) > 0 {
 		return &((*ptavs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of product.template.attribute.value not found", id)
+	return nil, fmt.Errorf("id %V of product.template.attribute.value not found", id)
 }
 
 // GetProductTemplateAttributeValues gets product.template.attribute.value existing records.
@@ -108,7 +108,7 @@ func (c *Client) FindProductTemplateAttributeValues(criteria *Criteria, options 
 	return ptavs, nil
 }
 
-// FindProductTemplateAttributeValueIds finds records ids by querying it
+// FindProductTemplateAttributeValueIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindProductTemplateAttributeValueIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ProductTemplateAttributeValueModel, criteria, options)

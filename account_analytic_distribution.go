@@ -41,7 +41,7 @@ func (c *Client) UpdateAccountAnalyticDistribution(aad *AccountAnalyticDistribut
 }
 
 // UpdateAccountAnalyticDistributions updates existing account.analytic.distribution records.
-// All records (represented by ids) will be updated by aad values.
+// All records (represented by IDs) will be updated by aad values.
 func (c *Client) UpdateAccountAnalyticDistributions(ids []int64, aad *AccountAnalyticDistribution) error {
 	return c.Update(AccountAnalyticDistributionModel, ids, aad)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetAccountAnalyticDistribution(id int64) (*AccountAnalyticDistr
 	if aads != nil && len(*aads) > 0 {
 		return &((*aads)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.analytic.distribution not found", id)
+	return nil, fmt.Errorf("id %V of account.analytic.distribution not found", id)
 }
 
 // GetAccountAnalyticDistributions gets account.analytic.distribution existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindAccountAnalyticDistributions(criteria *Criteria, options *O
 	return aads, nil
 }
 
-// FindAccountAnalyticDistributionIds finds records ids by querying it
+// FindAccountAnalyticDistributionIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountAnalyticDistributionIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountAnalyticDistributionModel, criteria, options)

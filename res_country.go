@@ -50,7 +50,7 @@ func (c *Client) UpdateResCountry(rc *ResCountry) error {
 }
 
 // UpdateResCountrys updates existing res.country records.
-// All records (represented by ids) will be updated by rc values.
+// All records (represented by IDs) will be updated by rc values.
 func (c *Client) UpdateResCountrys(ids []int64, rc *ResCountry) error {
 	return c.Update(ResCountryModel, ids, rc)
 }
@@ -74,7 +74,7 @@ func (c *Client) GetResCountry(id int64) (*ResCountry, error) {
 	if rcs != nil && len(*rcs) > 0 {
 		return &((*rcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.country not found", id)
+	return nil, fmt.Errorf("id %V of res.country not found", id)
 }
 
 // GetResCountrys gets res.country existing records.
@@ -108,7 +108,7 @@ func (c *Client) FindResCountrys(criteria *Criteria, options *Options) (*ResCoun
 	return rcs, nil
 }
 
-// FindResCountryIds finds records ids by querying it
+// FindResCountryIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResCountryIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResCountryModel, criteria, options)

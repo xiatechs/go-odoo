@@ -39,7 +39,7 @@ func (c *Client) UpdateSmsCancel(sc *SmsCancel) error {
 }
 
 // UpdateSmsCancels updates existing sms.cancel records.
-// All records (represented by ids) will be updated by sc values.
+// All records (represented by IDs) will be updated by sc values.
 func (c *Client) UpdateSmsCancels(ids []int64, sc *SmsCancel) error {
 	return c.Update(SmsCancelModel, ids, sc)
 }
@@ -63,7 +63,7 @@ func (c *Client) GetSmsCancel(id int64) (*SmsCancel, error) {
 	if scs != nil && len(*scs) > 0 {
 		return &((*scs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sms.cancel not found", id)
+	return nil, fmt.Errorf("id %V of sms.cancel not found", id)
 }
 
 // GetSmsCancels gets sms.cancel existing records.
@@ -97,7 +97,7 @@ func (c *Client) FindSmsCancels(criteria *Criteria, options *Options) (*SmsCance
 	return scs, nil
 }
 
-// FindSmsCancelIds finds records ids by querying it
+// FindSmsCancelIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSmsCancelIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SmsCancelModel, criteria, options)

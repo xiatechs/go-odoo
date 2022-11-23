@@ -47,7 +47,7 @@ func (c *Client) UpdateSaleAdvancePaymentInv(sapi *SaleAdvancePaymentInv) error 
 }
 
 // UpdateSaleAdvancePaymentInvs updates existing sale.advance.payment.inv records.
-// All records (represented by ids) will be updated by sapi values.
+// All records (represented by IDs) will be updated by sapi values.
 func (c *Client) UpdateSaleAdvancePaymentInvs(ids []int64, sapi *SaleAdvancePaymentInv) error {
 	return c.Update(SaleAdvancePaymentInvModel, ids, sapi)
 }
@@ -71,7 +71,7 @@ func (c *Client) GetSaleAdvancePaymentInv(id int64) (*SaleAdvancePaymentInv, err
 	if sapis != nil && len(*sapis) > 0 {
 		return &((*sapis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sale.advance.payment.inv not found", id)
+	return nil, fmt.Errorf("id %V of sale.advance.payment.inv not found", id)
 }
 
 // GetSaleAdvancePaymentInvs gets sale.advance.payment.inv existing records.
@@ -105,7 +105,7 @@ func (c *Client) FindSaleAdvancePaymentInvs(criteria *Criteria, options *Options
 	return sapis, nil
 }
 
-// FindSaleAdvancePaymentInvIds finds records ids by querying it
+// FindSaleAdvancePaymentInvIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSaleAdvancePaymentInvIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SaleAdvancePaymentInvModel, criteria, options)

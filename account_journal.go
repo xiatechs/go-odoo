@@ -112,7 +112,7 @@ func (c *Client) UpdateAccountJournal(aj *AccountJournal) error {
 }
 
 // UpdateAccountJournals updates existing account.journal records.
-// All records (represented by ids) will be updated by aj values.
+// All records (represented by IDs) will be updated by aj values.
 func (c *Client) UpdateAccountJournals(ids []int64, aj *AccountJournal) error {
 	return c.Update(AccountJournalModel, ids, aj)
 }
@@ -136,7 +136,7 @@ func (c *Client) GetAccountJournal(id int64) (*AccountJournal, error) {
 	if ajs != nil && len(*ajs) > 0 {
 		return &((*ajs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.journal not found", id)
+	return nil, fmt.Errorf("id %V of account.journal not found", id)
 }
 
 // GetAccountJournals gets account.journal existing records.
@@ -170,7 +170,7 @@ func (c *Client) FindAccountJournals(criteria *Criteria, options *Options) (*Acc
 	return ajs, nil
 }
 
-// FindAccountJournalIds finds records ids by querying it
+// FindAccountJournalIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountJournalIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountJournalModel, criteria, options)

@@ -41,7 +41,7 @@ func (c *Client) UpdateResCurrencyRate(rcr *ResCurrencyRate) error {
 }
 
 // UpdateResCurrencyRates updates existing res.currency.rate records.
-// All records (represented by ids) will be updated by rcr values.
+// All records (represented by IDs) will be updated by rcr values.
 func (c *Client) UpdateResCurrencyRates(ids []int64, rcr *ResCurrencyRate) error {
 	return c.Update(ResCurrencyRateModel, ids, rcr)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetResCurrencyRate(id int64) (*ResCurrencyRate, error) {
 	if rcrs != nil && len(*rcrs) > 0 {
 		return &((*rcrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.currency.rate not found", id)
+	return nil, fmt.Errorf("id %V of res.currency.rate not found", id)
 }
 
 // GetResCurrencyRates gets res.currency.rate existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindResCurrencyRates(criteria *Criteria, options *Options) (*Re
 	return rcrs, nil
 }
 
-// FindResCurrencyRateIds finds records ids by querying it
+// FindResCurrencyRateIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResCurrencyRateIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResCurrencyRateModel, criteria, options)

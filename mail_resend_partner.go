@@ -43,7 +43,7 @@ func (c *Client) UpdateMailResendPartner(mrp *MailResendPartner) error {
 }
 
 // UpdateMailResendPartners updates existing mail.resend.partner records.
-// All records (represented by ids) will be updated by mrp values.
+// All records (represented by IDs) will be updated by mrp values.
 func (c *Client) UpdateMailResendPartners(ids []int64, mrp *MailResendPartner) error {
 	return c.Update(MailResendPartnerModel, ids, mrp)
 }
@@ -67,7 +67,7 @@ func (c *Client) GetMailResendPartner(id int64) (*MailResendPartner, error) {
 	if mrps != nil && len(*mrps) > 0 {
 		return &((*mrps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.resend.partner not found", id)
+	return nil, fmt.Errorf("id %V of mail.resend.partner not found", id)
 }
 
 // GetMailResendPartners gets mail.resend.partner existing records.
@@ -101,7 +101,7 @@ func (c *Client) FindMailResendPartners(criteria *Criteria, options *Options) (*
 	return mrps, nil
 }
 
-// FindMailResendPartnerIds finds records ids by querying it
+// FindMailResendPartnerIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailResendPartnerIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailResendPartnerModel, criteria, options)

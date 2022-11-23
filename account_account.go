@@ -57,7 +57,7 @@ func (c *Client) UpdateAccountAccount(aa *AccountAccount) error {
 }
 
 // UpdateAccountAccounts updates existing account.account records.
-// All records (represented by ids) will be updated by aa values.
+// All records (represented by IDs) will be updated by aa values.
 func (c *Client) UpdateAccountAccounts(ids []int64, aa *AccountAccount) error {
 	return c.Update(AccountAccountModel, ids, aa)
 }
@@ -81,7 +81,7 @@ func (c *Client) GetAccountAccount(id int64) (*AccountAccount, error) {
 	if aas != nil && len(*aas) > 0 {
 		return &((*aas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.account not found", id)
+	return nil, fmt.Errorf("id %V of account.account not found", id)
 }
 
 // GetAccountAccounts gets account.account existing records.
@@ -115,7 +115,7 @@ func (c *Client) FindAccountAccounts(criteria *Criteria, options *Options) (*Acc
 	return aas, nil
 }
 
-// FindAccountAccountIds finds records ids by querying it
+// FindAccountAccountIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountAccountIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountAccountModel, criteria, options)

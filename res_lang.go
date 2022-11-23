@@ -51,7 +51,7 @@ func (c *Client) UpdateResLang(rl *ResLang) error {
 }
 
 // UpdateResLangs updates existing res.lang records.
-// All records (represented by ids) will be updated by rl values.
+// All records (represented by IDs) will be updated by rl values.
 func (c *Client) UpdateResLangs(ids []int64, rl *ResLang) error {
 	return c.Update(ResLangModel, ids, rl)
 }
@@ -75,7 +75,7 @@ func (c *Client) GetResLang(id int64) (*ResLang, error) {
 	if rls != nil && len(*rls) > 0 {
 		return &((*rls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.lang not found", id)
+	return nil, fmt.Errorf("id %V of res.lang not found", id)
 }
 
 // GetResLangs gets res.lang existing records.
@@ -109,7 +109,7 @@ func (c *Client) FindResLangs(criteria *Criteria, options *Options) (*ResLangs, 
 	return rls, nil
 }
 
-// FindResLangIds finds records ids by querying it
+// FindResLangIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResLangIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResLangModel, criteria, options)

@@ -39,7 +39,7 @@ func (c *Client) UpdateBusBus(bb *BusBus) error {
 }
 
 // UpdateBusBuss updates existing bus.bus records.
-// All records (represented by ids) will be updated by bb values.
+// All records (represented by IDs) will be updated by bb values.
 func (c *Client) UpdateBusBuss(ids []int64, bb *BusBus) error {
 	return c.Update(BusBusModel, ids, bb)
 }
@@ -63,7 +63,7 @@ func (c *Client) GetBusBus(id int64) (*BusBus, error) {
 	if bbs != nil && len(*bbs) > 0 {
 		return &((*bbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of bus.bus not found", id)
+	return nil, fmt.Errorf("id %V of bus.bus not found", id)
 }
 
 // GetBusBuss gets bus.bus existing records.
@@ -97,7 +97,7 @@ func (c *Client) FindBusBuss(criteria *Criteria, options *Options) (*BusBuss, er
 	return bbs, nil
 }
 
-// FindBusBusIds finds records ids by querying it
+// FindBusBusIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBusBusIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BusBusModel, criteria, options)

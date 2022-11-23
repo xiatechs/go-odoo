@@ -46,7 +46,7 @@ func (c *Client) UpdatePaymentToken(pt *PaymentToken) error {
 }
 
 // UpdatePaymentTokens updates existing payment.token records.
-// All records (represented by ids) will be updated by pt values.
+// All records (represented by IDs) will be updated by pt values.
 func (c *Client) UpdatePaymentTokens(ids []int64, pt *PaymentToken) error {
 	return c.Update(PaymentTokenModel, ids, pt)
 }
@@ -70,7 +70,7 @@ func (c *Client) GetPaymentToken(id int64) (*PaymentToken, error) {
 	if pts != nil && len(*pts) > 0 {
 		return &((*pts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of payment.token not found", id)
+	return nil, fmt.Errorf("id %V of payment.token not found", id)
 }
 
 // GetPaymentTokens gets payment.token existing records.
@@ -104,7 +104,7 @@ func (c *Client) FindPaymentTokens(criteria *Criteria, options *Options) (*Payme
 	return pts, nil
 }
 
-// FindPaymentTokenIds finds records ids by querying it
+// FindPaymentTokenIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindPaymentTokenIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(PaymentTokenModel, criteria, options)

@@ -33,7 +33,7 @@ func (c *Client) UpdateIrQwebFieldInteger(iqfi *IrQwebFieldInteger) error {
 }
 
 // UpdateIrQwebFieldIntegers updates existing ir.qweb.field.integer records.
-// All records (represented by ids) will be updated by iqfi values.
+// All records (represented by IDs) will be updated by iqfi values.
 func (c *Client) UpdateIrQwebFieldIntegers(ids []int64, iqfi *IrQwebFieldInteger) error {
 	return c.Update(IrQwebFieldIntegerModel, ids, iqfi)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldInteger(id int64) (*IrQwebFieldInteger, error) {
 	if iqfis != nil && len(*iqfis) > 0 {
 		return &((*iqfis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.qweb.field.integer not found", id)
+	return nil, fmt.Errorf("id %V of ir.qweb.field.integer not found", id)
 }
 
 // GetIrQwebFieldIntegers gets ir.qweb.field.integer existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindIrQwebFieldIntegers(criteria *Criteria, options *Options) (
 	return iqfis, nil
 }
 
-// FindIrQwebFieldIntegerIds finds records ids by querying it
+// FindIrQwebFieldIntegerIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrQwebFieldIntegerIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrQwebFieldIntegerModel, criteria, options)

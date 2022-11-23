@@ -39,7 +39,7 @@ func (c *Client) UpdateSnailmailConfirmInvoice(sci *SnailmailConfirmInvoice) err
 }
 
 // UpdateSnailmailConfirmInvoices updates existing snailmail.confirm.invoice records.
-// All records (represented by ids) will be updated by sci values.
+// All records (represented by IDs) will be updated by sci values.
 func (c *Client) UpdateSnailmailConfirmInvoices(ids []int64, sci *SnailmailConfirmInvoice) error {
 	return c.Update(SnailmailConfirmInvoiceModel, ids, sci)
 }
@@ -63,7 +63,7 @@ func (c *Client) GetSnailmailConfirmInvoice(id int64) (*SnailmailConfirmInvoice,
 	if scis != nil && len(*scis) > 0 {
 		return &((*scis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of snailmail.confirm.invoice not found", id)
+	return nil, fmt.Errorf("id %V of snailmail.confirm.invoice not found", id)
 }
 
 // GetSnailmailConfirmInvoices gets snailmail.confirm.invoice existing records.
@@ -97,7 +97,7 @@ func (c *Client) FindSnailmailConfirmInvoices(criteria *Criteria, options *Optio
 	return scis, nil
 }
 
-// FindSnailmailConfirmInvoiceIds finds records ids by querying it
+// FindSnailmailConfirmInvoiceIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSnailmailConfirmInvoiceIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SnailmailConfirmInvoiceModel, criteria, options)

@@ -38,7 +38,7 @@ func (c *Client) UpdatePrintPrenumberedChecks(ppc *PrintPrenumberedChecks) error
 }
 
 // UpdatePrintPrenumberedCheckss updates existing print.prenumbered.checks records.
-// All records (represented by ids) will be updated by ppc values.
+// All records (represented by IDs) will be updated by ppc values.
 func (c *Client) UpdatePrintPrenumberedCheckss(ids []int64, ppc *PrintPrenumberedChecks) error {
 	return c.Update(PrintPrenumberedChecksModel, ids, ppc)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetPrintPrenumberedChecks(id int64) (*PrintPrenumberedChecks, e
 	if ppcs != nil && len(*ppcs) > 0 {
 		return &((*ppcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of print.prenumbered.checks not found", id)
+	return nil, fmt.Errorf("id %V of print.prenumbered.checks not found", id)
 }
 
 // GetPrintPrenumberedCheckss gets print.prenumbered.checks existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindPrintPrenumberedCheckss(criteria *Criteria, options *Option
 	return ppcs, nil
 }
 
-// FindPrintPrenumberedChecksIds finds records ids by querying it
+// FindPrintPrenumberedChecksIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindPrintPrenumberedChecksIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(PrintPrenumberedChecksModel, criteria, options)

@@ -33,7 +33,7 @@ func (c *Client) UpdateIrQwebFieldContact(iqfc *IrQwebFieldContact) error {
 }
 
 // UpdateIrQwebFieldContacts updates existing ir.qweb.field.contact records.
-// All records (represented by ids) will be updated by iqfc values.
+// All records (represented by IDs) will be updated by iqfc values.
 func (c *Client) UpdateIrQwebFieldContacts(ids []int64, iqfc *IrQwebFieldContact) error {
 	return c.Update(IrQwebFieldContactModel, ids, iqfc)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldContact(id int64) (*IrQwebFieldContact, error) {
 	if iqfcs != nil && len(*iqfcs) > 0 {
 		return &((*iqfcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.qweb.field.contact not found", id)
+	return nil, fmt.Errorf("id %V of ir.qweb.field.contact not found", id)
 }
 
 // GetIrQwebFieldContacts gets ir.qweb.field.contact existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindIrQwebFieldContacts(criteria *Criteria, options *Options) (
 	return iqfcs, nil
 }
 
-// FindIrQwebFieldContactIds finds records ids by querying it
+// FindIrQwebFieldContactIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrQwebFieldContactIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrQwebFieldContactModel, criteria, options)

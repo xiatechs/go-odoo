@@ -48,7 +48,7 @@ func (c *Client) UpdateAccountPartialReconcile(apr *AccountPartialReconcile) err
 }
 
 // UpdateAccountPartialReconciles updates existing account.partial.reconcile records.
-// All records (represented by ids) will be updated by apr values.
+// All records (represented by IDs) will be updated by apr values.
 func (c *Client) UpdateAccountPartialReconciles(ids []int64, apr *AccountPartialReconcile) error {
 	return c.Update(AccountPartialReconcileModel, ids, apr)
 }
@@ -72,7 +72,7 @@ func (c *Client) GetAccountPartialReconcile(id int64) (*AccountPartialReconcile,
 	if aprs != nil && len(*aprs) > 0 {
 		return &((*aprs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.partial.reconcile not found", id)
+	return nil, fmt.Errorf("id %V of account.partial.reconcile not found", id)
 }
 
 // GetAccountPartialReconciles gets account.partial.reconcile existing records.
@@ -106,7 +106,7 @@ func (c *Client) FindAccountPartialReconciles(criteria *Criteria, options *Optio
 	return aprs, nil
 }
 
-// FindAccountPartialReconcileIds finds records ids by querying it
+// FindAccountPartialReconcileIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountPartialReconcileIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountPartialReconcileModel, criteria, options)

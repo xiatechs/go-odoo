@@ -46,7 +46,7 @@ func (c *Client) UpdateIrActionsActUrl(iaa *IrActionsActUrl) error {
 }
 
 // UpdateIrActionsActUrls updates existing ir.actions.act_url records.
-// All records (represented by ids) will be updated by iaa values.
+// All records (represented by IDs) will be updated by iaa values.
 func (c *Client) UpdateIrActionsActUrls(ids []int64, iaa *IrActionsActUrl) error {
 	return c.Update(IrActionsActUrlModel, ids, iaa)
 }
@@ -70,7 +70,7 @@ func (c *Client) GetIrActionsActUrl(id int64) (*IrActionsActUrl, error) {
 	if iaas != nil && len(*iaas) > 0 {
 		return &((*iaas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.actions.act_url not found", id)
+	return nil, fmt.Errorf("id %V of ir.actions.act_url not found", id)
 }
 
 // GetIrActionsActUrls gets ir.actions.act_url existing records.
@@ -104,7 +104,7 @@ func (c *Client) FindIrActionsActUrls(criteria *Criteria, options *Options) (*Ir
 	return iaas, nil
 }
 
-// FindIrActionsActUrlIds finds records ids by querying it
+// FindIrActionsActUrlIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrActionsActUrlIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrActionsActUrlModel, criteria, options)

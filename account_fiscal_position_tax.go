@@ -41,7 +41,7 @@ func (c *Client) UpdateAccountFiscalPositionTax(afpt *AccountFiscalPositionTax) 
 }
 
 // UpdateAccountFiscalPositionTaxs updates existing account.fiscal.position.tax records.
-// All records (represented by ids) will be updated by afpt values.
+// All records (represented by IDs) will be updated by afpt values.
 func (c *Client) UpdateAccountFiscalPositionTaxs(ids []int64, afpt *AccountFiscalPositionTax) error {
 	return c.Update(AccountFiscalPositionTaxModel, ids, afpt)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetAccountFiscalPositionTax(id int64) (*AccountFiscalPositionTa
 	if afpts != nil && len(*afpts) > 0 {
 		return &((*afpts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.fiscal.position.tax not found", id)
+	return nil, fmt.Errorf("id %V of account.fiscal.position.tax not found", id)
 }
 
 // GetAccountFiscalPositionTaxs gets account.fiscal.position.tax existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindAccountFiscalPositionTaxs(criteria *Criteria, options *Opti
 	return afpts, nil
 }
 
-// FindAccountFiscalPositionTaxIds finds records ids by querying it
+// FindAccountFiscalPositionTaxIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountFiscalPositionTaxIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountFiscalPositionTaxModel, criteria, options)

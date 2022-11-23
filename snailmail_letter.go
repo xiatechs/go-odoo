@@ -61,7 +61,7 @@ func (c *Client) UpdateSnailmailLetter(sl *SnailmailLetter) error {
 }
 
 // UpdateSnailmailLetters updates existing snailmail.letter records.
-// All records (represented by ids) will be updated by sl values.
+// All records (represented by IDs) will be updated by sl values.
 func (c *Client) UpdateSnailmailLetters(ids []int64, sl *SnailmailLetter) error {
 	return c.Update(SnailmailLetterModel, ids, sl)
 }
@@ -85,7 +85,7 @@ func (c *Client) GetSnailmailLetter(id int64) (*SnailmailLetter, error) {
 	if sls != nil && len(*sls) > 0 {
 		return &((*sls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of snailmail.letter not found", id)
+	return nil, fmt.Errorf("id %V of snailmail.letter not found", id)
 }
 
 // GetSnailmailLetters gets snailmail.letter existing records.
@@ -119,7 +119,7 @@ func (c *Client) FindSnailmailLetters(criteria *Criteria, options *Options) (*Sn
 	return sls, nil
 }
 
-// FindSnailmailLetterIds finds records ids by querying it
+// FindSnailmailLetterIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSnailmailLetterIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SnailmailLetterModel, criteria, options)

@@ -70,7 +70,7 @@ func (c *Client) UpdateCrmTeam(ct *CrmTeam) error {
 }
 
 // UpdateCrmTeams updates existing crm.team records.
-// All records (represented by ids) will be updated by ct values.
+// All records (represented by IDs) will be updated by ct values.
 func (c *Client) UpdateCrmTeams(ids []int64, ct *CrmTeam) error {
 	return c.Update(CrmTeamModel, ids, ct)
 }
@@ -94,7 +94,7 @@ func (c *Client) GetCrmTeam(id int64) (*CrmTeam, error) {
 	if cts != nil && len(*cts) > 0 {
 		return &((*cts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of crm.team not found", id)
+	return nil, fmt.Errorf("id %V of crm.team not found", id)
 }
 
 // GetCrmTeams gets crm.team existing records.
@@ -128,7 +128,7 @@ func (c *Client) FindCrmTeams(criteria *Criteria, options *Options) (*CrmTeams, 
 	return cts, nil
 }
 
-// FindCrmTeamIds finds records ids by querying it
+// FindCrmTeamIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindCrmTeamIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(CrmTeamModel, criteria, options)

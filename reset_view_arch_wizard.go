@@ -44,7 +44,7 @@ func (c *Client) UpdateResetViewArchWizard(rvaw *ResetViewArchWizard) error {
 }
 
 // UpdateResetViewArchWizards updates existing reset.view.arch.wizard records.
-// All records (represented by ids) will be updated by rvaw values.
+// All records (represented by IDs) will be updated by rvaw values.
 func (c *Client) UpdateResetViewArchWizards(ids []int64, rvaw *ResetViewArchWizard) error {
 	return c.Update(ResetViewArchWizardModel, ids, rvaw)
 }
@@ -68,7 +68,7 @@ func (c *Client) GetResetViewArchWizard(id int64) (*ResetViewArchWizard, error) 
 	if rvaws != nil && len(*rvaws) > 0 {
 		return &((*rvaws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of reset.view.arch.wizard not found", id)
+	return nil, fmt.Errorf("id %V of reset.view.arch.wizard not found", id)
 }
 
 // GetResetViewArchWizards gets reset.view.arch.wizard existing records.
@@ -102,7 +102,7 @@ func (c *Client) FindResetViewArchWizards(criteria *Criteria, options *Options) 
 	return rvaws, nil
 }
 
-// FindResetViewArchWizardIds finds records ids by querying it
+// FindResetViewArchWizardIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResetViewArchWizardIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResetViewArchWizardModel, criteria, options)

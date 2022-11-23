@@ -33,7 +33,7 @@ func (c *Client) UpdateIrQwebFieldDate(iqfd *IrQwebFieldDate) error {
 }
 
 // UpdateIrQwebFieldDates updates existing ir.qweb.field.date records.
-// All records (represented by ids) will be updated by iqfd values.
+// All records (represented by IDs) will be updated by iqfd values.
 func (c *Client) UpdateIrQwebFieldDates(ids []int64, iqfd *IrQwebFieldDate) error {
 	return c.Update(IrQwebFieldDateModel, ids, iqfd)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldDate(id int64) (*IrQwebFieldDate, error) {
 	if iqfds != nil && len(*iqfds) > 0 {
 		return &((*iqfds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.qweb.field.date not found", id)
+	return nil, fmt.Errorf("id %V of ir.qweb.field.date not found", id)
 }
 
 // GetIrQwebFieldDates gets ir.qweb.field.date existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindIrQwebFieldDates(criteria *Criteria, options *Options) (*Ir
 	return iqfds, nil
 }
 
-// FindIrQwebFieldDateIds finds records ids by querying it
+// FindIrQwebFieldDateIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrQwebFieldDateIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrQwebFieldDateModel, criteria, options)

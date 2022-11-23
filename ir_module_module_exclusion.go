@@ -41,7 +41,7 @@ func (c *Client) UpdateIrModuleModuleExclusion(imme *IrModuleModuleExclusion) er
 }
 
 // UpdateIrModuleModuleExclusions updates existing ir.module.module.exclusion records.
-// All records (represented by ids) will be updated by imme values.
+// All records (represented by IDs) will be updated by imme values.
 func (c *Client) UpdateIrModuleModuleExclusions(ids []int64, imme *IrModuleModuleExclusion) error {
 	return c.Update(IrModuleModuleExclusionModel, ids, imme)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetIrModuleModuleExclusion(id int64) (*IrModuleModuleExclusion,
 	if immes != nil && len(*immes) > 0 {
 		return &((*immes)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.module.module.exclusion not found", id)
+	return nil, fmt.Errorf("id %V of ir.module.module.exclusion not found", id)
 }
 
 // GetIrModuleModuleExclusions gets ir.module.module.exclusion existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindIrModuleModuleExclusions(criteria *Criteria, options *Optio
 	return immes, nil
 }
 
-// FindIrModuleModuleExclusionIds finds records ids by querying it
+// FindIrModuleModuleExclusionIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrModuleModuleExclusionIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrModuleModuleExclusionModel, criteria, options)

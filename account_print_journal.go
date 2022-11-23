@@ -44,7 +44,7 @@ func (c *Client) UpdateAccountPrintJournal(apj *AccountPrintJournal) error {
 }
 
 // UpdateAccountPrintJournals updates existing account.print.journal records.
-// All records (represented by ids) will be updated by apj values.
+// All records (represented by IDs) will be updated by apj values.
 func (c *Client) UpdateAccountPrintJournals(ids []int64, apj *AccountPrintJournal) error {
 	return c.Update(AccountPrintJournalModel, ids, apj)
 }
@@ -68,7 +68,7 @@ func (c *Client) GetAccountPrintJournal(id int64) (*AccountPrintJournal, error) 
 	if apjs != nil && len(*apjs) > 0 {
 		return &((*apjs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.print.journal not found", id)
+	return nil, fmt.Errorf("id %V of account.print.journal not found", id)
 }
 
 // GetAccountPrintJournals gets account.print.journal existing records.
@@ -102,7 +102,7 @@ func (c *Client) FindAccountPrintJournals(criteria *Criteria, options *Options) 
 	return apjs, nil
 }
 
-// FindAccountPrintJournalIds finds records ids by querying it
+// FindAccountPrintJournalIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountPrintJournalIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountPrintJournalModel, criteria, options)

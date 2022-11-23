@@ -45,7 +45,7 @@ func (c *Client) UpdateAccountReconcileModelLineTemplate(armlt *AccountReconcile
 }
 
 // UpdateAccountReconcileModelLineTemplates updates existing account.reconcile.model.line.template records.
-// All records (represented by ids) will be updated by armlt values.
+// All records (represented by IDs) will be updated by armlt values.
 func (c *Client) UpdateAccountReconcileModelLineTemplates(ids []int64, armlt *AccountReconcileModelLineTemplate) error {
 	return c.Update(AccountReconcileModelLineTemplateModel, ids, armlt)
 }
@@ -69,7 +69,7 @@ func (c *Client) GetAccountReconcileModelLineTemplate(id int64) (*AccountReconci
 	if armlts != nil && len(*armlts) > 0 {
 		return &((*armlts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.reconcile.model.line.template not found", id)
+	return nil, fmt.Errorf("id %V of account.reconcile.model.line.template not found", id)
 }
 
 // GetAccountReconcileModelLineTemplates gets account.reconcile.model.line.template existing records.
@@ -103,7 +103,7 @@ func (c *Client) FindAccountReconcileModelLineTemplates(criteria *Criteria, opti
 	return armlts, nil
 }
 
-// FindAccountReconcileModelLineTemplateIds finds records ids by querying it
+// FindAccountReconcileModelLineTemplateIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountReconcileModelLineTemplateIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountReconcileModelLineTemplateModel, criteria, options)

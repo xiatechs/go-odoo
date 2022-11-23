@@ -38,7 +38,7 @@ func (c *Client) UpdateBaseImportTestsModelsCharReadonly(btmcr *BaseImportTestsM
 }
 
 // UpdateBaseImportTestsModelsCharReadonlys updates existing base_import.tests.models.char.readonly records.
-// All records (represented by ids) will be updated by btmcr values.
+// All records (represented by IDs) will be updated by btmcr values.
 func (c *Client) UpdateBaseImportTestsModelsCharReadonlys(ids []int64, btmcr *BaseImportTestsModelsCharReadonly) error {
 	return c.Update(BaseImportTestsModelsCharReadonlyModel, ids, btmcr)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsCharReadonly(id int64) (*BaseImportTest
 	if btmcrs != nil && len(*btmcrs) > 0 {
 		return &((*btmcrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of base_import.tests.models.char.readonly not found", id)
+	return nil, fmt.Errorf("id %V of base_import.tests.models.char.readonly not found", id)
 }
 
 // GetBaseImportTestsModelsCharReadonlys gets base_import.tests.models.char.readonly existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindBaseImportTestsModelsCharReadonlys(criteria *Criteria, opti
 	return btmcrs, nil
 }
 
-// FindBaseImportTestsModelsCharReadonlyIds finds records ids by querying it
+// FindBaseImportTestsModelsCharReadonlyIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBaseImportTestsModelsCharReadonlyIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BaseImportTestsModelsCharReadonlyModel, criteria, options)

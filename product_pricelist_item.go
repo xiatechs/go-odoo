@@ -60,7 +60,7 @@ func (c *Client) UpdateProductPricelistItem(ppi *ProductPricelistItem) error {
 }
 
 // UpdateProductPricelistItems updates existing product.pricelist.item records.
-// All records (represented by ids) will be updated by ppi values.
+// All records (represented by IDs) will be updated by ppi values.
 func (c *Client) UpdateProductPricelistItems(ids []int64, ppi *ProductPricelistItem) error {
 	return c.Update(ProductPricelistItemModel, ids, ppi)
 }
@@ -84,7 +84,7 @@ func (c *Client) GetProductPricelistItem(id int64) (*ProductPricelistItem, error
 	if ppis != nil && len(*ppis) > 0 {
 		return &((*ppis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of product.pricelist.item not found", id)
+	return nil, fmt.Errorf("id %V of product.pricelist.item not found", id)
 }
 
 // GetProductPricelistItems gets product.pricelist.item existing records.
@@ -118,7 +118,7 @@ func (c *Client) FindProductPricelistItems(criteria *Criteria, options *Options)
 	return ppis, nil
 }
 
-// FindProductPricelistItemIds finds records ids by querying it
+// FindProductPricelistItemIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindProductPricelistItemIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ProductPricelistItemModel, criteria, options)

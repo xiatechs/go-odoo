@@ -48,7 +48,7 @@ func (c *Client) UpdateWebEditorConverterTest(wct *WebEditorConverterTest) error
 }
 
 // UpdateWebEditorConverterTests updates existing web_editor.converter.test records.
-// All records (represented by ids) will be updated by wct values.
+// All records (represented by IDs) will be updated by wct values.
 func (c *Client) UpdateWebEditorConverterTests(ids []int64, wct *WebEditorConverterTest) error {
 	return c.Update(WebEditorConverterTestModel, ids, wct)
 }
@@ -72,7 +72,7 @@ func (c *Client) GetWebEditorConverterTest(id int64) (*WebEditorConverterTest, e
 	if wcts != nil && len(*wcts) > 0 {
 		return &((*wcts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of web_editor.converter.test not found", id)
+	return nil, fmt.Errorf("id %V of web_editor.converter.test not found", id)
 }
 
 // GetWebEditorConverterTests gets web_editor.converter.test existing records.
@@ -106,7 +106,7 @@ func (c *Client) FindWebEditorConverterTests(criteria *Criteria, options *Option
 	return wcts, nil
 }
 
-// FindWebEditorConverterTestIds finds records ids by querying it
+// FindWebEditorConverterTestIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindWebEditorConverterTestIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(WebEditorConverterTestModel, criteria, options)

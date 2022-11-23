@@ -38,7 +38,7 @@ func (c *Client) UpdateBaseImportTestsModelsM2ORequired(btmmr *BaseImportTestsMo
 }
 
 // UpdateBaseImportTestsModelsM2ORequireds updates existing base_import.tests.models.m2o.required records.
-// All records (represented by ids) will be updated by btmmr values.
+// All records (represented by IDs) will be updated by btmmr values.
 func (c *Client) UpdateBaseImportTestsModelsM2ORequireds(ids []int64, btmmr *BaseImportTestsModelsM2ORequired) error {
 	return c.Update(BaseImportTestsModelsM2ORequiredModel, ids, btmmr)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsM2ORequired(id int64) (*BaseImportTests
 	if btmmrs != nil && len(*btmmrs) > 0 {
 		return &((*btmmrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of base_import.tests.models.m2o.required not found", id)
+	return nil, fmt.Errorf("id %V of base_import.tests.models.m2o.required not found", id)
 }
 
 // GetBaseImportTestsModelsM2ORequireds gets base_import.tests.models.m2o.required existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindBaseImportTestsModelsM2ORequireds(criteria *Criteria, optio
 	return btmmrs, nil
 }
 
-// FindBaseImportTestsModelsM2ORequiredIds finds records ids by querying it
+// FindBaseImportTestsModelsM2ORequiredIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBaseImportTestsModelsM2ORequiredIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BaseImportTestsModelsM2ORequiredModel, criteria, options)

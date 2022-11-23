@@ -41,7 +41,7 @@ func (c *Client) UpdateAccountFullReconcile(afr *AccountFullReconcile) error {
 }
 
 // UpdateAccountFullReconciles updates existing account.full.reconcile records.
-// All records (represented by ids) will be updated by afr values.
+// All records (represented by IDs) will be updated by afr values.
 func (c *Client) UpdateAccountFullReconciles(ids []int64, afr *AccountFullReconcile) error {
 	return c.Update(AccountFullReconcileModel, ids, afr)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetAccountFullReconcile(id int64) (*AccountFullReconcile, error
 	if afrs != nil && len(*afrs) > 0 {
 		return &((*afrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.full.reconcile not found", id)
+	return nil, fmt.Errorf("id %V of account.full.reconcile not found", id)
 }
 
 // GetAccountFullReconciles gets account.full.reconcile existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindAccountFullReconciles(criteria *Criteria, options *Options)
 	return afrs, nil
 }
 
-// FindAccountFullReconcileIds finds records ids by querying it
+// FindAccountFullReconcileIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountFullReconcileIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountFullReconcileModel, criteria, options)

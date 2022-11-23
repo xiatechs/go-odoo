@@ -37,7 +37,7 @@ func (c *Client) UpdateResConfigInstaller(rci *ResConfigInstaller) error {
 }
 
 // UpdateResConfigInstallers updates existing res.config.installer records.
-// All records (represented by ids) will be updated by rci values.
+// All records (represented by IDs) will be updated by rci values.
 func (c *Client) UpdateResConfigInstallers(ids []int64, rci *ResConfigInstaller) error {
 	return c.Update(ResConfigInstallerModel, ids, rci)
 }
@@ -61,7 +61,7 @@ func (c *Client) GetResConfigInstaller(id int64) (*ResConfigInstaller, error) {
 	if rcis != nil && len(*rcis) > 0 {
 		return &((*rcis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.config.installer not found", id)
+	return nil, fmt.Errorf("id %V of res.config.installer not found", id)
 }
 
 // GetResConfigInstallers gets res.config.installer existing records.
@@ -95,7 +95,7 @@ func (c *Client) FindResConfigInstallers(criteria *Criteria, options *Options) (
 	return rcis, nil
 }
 
-// FindResConfigInstallerIds finds records ids by querying it
+// FindResConfigInstallerIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResConfigInstallerIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResConfigInstallerModel, criteria, options)

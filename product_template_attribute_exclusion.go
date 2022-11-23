@@ -40,7 +40,7 @@ func (c *Client) UpdateProductTemplateAttributeExclusion(ptae *ProductTemplateAt
 }
 
 // UpdateProductTemplateAttributeExclusions updates existing product.template.attribute.exclusion records.
-// All records (represented by ids) will be updated by ptae values.
+// All records (represented by IDs) will be updated by ptae values.
 func (c *Client) UpdateProductTemplateAttributeExclusions(ids []int64, ptae *ProductTemplateAttributeExclusion) error {
 	return c.Update(ProductTemplateAttributeExclusionModel, ids, ptae)
 }
@@ -64,7 +64,7 @@ func (c *Client) GetProductTemplateAttributeExclusion(id int64) (*ProductTemplat
 	if ptaes != nil && len(*ptaes) > 0 {
 		return &((*ptaes)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of product.template.attribute.exclusion not found", id)
+	return nil, fmt.Errorf("id %V of product.template.attribute.exclusion not found", id)
 }
 
 // GetProductTemplateAttributeExclusions gets product.template.attribute.exclusion existing records.
@@ -98,7 +98,7 @@ func (c *Client) FindProductTemplateAttributeExclusions(criteria *Criteria, opti
 	return ptaes, nil
 }
 
-// FindProductTemplateAttributeExclusionIds finds records ids by querying it
+// FindProductTemplateAttributeExclusionIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindProductTemplateAttributeExclusionIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ProductTemplateAttributeExclusionModel, criteria, options)

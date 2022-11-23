@@ -50,7 +50,7 @@ func (c *Client) UpdateResourceCalendarAttendance(rca *ResourceCalendarAttendanc
 }
 
 // UpdateResourceCalendarAttendances updates existing resource.calendar.attendance records.
-// All records (represented by ids) will be updated by rca values.
+// All records (represented by IDs) will be updated by rca values.
 func (c *Client) UpdateResourceCalendarAttendances(ids []int64, rca *ResourceCalendarAttendance) error {
 	return c.Update(ResourceCalendarAttendanceModel, ids, rca)
 }
@@ -74,7 +74,7 @@ func (c *Client) GetResourceCalendarAttendance(id int64) (*ResourceCalendarAtten
 	if rcas != nil && len(*rcas) > 0 {
 		return &((*rcas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of resource.calendar.attendance not found", id)
+	return nil, fmt.Errorf("id %V of resource.calendar.attendance not found", id)
 }
 
 // GetResourceCalendarAttendances gets resource.calendar.attendance existing records.
@@ -108,7 +108,7 @@ func (c *Client) FindResourceCalendarAttendances(criteria *Criteria, options *Op
 	return rcas, nil
 }
 
-// FindResourceCalendarAttendanceIds finds records ids by querying it
+// FindResourceCalendarAttendanceIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResourceCalendarAttendanceIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResourceCalendarAttendanceModel, criteria, options)

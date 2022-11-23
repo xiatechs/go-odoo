@@ -33,7 +33,7 @@ func (c *Client) UpdateReportAccountReportHashIntegrity(rar *ReportAccountReport
 }
 
 // UpdateReportAccountReportHashIntegritys updates existing report.account.report_hash_integrity records.
-// All records (represented by ids) will be updated by rar values.
+// All records (represented by IDs) will be updated by rar values.
 func (c *Client) UpdateReportAccountReportHashIntegritys(ids []int64, rar *ReportAccountReportHashIntegrity) error {
 	return c.Update(ReportAccountReportHashIntegrityModel, ids, rar)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetReportAccountReportHashIntegrity(id int64) (*ReportAccountRe
 	if rars != nil && len(*rars) > 0 {
 		return &((*rars)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of report.account.report_hash_integrity not found", id)
+	return nil, fmt.Errorf("id %V of report.account.report_hash_integrity not found", id)
 }
 
 // GetReportAccountReportHashIntegritys gets report.account.report_hash_integrity existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindReportAccountReportHashIntegritys(criteria *Criteria, optio
 	return rars, nil
 }
 
-// FindReportAccountReportHashIntegrityIds finds records ids by querying it
+// FindReportAccountReportHashIntegrityIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindReportAccountReportHashIntegrityIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ReportAccountReportHashIntegrityModel, criteria, options)

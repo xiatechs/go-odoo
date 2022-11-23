@@ -33,7 +33,7 @@ func (c *Client) UpdateIrQwebFieldDuration(iqfd *IrQwebFieldDuration) error {
 }
 
 // UpdateIrQwebFieldDurations updates existing ir.qweb.field.duration records.
-// All records (represented by ids) will be updated by iqfd values.
+// All records (represented by IDs) will be updated by iqfd values.
 func (c *Client) UpdateIrQwebFieldDurations(ids []int64, iqfd *IrQwebFieldDuration) error {
 	return c.Update(IrQwebFieldDurationModel, ids, iqfd)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldDuration(id int64) (*IrQwebFieldDuration, error) 
 	if iqfds != nil && len(*iqfds) > 0 {
 		return &((*iqfds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.qweb.field.duration not found", id)
+	return nil, fmt.Errorf("id %V of ir.qweb.field.duration not found", id)
 }
 
 // GetIrQwebFieldDurations gets ir.qweb.field.duration existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindIrQwebFieldDurations(criteria *Criteria, options *Options) 
 	return iqfds, nil
 }
 
-// FindIrQwebFieldDurationIds finds records ids by querying it
+// FindIrQwebFieldDurationIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrQwebFieldDurationIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrQwebFieldDurationModel, criteria, options)

@@ -41,7 +41,7 @@ func (c *Client) UpdateAccountReconcileModelPartnerMapping(armpm *AccountReconci
 }
 
 // UpdateAccountReconcileModelPartnerMappings updates existing account.reconcile.model.partner.mapping records.
-// All records (represented by ids) will be updated by armpm values.
+// All records (represented by IDs) will be updated by armpm values.
 func (c *Client) UpdateAccountReconcileModelPartnerMappings(ids []int64, armpm *AccountReconcileModelPartnerMapping) error {
 	return c.Update(AccountReconcileModelPartnerMappingModel, ids, armpm)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetAccountReconcileModelPartnerMapping(id int64) (*AccountRecon
 	if armpms != nil && len(*armpms) > 0 {
 		return &((*armpms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.reconcile.model.partner.mapping not found", id)
+	return nil, fmt.Errorf("id %V of account.reconcile.model.partner.mapping not found", id)
 }
 
 // GetAccountReconcileModelPartnerMappings gets account.reconcile.model.partner.mapping existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindAccountReconcileModelPartnerMappings(criteria *Criteria, op
 	return armpms, nil
 }
 
-// FindAccountReconcileModelPartnerMappingIds finds records ids by querying it
+// FindAccountReconcileModelPartnerMappingIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountReconcileModelPartnerMappingIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountReconcileModelPartnerMappingModel, criteria, options)

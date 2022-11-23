@@ -35,7 +35,7 @@ func (c *Client) UpdateWebTourTour(wt *WebTourTour) error {
 }
 
 // UpdateWebTourTours updates existing web_tour.tour records.
-// All records (represented by ids) will be updated by wt values.
+// All records (represented by IDs) will be updated by wt values.
 func (c *Client) UpdateWebTourTours(ids []int64, wt *WebTourTour) error {
 	return c.Update(WebTourTourModel, ids, wt)
 }
@@ -59,7 +59,7 @@ func (c *Client) GetWebTourTour(id int64) (*WebTourTour, error) {
 	if wts != nil && len(*wts) > 0 {
 		return &((*wts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of web_tour.tour not found", id)
+	return nil, fmt.Errorf("id %V of web_tour.tour not found", id)
 }
 
 // GetWebTourTours gets web_tour.tour existing records.
@@ -93,7 +93,7 @@ func (c *Client) FindWebTourTours(criteria *Criteria, options *Options) (*WebTou
 	return wts, nil
 }
 
-// FindWebTourTourIds finds records ids by querying it
+// FindWebTourTourIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindWebTourTourIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(WebTourTourModel, criteria, options)

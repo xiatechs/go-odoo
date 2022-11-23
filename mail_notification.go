@@ -45,7 +45,7 @@ func (c *Client) UpdateMailNotification(mn *MailNotification) error {
 }
 
 // UpdateMailNotifications updates existing mail.notification records.
-// All records (represented by ids) will be updated by mn values.
+// All records (represented by IDs) will be updated by mn values.
 func (c *Client) UpdateMailNotifications(ids []int64, mn *MailNotification) error {
 	return c.Update(MailNotificationModel, ids, mn)
 }
@@ -69,7 +69,7 @@ func (c *Client) GetMailNotification(id int64) (*MailNotification, error) {
 	if mns != nil && len(*mns) > 0 {
 		return &((*mns)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.notification not found", id)
+	return nil, fmt.Errorf("id %V of mail.notification not found", id)
 }
 
 // GetMailNotifications gets mail.notification existing records.
@@ -103,7 +103,7 @@ func (c *Client) FindMailNotifications(criteria *Criteria, options *Options) (*M
 	return mns, nil
 }
 
-// FindMailNotificationIds finds records ids by querying it
+// FindMailNotificationIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailNotificationIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailNotificationModel, criteria, options)

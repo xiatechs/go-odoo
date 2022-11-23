@@ -43,7 +43,7 @@ func (c *Client) UpdateSmsSms(ss *SmsSms) error {
 }
 
 // UpdateSmsSmss updates existing sms.sms records.
-// All records (represented by ids) will be updated by ss values.
+// All records (represented by IDs) will be updated by ss values.
 func (c *Client) UpdateSmsSmss(ids []int64, ss *SmsSms) error {
 	return c.Update(SmsSmsModel, ids, ss)
 }
@@ -67,7 +67,7 @@ func (c *Client) GetSmsSms(id int64) (*SmsSms, error) {
 	if sss != nil && len(*sss) > 0 {
 		return &((*sss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sms.sms not found", id)
+	return nil, fmt.Errorf("id %V of sms.sms not found", id)
 }
 
 // GetSmsSmss gets sms.sms existing records.
@@ -101,7 +101,7 @@ func (c *Client) FindSmsSmss(criteria *Criteria, options *Options) (*SmsSmss, er
 	return sss, nil
 }
 
-// FindSmsSmsIds finds records ids by querying it
+// FindSmsSmsIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSmsSmsIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SmsSmsModel, criteria, options)

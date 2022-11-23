@@ -48,7 +48,7 @@ func (c *Client) UpdateAccountTaxReportLine(atrl *AccountTaxReportLine) error {
 }
 
 // UpdateAccountTaxReportLines updates existing account.tax.report.line records.
-// All records (represented by ids) will be updated by atrl values.
+// All records (represented by IDs) will be updated by atrl values.
 func (c *Client) UpdateAccountTaxReportLines(ids []int64, atrl *AccountTaxReportLine) error {
 	return c.Update(AccountTaxReportLineModel, ids, atrl)
 }
@@ -72,7 +72,7 @@ func (c *Client) GetAccountTaxReportLine(id int64) (*AccountTaxReportLine, error
 	if atrls != nil && len(*atrls) > 0 {
 		return &((*atrls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.tax.report.line not found", id)
+	return nil, fmt.Errorf("id %V of account.tax.report.line not found", id)
 }
 
 // GetAccountTaxReportLines gets account.tax.report.line existing records.
@@ -106,7 +106,7 @@ func (c *Client) FindAccountTaxReportLines(criteria *Criteria, options *Options)
 	return atrls, nil
 }
 
-// FindAccountTaxReportLineIds finds records ids by querying it
+// FindAccountTaxReportLineIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountTaxReportLineIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountTaxReportLineModel, criteria, options)

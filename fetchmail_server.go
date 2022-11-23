@@ -54,7 +54,7 @@ func (c *Client) UpdateFetchmailServer(fs *FetchmailServer) error {
 }
 
 // UpdateFetchmailServers updates existing fetchmail.server records.
-// All records (represented by ids) will be updated by fs values.
+// All records (represented by IDs) will be updated by fs values.
 func (c *Client) UpdateFetchmailServers(ids []int64, fs *FetchmailServer) error {
 	return c.Update(FetchmailServerModel, ids, fs)
 }
@@ -78,7 +78,7 @@ func (c *Client) GetFetchmailServer(id int64) (*FetchmailServer, error) {
 	if fss != nil && len(*fss) > 0 {
 		return &((*fss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of fetchmail.server not found", id)
+	return nil, fmt.Errorf("id %V of fetchmail.server not found", id)
 }
 
 // GetFetchmailServers gets fetchmail.server existing records.
@@ -112,7 +112,7 @@ func (c *Client) FindFetchmailServers(criteria *Criteria, options *Options) (*Fe
 	return fss, nil
 }
 
-// FindFetchmailServerIds finds records ids by querying it
+// FindFetchmailServerIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindFetchmailServerIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(FetchmailServerModel, criteria, options)

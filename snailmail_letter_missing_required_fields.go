@@ -45,7 +45,7 @@ func (c *Client) UpdateSnailmailLetterMissingRequiredFields(slmrf *SnailmailLett
 }
 
 // UpdateSnailmailLetterMissingRequiredFieldss updates existing snailmail.letter.missing.required.fields records.
-// All records (represented by ids) will be updated by slmrf values.
+// All records (represented by IDs) will be updated by slmrf values.
 func (c *Client) UpdateSnailmailLetterMissingRequiredFieldss(ids []int64, slmrf *SnailmailLetterMissingRequiredFields) error {
 	return c.Update(SnailmailLetterMissingRequiredFieldsModel, ids, slmrf)
 }
@@ -69,7 +69,7 @@ func (c *Client) GetSnailmailLetterMissingRequiredFields(id int64) (*SnailmailLe
 	if slmrfs != nil && len(*slmrfs) > 0 {
 		return &((*slmrfs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of snailmail.letter.missing.required.fields not found", id)
+	return nil, fmt.Errorf("id %V of snailmail.letter.missing.required.fields not found", id)
 }
 
 // GetSnailmailLetterMissingRequiredFieldss gets snailmail.letter.missing.required.fields existing records.
@@ -103,7 +103,7 @@ func (c *Client) FindSnailmailLetterMissingRequiredFieldss(criteria *Criteria, o
 	return slmrfs, nil
 }
 
-// FindSnailmailLetterMissingRequiredFieldsIds finds records ids by querying it
+// FindSnailmailLetterMissingRequiredFieldsIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSnailmailLetterMissingRequiredFieldsIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SnailmailLetterMissingRequiredFieldsModel, criteria, options)

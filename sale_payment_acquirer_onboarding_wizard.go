@@ -49,7 +49,7 @@ func (c *Client) UpdateSalePaymentAcquirerOnboardingWizard(spaow *SalePaymentAcq
 }
 
 // UpdateSalePaymentAcquirerOnboardingWizards updates existing sale.payment.acquirer.onboarding.wizard records.
-// All records (represented by ids) will be updated by spaow values.
+// All records (represented by IDs) will be updated by spaow values.
 func (c *Client) UpdateSalePaymentAcquirerOnboardingWizards(ids []int64, spaow *SalePaymentAcquirerOnboardingWizard) error {
 	return c.Update(SalePaymentAcquirerOnboardingWizardModel, ids, spaow)
 }
@@ -73,7 +73,7 @@ func (c *Client) GetSalePaymentAcquirerOnboardingWizard(id int64) (*SalePaymentA
 	if spaows != nil && len(*spaows) > 0 {
 		return &((*spaows)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sale.payment.acquirer.onboarding.wizard not found", id)
+	return nil, fmt.Errorf("id %V of sale.payment.acquirer.onboarding.wizard not found", id)
 }
 
 // GetSalePaymentAcquirerOnboardingWizards gets sale.payment.acquirer.onboarding.wizard existing records.
@@ -107,7 +107,7 @@ func (c *Client) FindSalePaymentAcquirerOnboardingWizards(criteria *Criteria, op
 	return spaows, nil
 }
 
-// FindSalePaymentAcquirerOnboardingWizardIds finds records ids by querying it
+// FindSalePaymentAcquirerOnboardingWizardIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSalePaymentAcquirerOnboardingWizardIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SalePaymentAcquirerOnboardingWizardModel, criteria, options)

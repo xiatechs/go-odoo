@@ -49,7 +49,7 @@ func (c *Client) UpdateAccountTaxRepartitionLine(atrl *AccountTaxRepartitionLine
 }
 
 // UpdateAccountTaxRepartitionLines updates existing account.tax.repartition.line records.
-// All records (represented by ids) will be updated by atrl values.
+// All records (represented by IDs) will be updated by atrl values.
 func (c *Client) UpdateAccountTaxRepartitionLines(ids []int64, atrl *AccountTaxRepartitionLine) error {
 	return c.Update(AccountTaxRepartitionLineModel, ids, atrl)
 }
@@ -73,7 +73,7 @@ func (c *Client) GetAccountTaxRepartitionLine(id int64) (*AccountTaxRepartitionL
 	if atrls != nil && len(*atrls) > 0 {
 		return &((*atrls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.tax.repartition.line not found", id)
+	return nil, fmt.Errorf("id %V of account.tax.repartition.line not found", id)
 }
 
 // GetAccountTaxRepartitionLines gets account.tax.repartition.line existing records.
@@ -107,7 +107,7 @@ func (c *Client) FindAccountTaxRepartitionLines(criteria *Criteria, options *Opt
 	return atrls, nil
 }
 
-// FindAccountTaxRepartitionLineIds finds records ids by querying it
+// FindAccountTaxRepartitionLineIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountTaxRepartitionLineIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountTaxRepartitionLineModel, criteria, options)

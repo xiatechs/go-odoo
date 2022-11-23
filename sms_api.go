@@ -33,7 +33,7 @@ func (c *Client) UpdateSmsApi(sa *SmsApi) error {
 }
 
 // UpdateSmsApis updates existing sms.api records.
-// All records (represented by ids) will be updated by sa values.
+// All records (represented by IDs) will be updated by sa values.
 func (c *Client) UpdateSmsApis(ids []int64, sa *SmsApi) error {
 	return c.Update(SmsApiModel, ids, sa)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetSmsApi(id int64) (*SmsApi, error) {
 	if sas != nil && len(*sas) > 0 {
 		return &((*sas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sms.api not found", id)
+	return nil, fmt.Errorf("id %V of sms.api not found", id)
 }
 
 // GetSmsApis gets sms.api existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindSmsApis(criteria *Criteria, options *Options) (*SmsApis, er
 	return sas, nil
 }
 
-// FindSmsApiIds finds records ids by querying it
+// FindSmsApiIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSmsApiIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SmsApiModel, criteria, options)

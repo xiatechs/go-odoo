@@ -38,7 +38,7 @@ func (c *Client) UpdateBaseModuleUpgrade(bmu *BaseModuleUpgrade) error {
 }
 
 // UpdateBaseModuleUpgrades updates existing base.module.upgrade records.
-// All records (represented by ids) will be updated by bmu values.
+// All records (represented by IDs) will be updated by bmu values.
 func (c *Client) UpdateBaseModuleUpgrades(ids []int64, bmu *BaseModuleUpgrade) error {
 	return c.Update(BaseModuleUpgradeModel, ids, bmu)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetBaseModuleUpgrade(id int64) (*BaseModuleUpgrade, error) {
 	if bmus != nil && len(*bmus) > 0 {
 		return &((*bmus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of base.module.upgrade not found", id)
+	return nil, fmt.Errorf("id %V of base.module.upgrade not found", id)
 }
 
 // GetBaseModuleUpgrades gets base.module.upgrade existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindBaseModuleUpgrades(criteria *Criteria, options *Options) (*
 	return bmus, nil
 }
 
-// FindBaseModuleUpgradeIds finds records ids by querying it
+// FindBaseModuleUpgradeIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBaseModuleUpgradeIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BaseModuleUpgradeModel, criteria, options)

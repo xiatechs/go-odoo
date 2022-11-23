@@ -40,7 +40,7 @@ func (c *Client) UpdateResCountryGroup(rcg *ResCountryGroup) error {
 }
 
 // UpdateResCountryGroups updates existing res.country.group records.
-// All records (represented by ids) will be updated by rcg values.
+// All records (represented by IDs) will be updated by rcg values.
 func (c *Client) UpdateResCountryGroups(ids []int64, rcg *ResCountryGroup) error {
 	return c.Update(ResCountryGroupModel, ids, rcg)
 }
@@ -64,7 +64,7 @@ func (c *Client) GetResCountryGroup(id int64) (*ResCountryGroup, error) {
 	if rcgs != nil && len(*rcgs) > 0 {
 		return &((*rcgs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.country.group not found", id)
+	return nil, fmt.Errorf("id %V of res.country.group not found", id)
 }
 
 // GetResCountryGroups gets res.country.group existing records.
@@ -98,7 +98,7 @@ func (c *Client) FindResCountryGroups(criteria *Criteria, options *Options) (*Re
 	return rcgs, nil
 }
 
-// FindResCountryGroupIds finds records ids by querying it
+// FindResCountryGroupIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResCountryGroupIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResCountryGroupModel, criteria, options)

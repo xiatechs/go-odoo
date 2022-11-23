@@ -44,7 +44,7 @@ func (c *Client) UpdateAccountEdiDocument(aed *AccountEdiDocument) error {
 }
 
 // UpdateAccountEdiDocuments updates existing account.edi.document records.
-// All records (represented by ids) will be updated by aed values.
+// All records (represented by IDs) will be updated by aed values.
 func (c *Client) UpdateAccountEdiDocuments(ids []int64, aed *AccountEdiDocument) error {
 	return c.Update(AccountEdiDocumentModel, ids, aed)
 }
@@ -68,7 +68,7 @@ func (c *Client) GetAccountEdiDocument(id int64) (*AccountEdiDocument, error) {
 	if aeds != nil && len(*aeds) > 0 {
 		return &((*aeds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.edi.document not found", id)
+	return nil, fmt.Errorf("id %V of account.edi.document not found", id)
 }
 
 // GetAccountEdiDocuments gets account.edi.document existing records.
@@ -102,7 +102,7 @@ func (c *Client) FindAccountEdiDocuments(criteria *Criteria, options *Options) (
 	return aeds, nil
 }
 
-// FindAccountEdiDocumentIds finds records ids by querying it
+// FindAccountEdiDocumentIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountEdiDocumentIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountEdiDocumentModel, criteria, options)

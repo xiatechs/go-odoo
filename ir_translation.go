@@ -42,7 +42,7 @@ func (c *Client) UpdateIrTranslation(it *IrTranslation) error {
 }
 
 // UpdateIrTranslations updates existing ir.translation records.
-// All records (represented by ids) will be updated by it values.
+// All records (represented by IDs) will be updated by it values.
 func (c *Client) UpdateIrTranslations(ids []int64, it *IrTranslation) error {
 	return c.Update(IrTranslationModel, ids, it)
 }
@@ -66,7 +66,7 @@ func (c *Client) GetIrTranslation(id int64) (*IrTranslation, error) {
 	if its != nil && len(*its) > 0 {
 		return &((*its)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.translation not found", id)
+	return nil, fmt.Errorf("id %V of ir.translation not found", id)
 }
 
 // GetIrTranslations gets ir.translation existing records.
@@ -100,7 +100,7 @@ func (c *Client) FindIrTranslations(criteria *Criteria, options *Options) (*IrTr
 	return its, nil
 }
 
-// FindIrTranslationIds finds records ids by querying it
+// FindIrTranslationIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrTranslationIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrTranslationModel, criteria, options)

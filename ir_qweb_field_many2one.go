@@ -33,7 +33,7 @@ func (c *Client) UpdateIrQwebFieldMany2One(iqfm *IrQwebFieldMany2One) error {
 }
 
 // UpdateIrQwebFieldMany2Ones updates existing ir.qweb.field.many2one records.
-// All records (represented by ids) will be updated by iqfm values.
+// All records (represented by IDs) will be updated by iqfm values.
 func (c *Client) UpdateIrQwebFieldMany2Ones(ids []int64, iqfm *IrQwebFieldMany2One) error {
 	return c.Update(IrQwebFieldMany2OneModel, ids, iqfm)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldMany2One(id int64) (*IrQwebFieldMany2One, error) 
 	if iqfms != nil && len(*iqfms) > 0 {
 		return &((*iqfms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.qweb.field.many2one not found", id)
+	return nil, fmt.Errorf("id %V of ir.qweb.field.many2one not found", id)
 }
 
 // GetIrQwebFieldMany2Ones gets ir.qweb.field.many2one existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindIrQwebFieldMany2Ones(criteria *Criteria, options *Options) 
 	return iqfms, nil
 }
 
-// FindIrQwebFieldMany2OneIds finds records ids by querying it
+// FindIrQwebFieldMany2OneIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrQwebFieldMany2OneIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrQwebFieldMany2OneModel, criteria, options)

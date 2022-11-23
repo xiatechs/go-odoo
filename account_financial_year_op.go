@@ -42,7 +42,7 @@ func (c *Client) UpdateAccountFinancialYearOp(afyo *AccountFinancialYearOp) erro
 }
 
 // UpdateAccountFinancialYearOps updates existing account.financial.year.op records.
-// All records (represented by ids) will be updated by afyo values.
+// All records (represented by IDs) will be updated by afyo values.
 func (c *Client) UpdateAccountFinancialYearOps(ids []int64, afyo *AccountFinancialYearOp) error {
 	return c.Update(AccountFinancialYearOpModel, ids, afyo)
 }
@@ -66,7 +66,7 @@ func (c *Client) GetAccountFinancialYearOp(id int64) (*AccountFinancialYearOp, e
 	if afyos != nil && len(*afyos) > 0 {
 		return &((*afyos)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.financial.year.op not found", id)
+	return nil, fmt.Errorf("id %V of account.financial.year.op not found", id)
 }
 
 // GetAccountFinancialYearOps gets account.financial.year.op existing records.
@@ -100,7 +100,7 @@ func (c *Client) FindAccountFinancialYearOps(criteria *Criteria, options *Option
 	return afyos, nil
 }
 
-// FindAccountFinancialYearOpIds finds records ids by querying it
+// FindAccountFinancialYearOpIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountFinancialYearOpIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountFinancialYearOpModel, criteria, options)

@@ -40,7 +40,7 @@ func (c *Client) UpdateAccountFiscalPositionAccountTemplate(afpat *AccountFiscal
 }
 
 // UpdateAccountFiscalPositionAccountTemplates updates existing account.fiscal.position.account.template records.
-// All records (represented by ids) will be updated by afpat values.
+// All records (represented by IDs) will be updated by afpat values.
 func (c *Client) UpdateAccountFiscalPositionAccountTemplates(ids []int64, afpat *AccountFiscalPositionAccountTemplate) error {
 	return c.Update(AccountFiscalPositionAccountTemplateModel, ids, afpat)
 }
@@ -64,7 +64,7 @@ func (c *Client) GetAccountFiscalPositionAccountTemplate(id int64) (*AccountFisc
 	if afpats != nil && len(*afpats) > 0 {
 		return &((*afpats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.fiscal.position.account.template not found", id)
+	return nil, fmt.Errorf("id %V of account.fiscal.position.account.template not found", id)
 }
 
 // GetAccountFiscalPositionAccountTemplates gets account.fiscal.position.account.template existing records.
@@ -98,7 +98,7 @@ func (c *Client) FindAccountFiscalPositionAccountTemplates(criteria *Criteria, o
 	return afpats, nil
 }
 
-// FindAccountFiscalPositionAccountTemplateIds finds records ids by querying it
+// FindAccountFiscalPositionAccountTemplateIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountFiscalPositionAccountTemplateIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountFiscalPositionAccountTemplateModel, criteria, options)

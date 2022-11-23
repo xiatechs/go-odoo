@@ -96,7 +96,7 @@ func (c *Client) UpdateAccountMoveLine(aml *AccountMoveLine) error {
 }
 
 // UpdateAccountMoveLines updates existing account.move.line records.
-// All records (represented by ids) will be updated by aml values.
+// All records (represented by IDs) will be updated by aml values.
 func (c *Client) UpdateAccountMoveLines(ids []int64, aml *AccountMoveLine) error {
 	return c.Update(AccountMoveLineModel, ids, aml)
 }
@@ -120,7 +120,7 @@ func (c *Client) GetAccountMoveLine(id int64) (*AccountMoveLine, error) {
 	if amls != nil && len(*amls) > 0 {
 		return &((*amls)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.move.line not found", id)
+	return nil, fmt.Errorf("id %V of account.move.line not found", id)
 }
 
 // GetAccountMoveLines gets account.move.line existing records.
@@ -154,7 +154,7 @@ func (c *Client) FindAccountMoveLines(criteria *Criteria, options *Options) (*Ac
 	return amls, nil
 }
 
-// FindAccountMoveLineIds finds records ids by querying it
+// FindAccountMoveLineIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountMoveLineIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountMoveLineModel, criteria, options)

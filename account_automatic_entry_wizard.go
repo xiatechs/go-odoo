@@ -52,7 +52,7 @@ func (c *Client) UpdateAccountAutomaticEntryWizard(aaew *AccountAutomaticEntryWi
 }
 
 // UpdateAccountAutomaticEntryWizards updates existing account.automatic.entry.wizard records.
-// All records (represented by ids) will be updated by aaew values.
+// All records (represented by IDs) will be updated by aaew values.
 func (c *Client) UpdateAccountAutomaticEntryWizards(ids []int64, aaew *AccountAutomaticEntryWizard) error {
 	return c.Update(AccountAutomaticEntryWizardModel, ids, aaew)
 }
@@ -76,7 +76,7 @@ func (c *Client) GetAccountAutomaticEntryWizard(id int64) (*AccountAutomaticEntr
 	if aaews != nil && len(*aaews) > 0 {
 		return &((*aaews)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.automatic.entry.wizard not found", id)
+	return nil, fmt.Errorf("id %V of account.automatic.entry.wizard not found", id)
 }
 
 // GetAccountAutomaticEntryWizards gets account.automatic.entry.wizard existing records.
@@ -110,7 +110,7 @@ func (c *Client) FindAccountAutomaticEntryWizards(criteria *Criteria, options *O
 	return aaews, nil
 }
 
-// FindAccountAutomaticEntryWizardIds finds records ids by querying it
+// FindAccountAutomaticEntryWizardIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountAutomaticEntryWizardIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountAutomaticEntryWizardModel, criteria, options)

@@ -41,7 +41,7 @@ func (c *Client) UpdateAccountPaymentMethod(apm *AccountPaymentMethod) error {
 }
 
 // UpdateAccountPaymentMethods updates existing account.payment.method records.
-// All records (represented by ids) will be updated by apm values.
+// All records (represented by IDs) will be updated by apm values.
 func (c *Client) UpdateAccountPaymentMethods(ids []int64, apm *AccountPaymentMethod) error {
 	return c.Update(AccountPaymentMethodModel, ids, apm)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetAccountPaymentMethod(id int64) (*AccountPaymentMethod, error
 	if apms != nil && len(*apms) > 0 {
 		return &((*apms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.payment.method not found", id)
+	return nil, fmt.Errorf("id %V of account.payment.method not found", id)
 }
 
 // GetAccountPaymentMethods gets account.payment.method existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindAccountPaymentMethods(criteria *Criteria, options *Options)
 	return apms, nil
 }
 
-// FindAccountPaymentMethodIds finds records ids by querying it
+// FindAccountPaymentMethodIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountPaymentMethodIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountPaymentMethodModel, criteria, options)

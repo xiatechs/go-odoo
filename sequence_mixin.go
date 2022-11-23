@@ -35,7 +35,7 @@ func (c *Client) UpdateSequenceMixin(sm *SequenceMixin) error {
 }
 
 // UpdateSequenceMixins updates existing sequence.mixin records.
-// All records (represented by ids) will be updated by sm values.
+// All records (represented by IDs) will be updated by sm values.
 func (c *Client) UpdateSequenceMixins(ids []int64, sm *SequenceMixin) error {
 	return c.Update(SequenceMixinModel, ids, sm)
 }
@@ -59,7 +59,7 @@ func (c *Client) GetSequenceMixin(id int64) (*SequenceMixin, error) {
 	if sms != nil && len(*sms) > 0 {
 		return &((*sms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sequence.mixin not found", id)
+	return nil, fmt.Errorf("id %V of sequence.mixin not found", id)
 }
 
 // GetSequenceMixins gets sequence.mixin existing records.
@@ -93,7 +93,7 @@ func (c *Client) FindSequenceMixins(criteria *Criteria, options *Options) (*Sequ
 	return sms, nil
 }
 
-// FindSequenceMixinIds finds records ids by querying it
+// FindSequenceMixinIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSequenceMixinIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SequenceMixinModel, criteria, options)

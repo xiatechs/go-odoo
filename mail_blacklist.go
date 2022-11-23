@@ -54,7 +54,7 @@ func (c *Client) UpdateMailBlacklist(mb *MailBlacklist) error {
 }
 
 // UpdateMailBlacklists updates existing mail.blacklist records.
-// All records (represented by ids) will be updated by mb values.
+// All records (represented by IDs) will be updated by mb values.
 func (c *Client) UpdateMailBlacklists(ids []int64, mb *MailBlacklist) error {
 	return c.Update(MailBlacklistModel, ids, mb)
 }
@@ -78,7 +78,7 @@ func (c *Client) GetMailBlacklist(id int64) (*MailBlacklist, error) {
 	if mbs != nil && len(*mbs) > 0 {
 		return &((*mbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.blacklist not found", id)
+	return nil, fmt.Errorf("id %V of mail.blacklist not found", id)
 }
 
 // GetMailBlacklists gets mail.blacklist existing records.
@@ -112,7 +112,7 @@ func (c *Client) FindMailBlacklists(criteria *Criteria, options *Options) (*Mail
 	return mbs, nil
 }
 
-// FindMailBlacklistIds finds records ids by querying it
+// FindMailBlacklistIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailBlacklistIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailBlacklistModel, criteria, options)

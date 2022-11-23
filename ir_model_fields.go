@@ -71,7 +71,7 @@ func (c *Client) UpdateIrModelFields(imf *IrModelFields) error {
 }
 
 // UpdateIrModelFieldss updates existing ir.model.fields records.
-// All records (represented by ids) will be updated by imf values.
+// All records (represented by IDs) will be updated by imf values.
 func (c *Client) UpdateIrModelFieldss(ids []int64, imf *IrModelFields) error {
 	return c.Update(IrModelFieldsModel, ids, imf)
 }
@@ -95,7 +95,7 @@ func (c *Client) GetIrModelFields(id int64) (*IrModelFields, error) {
 	if imfs != nil && len(*imfs) > 0 {
 		return &((*imfs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.model.fields not found", id)
+	return nil, fmt.Errorf("id %V of ir.model.fields not found", id)
 }
 
 // GetIrModelFieldss gets ir.model.fields existing records.
@@ -129,7 +129,7 @@ func (c *Client) FindIrModelFieldss(criteria *Criteria, options *Options) (*IrMo
 	return imfs, nil
 }
 
-// FindIrModelFieldsIds finds records ids by querying it
+// FindIrModelFieldsIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrModelFieldsIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrModelFieldsModel, criteria, options)

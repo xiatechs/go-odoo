@@ -38,7 +38,7 @@ func (c *Client) UpdateValidateAccountMove(vam *ValidateAccountMove) error {
 }
 
 // UpdateValidateAccountMoves updates existing validate.account.move records.
-// All records (represented by ids) will be updated by vam values.
+// All records (represented by IDs) will be updated by vam values.
 func (c *Client) UpdateValidateAccountMoves(ids []int64, vam *ValidateAccountMove) error {
 	return c.Update(ValidateAccountMoveModel, ids, vam)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetValidateAccountMove(id int64) (*ValidateAccountMove, error) 
 	if vams != nil && len(*vams) > 0 {
 		return &((*vams)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of validate.account.move not found", id)
+	return nil, fmt.Errorf("id %V of validate.account.move not found", id)
 }
 
 // GetValidateAccountMoves gets validate.account.move existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindValidateAccountMoves(criteria *Criteria, options *Options) 
 	return vams, nil
 }
 
-// FindValidateAccountMoveIds finds records ids by querying it
+// FindValidateAccountMoveIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindValidateAccountMoveIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ValidateAccountMoveModel, criteria, options)

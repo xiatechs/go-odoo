@@ -34,7 +34,7 @@ func (c *Client) UpdateSnailmailConfirm(sc *SnailmailConfirm) error {
 }
 
 // UpdateSnailmailConfirms updates existing snailmail.confirm records.
-// All records (represented by ids) will be updated by sc values.
+// All records (represented by IDs) will be updated by sc values.
 func (c *Client) UpdateSnailmailConfirms(ids []int64, sc *SnailmailConfirm) error {
 	return c.Update(SnailmailConfirmModel, ids, sc)
 }
@@ -58,7 +58,7 @@ func (c *Client) GetSnailmailConfirm(id int64) (*SnailmailConfirm, error) {
 	if scs != nil && len(*scs) > 0 {
 		return &((*scs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of snailmail.confirm not found", id)
+	return nil, fmt.Errorf("id %V of snailmail.confirm not found", id)
 }
 
 // GetSnailmailConfirms gets snailmail.confirm existing records.
@@ -92,7 +92,7 @@ func (c *Client) FindSnailmailConfirms(criteria *Criteria, options *Options) (*S
 	return scs, nil
 }
 
-// FindSnailmailConfirmIds finds records ids by querying it
+// FindSnailmailConfirmIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSnailmailConfirmIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SnailmailConfirmModel, criteria, options)

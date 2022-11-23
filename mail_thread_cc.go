@@ -49,7 +49,7 @@ func (c *Client) UpdateMailThreadCc(mtc *MailThreadCc) error {
 }
 
 // UpdateMailThreadCcs updates existing mail.thread.cc records.
-// All records (represented by ids) will be updated by mtc values.
+// All records (represented by IDs) will be updated by mtc values.
 func (c *Client) UpdateMailThreadCcs(ids []int64, mtc *MailThreadCc) error {
 	return c.Update(MailThreadCcModel, ids, mtc)
 }
@@ -73,7 +73,7 @@ func (c *Client) GetMailThreadCc(id int64) (*MailThreadCc, error) {
 	if mtcs != nil && len(*mtcs) > 0 {
 		return &((*mtcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.thread.cc not found", id)
+	return nil, fmt.Errorf("id %V of mail.thread.cc not found", id)
 }
 
 // GetMailThreadCcs gets mail.thread.cc existing records.
@@ -107,7 +107,7 @@ func (c *Client) FindMailThreadCcs(criteria *Criteria, options *Options) (*MailT
 	return mtcs, nil
 }
 
-// FindMailThreadCcIds finds records ids by querying it
+// FindMailThreadCcIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailThreadCcIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailThreadCcModel, criteria, options)

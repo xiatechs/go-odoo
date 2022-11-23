@@ -43,7 +43,7 @@ func (c *Client) UpdateIrModelConstraint(imc *IrModelConstraint) error {
 }
 
 // UpdateIrModelConstraints updates existing ir.model.constraint records.
-// All records (represented by ids) will be updated by imc values.
+// All records (represented by IDs) will be updated by imc values.
 func (c *Client) UpdateIrModelConstraints(ids []int64, imc *IrModelConstraint) error {
 	return c.Update(IrModelConstraintModel, ids, imc)
 }
@@ -67,7 +67,7 @@ func (c *Client) GetIrModelConstraint(id int64) (*IrModelConstraint, error) {
 	if imcs != nil && len(*imcs) > 0 {
 		return &((*imcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.model.constraint not found", id)
+	return nil, fmt.Errorf("id %V of ir.model.constraint not found", id)
 }
 
 // GetIrModelConstraints gets ir.model.constraint existing records.
@@ -101,7 +101,7 @@ func (c *Client) FindIrModelConstraints(criteria *Criteria, options *Options) (*
 	return imcs, nil
 }
 
-// FindIrModelConstraintIds finds records ids by querying it
+// FindIrModelConstraintIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrModelConstraintIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrModelConstraintModel, criteria, options)

@@ -61,7 +61,7 @@ func (c *Client) UpdateIrAttachment(ia *IrAttachment) error {
 }
 
 // UpdateIrAttachments updates existing ir.attachment records.
-// All records (represented by ids) will be updated by ia values.
+// All records (represented by IDs) will be updated by ia values.
 func (c *Client) UpdateIrAttachments(ids []int64, ia *IrAttachment) error {
 	return c.Update(IrAttachmentModel, ids, ia)
 }
@@ -85,7 +85,7 @@ func (c *Client) GetIrAttachment(id int64) (*IrAttachment, error) {
 	if ias != nil && len(*ias) > 0 {
 		return &((*ias)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.attachment not found", id)
+	return nil, fmt.Errorf("id %V of ir.attachment not found", id)
 }
 
 // GetIrAttachments gets ir.attachment existing records.
@@ -119,7 +119,7 @@ func (c *Client) FindIrAttachments(criteria *Criteria, options *Options) (*IrAtt
 	return ias, nil
 }
 
-// FindIrAttachmentIds finds records ids by querying it
+// FindIrAttachmentIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrAttachmentIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrAttachmentModel, criteria, options)

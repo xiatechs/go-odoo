@@ -42,7 +42,7 @@ func (c *Client) UpdateIrModuleModuleDependency(immd *IrModuleModuleDependency) 
 }
 
 // UpdateIrModuleModuleDependencys updates existing ir.module.module.dependency records.
-// All records (represented by ids) will be updated by immd values.
+// All records (represented by IDs) will be updated by immd values.
 func (c *Client) UpdateIrModuleModuleDependencys(ids []int64, immd *IrModuleModuleDependency) error {
 	return c.Update(IrModuleModuleDependencyModel, ids, immd)
 }
@@ -66,7 +66,7 @@ func (c *Client) GetIrModuleModuleDependency(id int64) (*IrModuleModuleDependenc
 	if immds != nil && len(*immds) > 0 {
 		return &((*immds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.module.module.dependency not found", id)
+	return nil, fmt.Errorf("id %V of ir.module.module.dependency not found", id)
 }
 
 // GetIrModuleModuleDependencys gets ir.module.module.dependency existing records.
@@ -100,7 +100,7 @@ func (c *Client) FindIrModuleModuleDependencys(criteria *Criteria, options *Opti
 	return immds, nil
 }
 
-// FindIrModuleModuleDependencyIds finds records ids by querying it
+// FindIrModuleModuleDependencyIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrModuleModuleDependencyIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrModuleModuleDependencyModel, criteria, options)

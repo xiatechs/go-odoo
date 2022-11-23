@@ -38,7 +38,7 @@ func (c *Client) UpdateResUsersApikeysDescription(ruad *ResUsersApikeysDescripti
 }
 
 // UpdateResUsersApikeysDescriptions updates existing res.users.apikeys.description records.
-// All records (represented by ids) will be updated by ruad values.
+// All records (represented by IDs) will be updated by ruad values.
 func (c *Client) UpdateResUsersApikeysDescriptions(ids []int64, ruad *ResUsersApikeysDescription) error {
 	return c.Update(ResUsersApikeysDescriptionModel, ids, ruad)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetResUsersApikeysDescription(id int64) (*ResUsersApikeysDescri
 	if ruads != nil && len(*ruads) > 0 {
 		return &((*ruads)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.users.apikeys.description not found", id)
+	return nil, fmt.Errorf("id %V of res.users.apikeys.description not found", id)
 }
 
 // GetResUsersApikeysDescriptions gets res.users.apikeys.description existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindResUsersApikeysDescriptions(criteria *Criteria, options *Op
 	return ruads, nil
 }
 
-// FindResUsersApikeysDescriptionIds finds records ids by querying it
+// FindResUsersApikeysDescriptionIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResUsersApikeysDescriptionIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResUsersApikeysDescriptionModel, criteria, options)

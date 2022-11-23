@@ -39,7 +39,7 @@ func (c *Client) UpdateUtmMedium(um *UtmMedium) error {
 }
 
 // UpdateUtmMediums updates existing utm.medium records.
-// All records (represented by ids) will be updated by um values.
+// All records (represented by IDs) will be updated by um values.
 func (c *Client) UpdateUtmMediums(ids []int64, um *UtmMedium) error {
 	return c.Update(UtmMediumModel, ids, um)
 }
@@ -63,7 +63,7 @@ func (c *Client) GetUtmMedium(id int64) (*UtmMedium, error) {
 	if ums != nil && len(*ums) > 0 {
 		return &((*ums)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of utm.medium not found", id)
+	return nil, fmt.Errorf("id %V of utm.medium not found", id)
 }
 
 // GetUtmMediums gets utm.medium existing records.
@@ -97,7 +97,7 @@ func (c *Client) FindUtmMediums(criteria *Criteria, options *Options) (*UtmMediu
 	return ums, nil
 }
 
-// FindUtmMediumIds finds records ids by querying it
+// FindUtmMediumIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindUtmMediumIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(UtmMediumModel, criteria, options)

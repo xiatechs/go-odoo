@@ -41,7 +41,7 @@ func (c *Client) UpdateChangePasswordUser(cpu *ChangePasswordUser) error {
 }
 
 // UpdateChangePasswordUsers updates existing change.password.user records.
-// All records (represented by ids) will be updated by cpu values.
+// All records (represented by IDs) will be updated by cpu values.
 func (c *Client) UpdateChangePasswordUsers(ids []int64, cpu *ChangePasswordUser) error {
 	return c.Update(ChangePasswordUserModel, ids, cpu)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetChangePasswordUser(id int64) (*ChangePasswordUser, error) {
 	if cpus != nil && len(*cpus) > 0 {
 		return &((*cpus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of change.password.user not found", id)
+	return nil, fmt.Errorf("id %V of change.password.user not found", id)
 }
 
 // GetChangePasswordUsers gets change.password.user existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindChangePasswordUsers(criteria *Criteria, options *Options) (
 	return cpus, nil
 }
 
-// FindChangePasswordUserIds finds records ids by querying it
+// FindChangePasswordUserIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindChangePasswordUserIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ChangePasswordUserModel, criteria, options)

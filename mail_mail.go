@@ -90,7 +90,7 @@ func (c *Client) UpdateMailMail(mm *MailMail) error {
 }
 
 // UpdateMailMails updates existing mail.mail records.
-// All records (represented by ids) will be updated by mm values.
+// All records (represented by IDs) will be updated by mm values.
 func (c *Client) UpdateMailMails(ids []int64, mm *MailMail) error {
 	return c.Update(MailMailModel, ids, mm)
 }
@@ -114,7 +114,7 @@ func (c *Client) GetMailMail(id int64) (*MailMail, error) {
 	if mms != nil && len(*mms) > 0 {
 		return &((*mms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.mail not found", id)
+	return nil, fmt.Errorf("id %V of mail.mail not found", id)
 }
 
 // GetMailMails gets mail.mail existing records.
@@ -148,7 +148,7 @@ func (c *Client) FindMailMails(criteria *Criteria, options *Options) (*MailMails
 	return mms, nil
 }
 
-// FindMailMailIds finds records ids by querying it
+// FindMailMailIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailMailIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailMailModel, criteria, options)

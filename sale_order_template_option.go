@@ -44,7 +44,7 @@ func (c *Client) UpdateSaleOrderTemplateOption(soto *SaleOrderTemplateOption) er
 }
 
 // UpdateSaleOrderTemplateOptions updates existing sale.order.template.option records.
-// All records (represented by ids) will be updated by soto values.
+// All records (represented by IDs) will be updated by soto values.
 func (c *Client) UpdateSaleOrderTemplateOptions(ids []int64, soto *SaleOrderTemplateOption) error {
 	return c.Update(SaleOrderTemplateOptionModel, ids, soto)
 }
@@ -68,7 +68,7 @@ func (c *Client) GetSaleOrderTemplateOption(id int64) (*SaleOrderTemplateOption,
 	if sotos != nil && len(*sotos) > 0 {
 		return &((*sotos)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sale.order.template.option not found", id)
+	return nil, fmt.Errorf("id %V of sale.order.template.option not found", id)
 }
 
 // GetSaleOrderTemplateOptions gets sale.order.template.option existing records.
@@ -102,7 +102,7 @@ func (c *Client) FindSaleOrderTemplateOptions(criteria *Criteria, options *Optio
 	return sotos, nil
 }
 
-// FindSaleOrderTemplateOptionIds finds records ids by querying it
+// FindSaleOrderTemplateOptionIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSaleOrderTemplateOptionIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SaleOrderTemplateOptionModel, criteria, options)

@@ -33,7 +33,7 @@ func (c *Client) UpdateIrHttp(ih *IrHttp) error {
 }
 
 // UpdateIrHttps updates existing ir.http records.
-// All records (represented by ids) will be updated by ih values.
+// All records (represented by IDs) will be updated by ih values.
 func (c *Client) UpdateIrHttps(ids []int64, ih *IrHttp) error {
 	return c.Update(IrHttpModel, ids, ih)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetIrHttp(id int64) (*IrHttp, error) {
 	if ihs != nil && len(*ihs) > 0 {
 		return &((*ihs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.http not found", id)
+	return nil, fmt.Errorf("id %V of ir.http not found", id)
 }
 
 // GetIrHttps gets ir.http existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindIrHttps(criteria *Criteria, options *Options) (*IrHttps, er
 	return ihs, nil
 }
 
-// FindIrHttpIds finds records ids by querying it
+// FindIrHttpIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrHttpIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrHttpModel, criteria, options)

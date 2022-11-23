@@ -37,7 +37,7 @@ func (c *Client) UpdateAccountUnreconcile(au *AccountUnreconcile) error {
 }
 
 // UpdateAccountUnreconciles updates existing account.unreconcile records.
-// All records (represented by ids) will be updated by au values.
+// All records (represented by IDs) will be updated by au values.
 func (c *Client) UpdateAccountUnreconciles(ids []int64, au *AccountUnreconcile) error {
 	return c.Update(AccountUnreconcileModel, ids, au)
 }
@@ -61,7 +61,7 @@ func (c *Client) GetAccountUnreconcile(id int64) (*AccountUnreconcile, error) {
 	if aus != nil && len(*aus) > 0 {
 		return &((*aus)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.unreconcile not found", id)
+	return nil, fmt.Errorf("id %V of account.unreconcile not found", id)
 }
 
 // GetAccountUnreconciles gets account.unreconcile existing records.
@@ -95,7 +95,7 @@ func (c *Client) FindAccountUnreconciles(criteria *Criteria, options *Options) (
 	return aus, nil
 }
 
-// FindAccountUnreconcileIds finds records ids by querying it
+// FindAccountUnreconcileIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountUnreconcileIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountUnreconcileModel, criteria, options)

@@ -52,7 +52,7 @@ func (c *Client) UpdateMailThreadPhone(mtp *MailThreadPhone) error {
 }
 
 // UpdateMailThreadPhones updates existing mail.thread.phone records.
-// All records (represented by ids) will be updated by mtp values.
+// All records (represented by IDs) will be updated by mtp values.
 func (c *Client) UpdateMailThreadPhones(ids []int64, mtp *MailThreadPhone) error {
 	return c.Update(MailThreadPhoneModel, ids, mtp)
 }
@@ -76,7 +76,7 @@ func (c *Client) GetMailThreadPhone(id int64) (*MailThreadPhone, error) {
 	if mtps != nil && len(*mtps) > 0 {
 		return &((*mtps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.thread.phone not found", id)
+	return nil, fmt.Errorf("id %V of mail.thread.phone not found", id)
 }
 
 // GetMailThreadPhones gets mail.thread.phone existing records.
@@ -110,7 +110,7 @@ func (c *Client) FindMailThreadPhones(criteria *Criteria, options *Options) (*Ma
 	return mtps, nil
 }
 
-// FindMailThreadPhoneIds finds records ids by querying it
+// FindMailThreadPhoneIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailThreadPhoneIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailThreadPhoneModel, criteria, options)

@@ -42,7 +42,7 @@ func (c *Client) UpdateProductTemplateAttributeLine(ptal *ProductTemplateAttribu
 }
 
 // UpdateProductTemplateAttributeLines updates existing product.template.attribute.line records.
-// All records (represented by ids) will be updated by ptal values.
+// All records (represented by IDs) will be updated by ptal values.
 func (c *Client) UpdateProductTemplateAttributeLines(ids []int64, ptal *ProductTemplateAttributeLine) error {
 	return c.Update(ProductTemplateAttributeLineModel, ids, ptal)
 }
@@ -66,7 +66,7 @@ func (c *Client) GetProductTemplateAttributeLine(id int64) (*ProductTemplateAttr
 	if ptals != nil && len(*ptals) > 0 {
 		return &((*ptals)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of product.template.attribute.line not found", id)
+	return nil, fmt.Errorf("id %V of product.template.attribute.line not found", id)
 }
 
 // GetProductTemplateAttributeLines gets product.template.attribute.line existing records.
@@ -100,7 +100,7 @@ func (c *Client) FindProductTemplateAttributeLines(criteria *Criteria, options *
 	return ptals, nil
 }
 
-// FindProductTemplateAttributeLineIds finds records ids by querying it
+// FindProductTemplateAttributeLineIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindProductTemplateAttributeLineIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ProductTemplateAttributeLineModel, criteria, options)

@@ -66,7 +66,7 @@ func (c *Client) UpdateIrModuleModule(imm *IrModuleModule) error {
 }
 
 // UpdateIrModuleModules updates existing ir.module.module records.
-// All records (represented by ids) will be updated by imm values.
+// All records (represented by IDs) will be updated by imm values.
 func (c *Client) UpdateIrModuleModules(ids []int64, imm *IrModuleModule) error {
 	return c.Update(IrModuleModuleModel, ids, imm)
 }
@@ -90,7 +90,7 @@ func (c *Client) GetIrModuleModule(id int64) (*IrModuleModule, error) {
 	if imms != nil && len(*imms) > 0 {
 		return &((*imms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.module.module not found", id)
+	return nil, fmt.Errorf("id %V of ir.module.module not found", id)
 }
 
 // GetIrModuleModules gets ir.module.module existing records.
@@ -124,7 +124,7 @@ func (c *Client) FindIrModuleModules(criteria *Criteria, options *Options) (*IrM
 	return imms, nil
 }
 
-// FindIrModuleModuleIds finds records ids by querying it
+// FindIrModuleModuleIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrModuleModuleIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrModuleModuleModel, criteria, options)

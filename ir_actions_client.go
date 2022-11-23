@@ -50,7 +50,7 @@ func (c *Client) UpdateIrActionsClient(iac *IrActionsClient) error {
 }
 
 // UpdateIrActionsClients updates existing ir.actions.client records.
-// All records (represented by ids) will be updated by iac values.
+// All records (represented by IDs) will be updated by iac values.
 func (c *Client) UpdateIrActionsClients(ids []int64, iac *IrActionsClient) error {
 	return c.Update(IrActionsClientModel, ids, iac)
 }
@@ -74,7 +74,7 @@ func (c *Client) GetIrActionsClient(id int64) (*IrActionsClient, error) {
 	if iacs != nil && len(*iacs) > 0 {
 		return &((*iacs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.actions.client not found", id)
+	return nil, fmt.Errorf("id %V of ir.actions.client not found", id)
 }
 
 // GetIrActionsClients gets ir.actions.client existing records.
@@ -108,7 +108,7 @@ func (c *Client) FindIrActionsClients(criteria *Criteria, options *Options) (*Ir
 	return iacs, nil
 }
 
-// FindIrActionsClientIds finds records ids by querying it
+// FindIrActionsClientIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrActionsClientIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrActionsClientModel, criteria, options)

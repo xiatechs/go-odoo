@@ -144,7 +144,7 @@ func (c *Client) UpdateResCompany(rc *ResCompany) error {
 }
 
 // UpdateResCompanys updates existing res.company records.
-// All records (represented by ids) will be updated by rc values.
+// All records (represented by IDs) will be updated by rc values.
 func (c *Client) UpdateResCompanys(ids []int64, rc *ResCompany) error {
 	return c.Update(ResCompanyModel, ids, rc)
 }
@@ -168,7 +168,7 @@ func (c *Client) GetResCompany(id int64) (*ResCompany, error) {
 	if rcs != nil && len(*rcs) > 0 {
 		return &((*rcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.company not found", id)
+	return nil, fmt.Errorf("id %V of res.company not found", id)
 }
 
 // GetResCompanys gets res.company existing records.
@@ -202,7 +202,7 @@ func (c *Client) FindResCompanys(criteria *Criteria, options *Options) (*ResComp
 	return rcs, nil
 }
 
-// FindResCompanyIds finds records ids by querying it
+// FindResCompanyIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResCompanyIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResCompanyModel, criteria, options)

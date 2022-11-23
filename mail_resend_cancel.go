@@ -39,7 +39,7 @@ func (c *Client) UpdateMailResendCancel(mrc *MailResendCancel) error {
 }
 
 // UpdateMailResendCancels updates existing mail.resend.cancel records.
-// All records (represented by ids) will be updated by mrc values.
+// All records (represented by IDs) will be updated by mrc values.
 func (c *Client) UpdateMailResendCancels(ids []int64, mrc *MailResendCancel) error {
 	return c.Update(MailResendCancelModel, ids, mrc)
 }
@@ -63,7 +63,7 @@ func (c *Client) GetMailResendCancel(id int64) (*MailResendCancel, error) {
 	if mrcs != nil && len(*mrcs) > 0 {
 		return &((*mrcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.resend.cancel not found", id)
+	return nil, fmt.Errorf("id %V of mail.resend.cancel not found", id)
 }
 
 // GetMailResendCancels gets mail.resend.cancel existing records.
@@ -97,7 +97,7 @@ func (c *Client) FindMailResendCancels(criteria *Criteria, options *Options) (*M
 	return mrcs, nil
 }
 
-// FindMailResendCancelIds finds records ids by querying it
+// FindMailResendCancelIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailResendCancelIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailResendCancelModel, criteria, options)

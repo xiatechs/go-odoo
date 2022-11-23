@@ -47,7 +47,7 @@ func (c *Client) UpdateTaxAdjustmentsWizard(taw *TaxAdjustmentsWizard) error {
 }
 
 // UpdateTaxAdjustmentsWizards updates existing tax.adjustments.wizard records.
-// All records (represented by ids) will be updated by taw values.
+// All records (represented by IDs) will be updated by taw values.
 func (c *Client) UpdateTaxAdjustmentsWizards(ids []int64, taw *TaxAdjustmentsWizard) error {
 	return c.Update(TaxAdjustmentsWizardModel, ids, taw)
 }
@@ -71,7 +71,7 @@ func (c *Client) GetTaxAdjustmentsWizard(id int64) (*TaxAdjustmentsWizard, error
 	if taws != nil && len(*taws) > 0 {
 		return &((*taws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of tax.adjustments.wizard not found", id)
+	return nil, fmt.Errorf("id %V of tax.adjustments.wizard not found", id)
 }
 
 // GetTaxAdjustmentsWizards gets tax.adjustments.wizard existing records.
@@ -105,7 +105,7 @@ func (c *Client) FindTaxAdjustmentsWizards(criteria *Criteria, options *Options)
 	return taws, nil
 }
 
-// FindTaxAdjustmentsWizardIds finds records ids by querying it
+// FindTaxAdjustmentsWizardIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindTaxAdjustmentsWizardIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(TaxAdjustmentsWizardModel, criteria, options)

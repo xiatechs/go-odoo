@@ -63,7 +63,7 @@ func (c *Client) UpdateMailComposeMessage(mcm *MailComposeMessage) error {
 }
 
 // UpdateMailComposeMessages updates existing mail.compose.message records.
-// All records (represented by ids) will be updated by mcm values.
+// All records (represented by IDs) will be updated by mcm values.
 func (c *Client) UpdateMailComposeMessages(ids []int64, mcm *MailComposeMessage) error {
 	return c.Update(MailComposeMessageModel, ids, mcm)
 }
@@ -87,7 +87,7 @@ func (c *Client) GetMailComposeMessage(id int64) (*MailComposeMessage, error) {
 	if mcms != nil && len(*mcms) > 0 {
 		return &((*mcms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.compose.message not found", id)
+	return nil, fmt.Errorf("id %V of mail.compose.message not found", id)
 }
 
 // GetMailComposeMessages gets mail.compose.message existing records.
@@ -121,7 +121,7 @@ func (c *Client) FindMailComposeMessages(criteria *Criteria, options *Options) (
 	return mcms, nil
 }
 
-// FindMailComposeMessageIds finds records ids by querying it
+// FindMailComposeMessageIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailComposeMessageIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailComposeMessageModel, criteria, options)

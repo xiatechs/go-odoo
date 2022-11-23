@@ -42,7 +42,7 @@ func (c *Client) UpdateIrSequenceDateRange(isd *IrSequenceDateRange) error {
 }
 
 // UpdateIrSequenceDateRanges updates existing ir.sequence.date_range records.
-// All records (represented by ids) will be updated by isd values.
+// All records (represented by IDs) will be updated by isd values.
 func (c *Client) UpdateIrSequenceDateRanges(ids []int64, isd *IrSequenceDateRange) error {
 	return c.Update(IrSequenceDateRangeModel, ids, isd)
 }
@@ -66,7 +66,7 @@ func (c *Client) GetIrSequenceDateRange(id int64) (*IrSequenceDateRange, error) 
 	if isds != nil && len(*isds) > 0 {
 		return &((*isds)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.sequence.date_range not found", id)
+	return nil, fmt.Errorf("id %V of ir.sequence.date_range not found", id)
 }
 
 // GetIrSequenceDateRanges gets ir.sequence.date_range existing records.
@@ -100,7 +100,7 @@ func (c *Client) FindIrSequenceDateRanges(criteria *Criteria, options *Options) 
 	return isds, nil
 }
 
-// FindIrSequenceDateRangeIds finds records ids by querying it
+// FindIrSequenceDateRangeIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrSequenceDateRangeIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrSequenceDateRangeModel, criteria, options)

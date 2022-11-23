@@ -33,7 +33,7 @@ func (c *Client) UpdateIrAutovacuum(ia *IrAutovacuum) error {
 }
 
 // UpdateIrAutovacuums updates existing ir.autovacuum records.
-// All records (represented by ids) will be updated by ia values.
+// All records (represented by IDs) will be updated by ia values.
 func (c *Client) UpdateIrAutovacuums(ids []int64, ia *IrAutovacuum) error {
 	return c.Update(IrAutovacuumModel, ids, ia)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetIrAutovacuum(id int64) (*IrAutovacuum, error) {
 	if ias != nil && len(*ias) > 0 {
 		return &((*ias)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.autovacuum not found", id)
+	return nil, fmt.Errorf("id %V of ir.autovacuum not found", id)
 }
 
 // GetIrAutovacuums gets ir.autovacuum existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindIrAutovacuums(criteria *Criteria, options *Options) (*IrAut
 	return ias, nil
 }
 
-// FindIrAutovacuumIds finds records ids by querying it
+// FindIrAutovacuumIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrAutovacuumIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrAutovacuumModel, criteria, options)

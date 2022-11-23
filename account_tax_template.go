@@ -55,7 +55,7 @@ func (c *Client) UpdateAccountTaxTemplate(att *AccountTaxTemplate) error {
 }
 
 // UpdateAccountTaxTemplates updates existing account.tax.template records.
-// All records (represented by ids) will be updated by att values.
+// All records (represented by IDs) will be updated by att values.
 func (c *Client) UpdateAccountTaxTemplates(ids []int64, att *AccountTaxTemplate) error {
 	return c.Update(AccountTaxTemplateModel, ids, att)
 }
@@ -79,7 +79,7 @@ func (c *Client) GetAccountTaxTemplate(id int64) (*AccountTaxTemplate, error) {
 	if atts != nil && len(*atts) > 0 {
 		return &((*atts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.tax.template not found", id)
+	return nil, fmt.Errorf("id %V of account.tax.template not found", id)
 }
 
 // GetAccountTaxTemplates gets account.tax.template existing records.
@@ -113,7 +113,7 @@ func (c *Client) FindAccountTaxTemplates(criteria *Criteria, options *Options) (
 	return atts, nil
 }
 
-// FindAccountTaxTemplateIds finds records ids by querying it
+// FindAccountTaxTemplateIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountTaxTemplateIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountTaxTemplateModel, criteria, options)

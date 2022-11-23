@@ -79,7 +79,7 @@ func (c *Client) UpdateSaleOrderLine(sol *SaleOrderLine) error {
 }
 
 // UpdateSaleOrderLines updates existing sale.order.line records.
-// All records (represented by ids) will be updated by sol values.
+// All records (represented by IDs) will be updated by sol values.
 func (c *Client) UpdateSaleOrderLines(ids []int64, sol *SaleOrderLine) error {
 	return c.Update(SaleOrderLineModel, ids, sol)
 }
@@ -103,7 +103,7 @@ func (c *Client) GetSaleOrderLine(id int64) (*SaleOrderLine, error) {
 	if sols != nil && len(*sols) > 0 {
 		return &((*sols)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sale.order.line not found", id)
+	return nil, fmt.Errorf("id %V of sale.order.line not found", id)
 }
 
 // GetSaleOrderLines gets sale.order.line existing records.
@@ -137,7 +137,7 @@ func (c *Client) FindSaleOrderLines(criteria *Criteria, options *Options) (*Sale
 	return sols, nil
 }
 
-// FindSaleOrderLineIds finds records ids by querying it
+// FindSaleOrderLineIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSaleOrderLineIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SaleOrderLineModel, criteria, options)

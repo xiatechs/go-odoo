@@ -45,7 +45,7 @@ func (c *Client) UpdateAccountResequenceWizard(arw *AccountResequenceWizard) err
 }
 
 // UpdateAccountResequenceWizards updates existing account.resequence.wizard records.
-// All records (represented by ids) will be updated by arw values.
+// All records (represented by IDs) will be updated by arw values.
 func (c *Client) UpdateAccountResequenceWizards(ids []int64, arw *AccountResequenceWizard) error {
 	return c.Update(AccountResequenceWizardModel, ids, arw)
 }
@@ -69,7 +69,7 @@ func (c *Client) GetAccountResequenceWizard(id int64) (*AccountResequenceWizard,
 	if arws != nil && len(*arws) > 0 {
 		return &((*arws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.resequence.wizard not found", id)
+	return nil, fmt.Errorf("id %V of account.resequence.wizard not found", id)
 }
 
 // GetAccountResequenceWizards gets account.resequence.wizard existing records.
@@ -103,7 +103,7 @@ func (c *Client) FindAccountResequenceWizards(criteria *Criteria, options *Optio
 	return arws, nil
 }
 
-// FindAccountResequenceWizardIds finds records ids by querying it
+// FindAccountResequenceWizardIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountResequenceWizardIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountResequenceWizardModel, criteria, options)

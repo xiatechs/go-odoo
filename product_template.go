@@ -119,7 +119,7 @@ func (c *Client) UpdateProductTemplate(pt *ProductTemplate) error {
 }
 
 // UpdateProductTemplates updates existing product.template records.
-// All records (represented by ids) will be updated by pt values.
+// All records (represented by IDs) will be updated by pt values.
 func (c *Client) UpdateProductTemplates(ids []int64, pt *ProductTemplate) error {
 	return c.Update(ProductTemplateModel, ids, pt)
 }
@@ -143,7 +143,7 @@ func (c *Client) GetProductTemplate(id int64) (*ProductTemplate, error) {
 	if pts != nil && len(*pts) > 0 {
 		return &((*pts)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of product.template not found", id)
+	return nil, fmt.Errorf("id %V of product.template not found", id)
 }
 
 // GetProductTemplates gets product.template existing records.
@@ -177,7 +177,7 @@ func (c *Client) FindProductTemplates(criteria *Criteria, options *Options) (*Pr
 	return pts, nil
 }
 
-// FindProductTemplateIds finds records ids by querying it
+// FindProductTemplateIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindProductTemplateIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ProductTemplateModel, criteria, options)

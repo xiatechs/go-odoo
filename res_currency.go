@@ -49,7 +49,7 @@ func (c *Client) UpdateResCurrency(rc *ResCurrency) error {
 }
 
 // UpdateResCurrencys updates existing res.currency records.
-// All records (represented by ids) will be updated by rc values.
+// All records (represented by IDs) will be updated by rc values.
 func (c *Client) UpdateResCurrencys(ids []int64, rc *ResCurrency) error {
 	return c.Update(ResCurrencyModel, ids, rc)
 }
@@ -73,7 +73,7 @@ func (c *Client) GetResCurrency(id int64) (*ResCurrency, error) {
 	if rcs != nil && len(*rcs) > 0 {
 		return &((*rcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.currency not found", id)
+	return nil, fmt.Errorf("id %V of res.currency not found", id)
 }
 
 // GetResCurrencys gets res.currency existing records.
@@ -107,7 +107,7 @@ func (c *Client) FindResCurrencys(criteria *Criteria, options *Options) (*ResCur
 	return rcs, nil
 }
 
-// FindResCurrencyIds finds records ids by querying it
+// FindResCurrencyIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResCurrencyIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResCurrencyModel, criteria, options)

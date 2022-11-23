@@ -37,7 +37,7 @@ func (c *Client) UpdateBusPresence(bp *BusPresence) error {
 }
 
 // UpdateBusPresences updates existing bus.presence records.
-// All records (represented by ids) will be updated by bp values.
+// All records (represented by IDs) will be updated by bp values.
 func (c *Client) UpdateBusPresences(ids []int64, bp *BusPresence) error {
 	return c.Update(BusPresenceModel, ids, bp)
 }
@@ -61,7 +61,7 @@ func (c *Client) GetBusPresence(id int64) (*BusPresence, error) {
 	if bps != nil && len(*bps) > 0 {
 		return &((*bps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of bus.presence not found", id)
+	return nil, fmt.Errorf("id %V of bus.presence not found", id)
 }
 
 // GetBusPresences gets bus.presence existing records.
@@ -95,7 +95,7 @@ func (c *Client) FindBusPresences(criteria *Criteria, options *Options) (*BusPre
 	return bps, nil
 }
 
-// FindBusPresenceIds finds records ids by querying it
+// FindBusPresenceIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBusPresenceIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BusPresenceModel, criteria, options)

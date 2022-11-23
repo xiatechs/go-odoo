@@ -56,7 +56,7 @@ func (c *Client) UpdateAccountAnalyticLine(aal *AccountAnalyticLine) error {
 }
 
 // UpdateAccountAnalyticLines updates existing account.analytic.line records.
-// All records (represented by ids) will be updated by aal values.
+// All records (represented by IDs) will be updated by aal values.
 func (c *Client) UpdateAccountAnalyticLines(ids []int64, aal *AccountAnalyticLine) error {
 	return c.Update(AccountAnalyticLineModel, ids, aal)
 }
@@ -80,7 +80,7 @@ func (c *Client) GetAccountAnalyticLine(id int64) (*AccountAnalyticLine, error) 
 	if aals != nil && len(*aals) > 0 {
 		return &((*aals)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.analytic.line not found", id)
+	return nil, fmt.Errorf("id %V of account.analytic.line not found", id)
 }
 
 // GetAccountAnalyticLines gets account.analytic.line existing records.
@@ -114,7 +114,7 @@ func (c *Client) FindAccountAnalyticLines(criteria *Criteria, options *Options) 
 	return aals, nil
 }
 
-// FindAccountAnalyticLineIds finds records ids by querying it
+// FindAccountAnalyticLineIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountAnalyticLineIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountAnalyticLineModel, criteria, options)

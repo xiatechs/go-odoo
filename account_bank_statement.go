@@ -79,7 +79,7 @@ func (c *Client) UpdateAccountBankStatement(abs *AccountBankStatement) error {
 }
 
 // UpdateAccountBankStatements updates existing account.bank.statement records.
-// All records (represented by ids) will be updated by abs values.
+// All records (represented by IDs) will be updated by abs values.
 func (c *Client) UpdateAccountBankStatements(ids []int64, abs *AccountBankStatement) error {
 	return c.Update(AccountBankStatementModel, ids, abs)
 }
@@ -103,7 +103,7 @@ func (c *Client) GetAccountBankStatement(id int64) (*AccountBankStatement, error
 	if abss != nil && len(*abss) > 0 {
 		return &((*abss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.bank.statement not found", id)
+	return nil, fmt.Errorf("id %V of account.bank.statement not found", id)
 }
 
 // GetAccountBankStatements gets account.bank.statement existing records.
@@ -137,7 +137,7 @@ func (c *Client) FindAccountBankStatements(criteria *Criteria, options *Options)
 	return abss, nil
 }
 
-// FindAccountBankStatementIds finds records ids by querying it
+// FindAccountBankStatementIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountBankStatementIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountBankStatementModel, criteria, options)

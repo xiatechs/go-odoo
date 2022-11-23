@@ -40,7 +40,7 @@ func (c *Client) UpdateBaseImportMapping(bm *BaseImportMapping) error {
 }
 
 // UpdateBaseImportMappings updates existing base_import.mapping records.
-// All records (represented by ids) will be updated by bm values.
+// All records (represented by IDs) will be updated by bm values.
 func (c *Client) UpdateBaseImportMappings(ids []int64, bm *BaseImportMapping) error {
 	return c.Update(BaseImportMappingModel, ids, bm)
 }
@@ -64,7 +64,7 @@ func (c *Client) GetBaseImportMapping(id int64) (*BaseImportMapping, error) {
 	if bms != nil && len(*bms) > 0 {
 		return &((*bms)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of base_import.mapping not found", id)
+	return nil, fmt.Errorf("id %V of base_import.mapping not found", id)
 }
 
 // GetBaseImportMappings gets base_import.mapping existing records.
@@ -98,7 +98,7 @@ func (c *Client) FindBaseImportMappings(criteria *Criteria, options *Options) (*
 	return bms, nil
 }
 
-// FindBaseImportMappingIds finds records ids by querying it
+// FindBaseImportMappingIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBaseImportMappingIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BaseImportMappingModel, criteria, options)

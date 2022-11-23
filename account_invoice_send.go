@@ -75,7 +75,7 @@ func (c *Client) UpdateAccountInvoiceSend(ais *AccountInvoiceSend) error {
 }
 
 // UpdateAccountInvoiceSends updates existing account.invoice.send records.
-// All records (represented by ids) will be updated by ais values.
+// All records (represented by IDs) will be updated by ais values.
 func (c *Client) UpdateAccountInvoiceSends(ids []int64, ais *AccountInvoiceSend) error {
 	return c.Update(AccountInvoiceSendModel, ids, ais)
 }
@@ -99,7 +99,7 @@ func (c *Client) GetAccountInvoiceSend(id int64) (*AccountInvoiceSend, error) {
 	if aiss != nil && len(*aiss) > 0 {
 		return &((*aiss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.invoice.send not found", id)
+	return nil, fmt.Errorf("id %V of account.invoice.send not found", id)
 }
 
 // GetAccountInvoiceSends gets account.invoice.send existing records.
@@ -133,7 +133,7 @@ func (c *Client) FindAccountInvoiceSends(criteria *Criteria, options *Options) (
 	return aiss, nil
 }
 
-// FindAccountInvoiceSendIds finds records ids by querying it
+// FindAccountInvoiceSendIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountInvoiceSendIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountInvoiceSendModel, criteria, options)

@@ -45,7 +45,7 @@ func (c *Client) UpdateResourceResource(rr *ResourceResource) error {
 }
 
 // UpdateResourceResources updates existing resource.resource records.
-// All records (represented by ids) will be updated by rr values.
+// All records (represented by IDs) will be updated by rr values.
 func (c *Client) UpdateResourceResources(ids []int64, rr *ResourceResource) error {
 	return c.Update(ResourceResourceModel, ids, rr)
 }
@@ -69,7 +69,7 @@ func (c *Client) GetResourceResource(id int64) (*ResourceResource, error) {
 	if rrs != nil && len(*rrs) > 0 {
 		return &((*rrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of resource.resource not found", id)
+	return nil, fmt.Errorf("id %V of resource.resource not found", id)
 }
 
 // GetResourceResources gets resource.resource existing records.
@@ -103,7 +103,7 @@ func (c *Client) FindResourceResources(criteria *Criteria, options *Options) (*R
 	return rrs, nil
 }
 
-// FindResourceResourceIds finds records ids by querying it
+// FindResourceResourceIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResourceResourceIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResourceResourceModel, criteria, options)

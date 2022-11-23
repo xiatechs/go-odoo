@@ -42,7 +42,7 @@ func (c *Client) UpdateBaseLanguageImport(bli *BaseLanguageImport) error {
 }
 
 // UpdateBaseLanguageImports updates existing base.language.import records.
-// All records (represented by ids) will be updated by bli values.
+// All records (represented by IDs) will be updated by bli values.
 func (c *Client) UpdateBaseLanguageImports(ids []int64, bli *BaseLanguageImport) error {
 	return c.Update(BaseLanguageImportModel, ids, bli)
 }
@@ -66,7 +66,7 @@ func (c *Client) GetBaseLanguageImport(id int64) (*BaseLanguageImport, error) {
 	if blis != nil && len(*blis) > 0 {
 		return &((*blis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of base.language.import not found", id)
+	return nil, fmt.Errorf("id %V of base.language.import not found", id)
 }
 
 // GetBaseLanguageImports gets base.language.import existing records.
@@ -100,7 +100,7 @@ func (c *Client) FindBaseLanguageImports(criteria *Criteria, options *Options) (
 	return blis, nil
 }
 
-// FindBaseLanguageImportIds finds records ids by querying it
+// FindBaseLanguageImportIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBaseLanguageImportIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BaseLanguageImportModel, criteria, options)

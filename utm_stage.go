@@ -39,7 +39,7 @@ func (c *Client) UpdateUtmStage(us *UtmStage) error {
 }
 
 // UpdateUtmStages updates existing utm.stage records.
-// All records (represented by ids) will be updated by us values.
+// All records (represented by IDs) will be updated by us values.
 func (c *Client) UpdateUtmStages(ids []int64, us *UtmStage) error {
 	return c.Update(UtmStageModel, ids, us)
 }
@@ -63,7 +63,7 @@ func (c *Client) GetUtmStage(id int64) (*UtmStage, error) {
 	if uss != nil && len(*uss) > 0 {
 		return &((*uss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of utm.stage not found", id)
+	return nil, fmt.Errorf("id %V of utm.stage not found", id)
 }
 
 // GetUtmStages gets utm.stage existing records.
@@ -97,7 +97,7 @@ func (c *Client) FindUtmStages(criteria *Criteria, options *Options) (*UtmStages
 	return uss, nil
 }
 
-// FindUtmStageIds finds records ids by querying it
+// FindUtmStageIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindUtmStageIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(UtmStageModel, criteria, options)

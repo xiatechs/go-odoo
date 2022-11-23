@@ -40,7 +40,7 @@ func (c *Client) UpdateResCountryState(rcs *ResCountryState) error {
 }
 
 // UpdateResCountryStates updates existing res.country.state records.
-// All records (represented by ids) will be updated by rcs values.
+// All records (represented by IDs) will be updated by rcs values.
 func (c *Client) UpdateResCountryStates(ids []int64, rcs *ResCountryState) error {
 	return c.Update(ResCountryStateModel, ids, rcs)
 }
@@ -64,7 +64,7 @@ func (c *Client) GetResCountryState(id int64) (*ResCountryState, error) {
 	if rcss != nil && len(*rcss) > 0 {
 		return &((*rcss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.country.state not found", id)
+	return nil, fmt.Errorf("id %V of res.country.state not found", id)
 }
 
 // GetResCountryStates gets res.country.state existing records.
@@ -98,7 +98,7 @@ func (c *Client) FindResCountryStates(criteria *Criteria, options *Options) (*Re
 	return rcss, nil
 }
 
-// FindResCountryStateIds finds records ids by querying it
+// FindResCountryStateIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResCountryStateIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResCountryStateModel, criteria, options)

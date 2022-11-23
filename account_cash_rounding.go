@@ -44,7 +44,7 @@ func (c *Client) UpdateAccountCashRounding(acr *AccountCashRounding) error {
 }
 
 // UpdateAccountCashRoundings updates existing account.cash.rounding records.
-// All records (represented by ids) will be updated by acr values.
+// All records (represented by IDs) will be updated by acr values.
 func (c *Client) UpdateAccountCashRoundings(ids []int64, acr *AccountCashRounding) error {
 	return c.Update(AccountCashRoundingModel, ids, acr)
 }
@@ -68,7 +68,7 @@ func (c *Client) GetAccountCashRounding(id int64) (*AccountCashRounding, error) 
 	if acrs != nil && len(*acrs) > 0 {
 		return &((*acrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.cash.rounding not found", id)
+	return nil, fmt.Errorf("id %V of account.cash.rounding not found", id)
 }
 
 // GetAccountCashRoundings gets account.cash.rounding existing records.
@@ -102,7 +102,7 @@ func (c *Client) FindAccountCashRoundings(criteria *Criteria, options *Options) 
 	return acrs, nil
 }
 
-// FindAccountCashRoundingIds finds records ids by querying it
+// FindAccountCashRoundingIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountCashRoundingIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountCashRoundingModel, criteria, options)

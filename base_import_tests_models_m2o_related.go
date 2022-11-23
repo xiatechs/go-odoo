@@ -38,7 +38,7 @@ func (c *Client) UpdateBaseImportTestsModelsM2ORelated(btmmr *BaseImportTestsMod
 }
 
 // UpdateBaseImportTestsModelsM2ORelateds updates existing base_import.tests.models.m2o.related records.
-// All records (represented by ids) will be updated by btmmr values.
+// All records (represented by IDs) will be updated by btmmr values.
 func (c *Client) UpdateBaseImportTestsModelsM2ORelateds(ids []int64, btmmr *BaseImportTestsModelsM2ORelated) error {
 	return c.Update(BaseImportTestsModelsM2ORelatedModel, ids, btmmr)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetBaseImportTestsModelsM2ORelated(id int64) (*BaseImportTestsM
 	if btmmrs != nil && len(*btmmrs) > 0 {
 		return &((*btmmrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of base_import.tests.models.m2o.related not found", id)
+	return nil, fmt.Errorf("id %V of base_import.tests.models.m2o.related not found", id)
 }
 
 // GetBaseImportTestsModelsM2ORelateds gets base_import.tests.models.m2o.related existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindBaseImportTestsModelsM2ORelateds(criteria *Criteria, option
 	return btmmrs, nil
 }
 
-// FindBaseImportTestsModelsM2ORelatedIds finds records ids by querying it
+// FindBaseImportTestsModelsM2ORelatedIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindBaseImportTestsModelsM2ORelatedIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(BaseImportTestsModelsM2ORelatedModel, criteria, options)

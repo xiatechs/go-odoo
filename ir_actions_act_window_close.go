@@ -44,7 +44,7 @@ func (c *Client) UpdateIrActionsActWindowClose(iaa *IrActionsActWindowClose) err
 }
 
 // UpdateIrActionsActWindowCloses updates existing ir.actions.act_window_close records.
-// All records (represented by ids) will be updated by iaa values.
+// All records (represented by IDs) will be updated by iaa values.
 func (c *Client) UpdateIrActionsActWindowCloses(ids []int64, iaa *IrActionsActWindowClose) error {
 	return c.Update(IrActionsActWindowCloseModel, ids, iaa)
 }
@@ -68,7 +68,7 @@ func (c *Client) GetIrActionsActWindowClose(id int64) (*IrActionsActWindowClose,
 	if iaas != nil && len(*iaas) > 0 {
 		return &((*iaas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.actions.act_window_close not found", id)
+	return nil, fmt.Errorf("id %V of ir.actions.act_window_close not found", id)
 }
 
 // GetIrActionsActWindowCloses gets ir.actions.act_window_close existing records.
@@ -102,7 +102,7 @@ func (c *Client) FindIrActionsActWindowCloses(criteria *Criteria, options *Optio
 	return iaas, nil
 }
 
-// FindIrActionsActWindowCloseIds finds records ids by querying it
+// FindIrActionsActWindowCloseIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrActionsActWindowCloseIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrActionsActWindowCloseModel, criteria, options)

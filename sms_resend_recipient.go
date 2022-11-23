@@ -44,7 +44,7 @@ func (c *Client) UpdateSmsResendRecipient(srr *SmsResendRecipient) error {
 }
 
 // UpdateSmsResendRecipients updates existing sms.resend.recipient records.
-// All records (represented by ids) will be updated by srr values.
+// All records (represented by IDs) will be updated by srr values.
 func (c *Client) UpdateSmsResendRecipients(ids []int64, srr *SmsResendRecipient) error {
 	return c.Update(SmsResendRecipientModel, ids, srr)
 }
@@ -68,7 +68,7 @@ func (c *Client) GetSmsResendRecipient(id int64) (*SmsResendRecipient, error) {
 	if srrs != nil && len(*srrs) > 0 {
 		return &((*srrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of sms.resend.recipient not found", id)
+	return nil, fmt.Errorf("id %V of sms.resend.recipient not found", id)
 }
 
 // GetSmsResendRecipients gets sms.resend.recipient existing records.
@@ -102,7 +102,7 @@ func (c *Client) FindSmsResendRecipients(criteria *Criteria, options *Options) (
 	return srrs, nil
 }
 
-// FindSmsResendRecipientIds finds records ids by querying it
+// FindSmsResendRecipientIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSmsResendRecipientIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SmsResendRecipientModel, criteria, options)

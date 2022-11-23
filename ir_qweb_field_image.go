@@ -33,7 +33,7 @@ func (c *Client) UpdateIrQwebFieldImage(iqfi *IrQwebFieldImage) error {
 }
 
 // UpdateIrQwebFieldImages updates existing ir.qweb.field.image records.
-// All records (represented by ids) will be updated by iqfi values.
+// All records (represented by IDs) will be updated by iqfi values.
 func (c *Client) UpdateIrQwebFieldImages(ids []int64, iqfi *IrQwebFieldImage) error {
 	return c.Update(IrQwebFieldImageModel, ids, iqfi)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetIrQwebFieldImage(id int64) (*IrQwebFieldImage, error) {
 	if iqfis != nil && len(*iqfis) > 0 {
 		return &((*iqfis)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.qweb.field.image not found", id)
+	return nil, fmt.Errorf("id %V of ir.qweb.field.image not found", id)
 }
 
 // GetIrQwebFieldImages gets ir.qweb.field.image existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindIrQwebFieldImages(criteria *Criteria, options *Options) (*I
 	return iqfis, nil
 }
 
-// FindIrQwebFieldImageIds finds records ids by querying it
+// FindIrQwebFieldImageIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrQwebFieldImageIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrQwebFieldImageModel, criteria, options)

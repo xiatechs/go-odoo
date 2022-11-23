@@ -175,7 +175,7 @@ func (c *Client) UpdateAccountPayment(ap *AccountPayment) error {
 }
 
 // UpdateAccountPayments updates existing account.payment records.
-// All records (represented by ids) will be updated by ap values.
+// All records (represented by IDs) will be updated by ap values.
 func (c *Client) UpdateAccountPayments(ids []int64, ap *AccountPayment) error {
 	return c.Update(AccountPaymentModel, ids, ap)
 }
@@ -199,7 +199,7 @@ func (c *Client) GetAccountPayment(id int64) (*AccountPayment, error) {
 	if aps != nil && len(*aps) > 0 {
 		return &((*aps)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.payment not found", id)
+	return nil, fmt.Errorf("id %V of account.payment not found", id)
 }
 
 // GetAccountPayments gets account.payment existing records.
@@ -233,7 +233,7 @@ func (c *Client) FindAccountPayments(criteria *Criteria, options *Options) (*Acc
 	return aps, nil
 }
 
-// FindAccountPaymentIds finds records ids by querying it
+// FindAccountPaymentIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountPaymentIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountPaymentModel, criteria, options)

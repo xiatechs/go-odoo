@@ -68,7 +68,7 @@ func (c *Client) UpdateAccountPaymentRegister(apr *AccountPaymentRegister) error
 }
 
 // UpdateAccountPaymentRegisters updates existing account.payment.register records.
-// All records (represented by ids) will be updated by apr values.
+// All records (represented by IDs) will be updated by apr values.
 func (c *Client) UpdateAccountPaymentRegisters(ids []int64, apr *AccountPaymentRegister) error {
 	return c.Update(AccountPaymentRegisterModel, ids, apr)
 }
@@ -92,7 +92,7 @@ func (c *Client) GetAccountPaymentRegister(id int64) (*AccountPaymentRegister, e
 	if aprs != nil && len(*aprs) > 0 {
 		return &((*aprs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.payment.register not found", id)
+	return nil, fmt.Errorf("id %V of account.payment.register not found", id)
 }
 
 // GetAccountPaymentRegisters gets account.payment.register existing records.
@@ -126,7 +126,7 @@ func (c *Client) FindAccountPaymentRegisters(criteria *Criteria, options *Option
 	return aprs, nil
 }
 
-// FindAccountPaymentRegisterIds finds records ids by querying it
+// FindAccountPaymentRegisterIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountPaymentRegisterIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountPaymentRegisterModel, criteria, options)

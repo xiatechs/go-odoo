@@ -39,7 +39,7 @@ func (c *Client) UpdatePortalWizard(pw *PortalWizard) error {
 }
 
 // UpdatePortalWizards updates existing portal.wizard records.
-// All records (represented by ids) will be updated by pw values.
+// All records (represented by IDs) will be updated by pw values.
 func (c *Client) UpdatePortalWizards(ids []int64, pw *PortalWizard) error {
 	return c.Update(PortalWizardModel, ids, pw)
 }
@@ -63,7 +63,7 @@ func (c *Client) GetPortalWizard(id int64) (*PortalWizard, error) {
 	if pws != nil && len(*pws) > 0 {
 		return &((*pws)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of portal.wizard not found", id)
+	return nil, fmt.Errorf("id %V of portal.wizard not found", id)
 }
 
 // GetPortalWizards gets portal.wizard existing records.
@@ -97,7 +97,7 @@ func (c *Client) FindPortalWizards(criteria *Criteria, options *Options) (*Porta
 	return pws, nil
 }
 
-// FindPortalWizardIds finds records ids by querying it
+// FindPortalWizardIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindPortalWizardIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(PortalWizardModel, criteria, options)

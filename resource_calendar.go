@@ -47,7 +47,7 @@ func (c *Client) UpdateResourceCalendar(rc *ResourceCalendar) error {
 }
 
 // UpdateResourceCalendars updates existing resource.calendar records.
-// All records (represented by ids) will be updated by rc values.
+// All records (represented by IDs) will be updated by rc values.
 func (c *Client) UpdateResourceCalendars(ids []int64, rc *ResourceCalendar) error {
 	return c.Update(ResourceCalendarModel, ids, rc)
 }
@@ -71,7 +71,7 @@ func (c *Client) GetResourceCalendar(id int64) (*ResourceCalendar, error) {
 	if rcs != nil && len(*rcs) > 0 {
 		return &((*rcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of resource.calendar not found", id)
+	return nil, fmt.Errorf("id %V of resource.calendar not found", id)
 }
 
 // GetResourceCalendars gets resource.calendar existing records.
@@ -105,7 +105,7 @@ func (c *Client) FindResourceCalendars(criteria *Criteria, options *Options) (*R
 	return rcs, nil
 }
 
-// FindResourceCalendarIds finds records ids by querying it
+// FindResourceCalendarIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResourceCalendarIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResourceCalendarModel, criteria, options)

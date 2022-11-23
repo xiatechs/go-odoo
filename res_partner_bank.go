@@ -51,7 +51,7 @@ func (c *Client) UpdateResPartnerBank(rpb *ResPartnerBank) error {
 }
 
 // UpdateResPartnerBanks updates existing res.partner.bank records.
-// All records (represented by ids) will be updated by rpb values.
+// All records (represented by IDs) will be updated by rpb values.
 func (c *Client) UpdateResPartnerBanks(ids []int64, rpb *ResPartnerBank) error {
 	return c.Update(ResPartnerBankModel, ids, rpb)
 }
@@ -75,7 +75,7 @@ func (c *Client) GetResPartnerBank(id int64) (*ResPartnerBank, error) {
 	if rpbs != nil && len(*rpbs) > 0 {
 		return &((*rpbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of res.partner.bank not found", id)
+	return nil, fmt.Errorf("id %V of res.partner.bank not found", id)
 }
 
 // GetResPartnerBanks gets res.partner.bank existing records.
@@ -109,7 +109,7 @@ func (c *Client) FindResPartnerBanks(criteria *Criteria, options *Options) (*Res
 	return rpbs, nil
 }
 
-// FindResPartnerBankIds finds records ids by querying it
+// FindResPartnerBankIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindResPartnerBankIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(ResPartnerBankModel, criteria, options)

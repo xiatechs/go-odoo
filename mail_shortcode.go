@@ -41,7 +41,7 @@ func (c *Client) UpdateMailShortcode(ms *MailShortcode) error {
 }
 
 // UpdateMailShortcodes updates existing mail.shortcode records.
-// All records (represented by ids) will be updated by ms values.
+// All records (represented by IDs) will be updated by ms values.
 func (c *Client) UpdateMailShortcodes(ids []int64, ms *MailShortcode) error {
 	return c.Update(MailShortcodeModel, ids, ms)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetMailShortcode(id int64) (*MailShortcode, error) {
 	if mss != nil && len(*mss) > 0 {
 		return &((*mss)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.shortcode not found", id)
+	return nil, fmt.Errorf("id %V of mail.shortcode not found", id)
 }
 
 // GetMailShortcodes gets mail.shortcode existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindMailShortcodes(criteria *Criteria, options *Options) (*Mail
 	return mss, nil
 }
 
-// FindMailShortcodeIds finds records ids by querying it
+// FindMailShortcodeIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailShortcodeIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailShortcodeModel, criteria, options)

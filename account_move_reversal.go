@@ -48,7 +48,7 @@ func (c *Client) UpdateAccountMoveReversal(amr *AccountMoveReversal) error {
 }
 
 // UpdateAccountMoveReversals updates existing account.move.reversal records.
-// All records (represented by ids) will be updated by amr values.
+// All records (represented by IDs) will be updated by amr values.
 func (c *Client) UpdateAccountMoveReversals(ids []int64, amr *AccountMoveReversal) error {
 	return c.Update(AccountMoveReversalModel, ids, amr)
 }
@@ -72,7 +72,7 @@ func (c *Client) GetAccountMoveReversal(id int64) (*AccountMoveReversal, error) 
 	if amrs != nil && len(*amrs) > 0 {
 		return &((*amrs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.move.reversal not found", id)
+	return nil, fmt.Errorf("id %V of account.move.reversal not found", id)
 }
 
 // GetAccountMoveReversals gets account.move.reversal existing records.
@@ -106,7 +106,7 @@ func (c *Client) FindAccountMoveReversals(criteria *Criteria, options *Options) 
 	return amrs, nil
 }
 
-// FindAccountMoveReversalIds finds records ids by querying it
+// FindAccountMoveReversalIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountMoveReversalIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountMoveReversalModel, criteria, options)

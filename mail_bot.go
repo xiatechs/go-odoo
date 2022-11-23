@@ -33,7 +33,7 @@ func (c *Client) UpdateMailBot(mb *MailBot) error {
 }
 
 // UpdateMailBots updates existing mail.bot records.
-// All records (represented by ids) will be updated by mb values.
+// All records (represented by IDs) will be updated by mb values.
 func (c *Client) UpdateMailBots(ids []int64, mb *MailBot) error {
 	return c.Update(MailBotModel, ids, mb)
 }
@@ -57,7 +57,7 @@ func (c *Client) GetMailBot(id int64) (*MailBot, error) {
 	if mbs != nil && len(*mbs) > 0 {
 		return &((*mbs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of mail.bot not found", id)
+	return nil, fmt.Errorf("id %V of mail.bot not found", id)
 }
 
 // GetMailBots gets mail.bot existing records.
@@ -91,7 +91,7 @@ func (c *Client) FindMailBots(criteria *Criteria, options *Options) (*MailBots, 
 	return mbs, nil
 }
 
-// FindMailBotIds finds records ids by querying it
+// FindMailBotIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindMailBotIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(MailBotModel, criteria, options)

@@ -39,7 +39,7 @@ func (c *Client) UpdateSnailmailLetterCancel(slc *SnailmailLetterCancel) error {
 }
 
 // UpdateSnailmailLetterCancels updates existing snailmail.letter.cancel records.
-// All records (represented by ids) will be updated by slc values.
+// All records (represented by IDs) will be updated by slc values.
 func (c *Client) UpdateSnailmailLetterCancels(ids []int64, slc *SnailmailLetterCancel) error {
 	return c.Update(SnailmailLetterCancelModel, ids, slc)
 }
@@ -63,7 +63,7 @@ func (c *Client) GetSnailmailLetterCancel(id int64) (*SnailmailLetterCancel, err
 	if slcs != nil && len(*slcs) > 0 {
 		return &((*slcs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of snailmail.letter.cancel not found", id)
+	return nil, fmt.Errorf("id %V of snailmail.letter.cancel not found", id)
 }
 
 // GetSnailmailLetterCancels gets snailmail.letter.cancel existing records.
@@ -97,7 +97,7 @@ func (c *Client) FindSnailmailLetterCancels(criteria *Criteria, options *Options
 	return slcs, nil
 }
 
-// FindSnailmailLetterCancelIds finds records ids by querying it
+// FindSnailmailLetterCancelIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindSnailmailLetterCancelIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(SnailmailLetterCancelModel, criteria, options)

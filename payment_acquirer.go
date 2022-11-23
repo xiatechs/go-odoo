@@ -74,7 +74,7 @@ func (c *Client) UpdatePaymentAcquirer(pa *PaymentAcquirer) error {
 }
 
 // UpdatePaymentAcquirers updates existing payment.acquirer records.
-// All records (represented by ids) will be updated by pa values.
+// All records (represented by IDs) will be updated by pa values.
 func (c *Client) UpdatePaymentAcquirers(ids []int64, pa *PaymentAcquirer) error {
 	return c.Update(PaymentAcquirerModel, ids, pa)
 }
@@ -98,7 +98,7 @@ func (c *Client) GetPaymentAcquirer(id int64) (*PaymentAcquirer, error) {
 	if pas != nil && len(*pas) > 0 {
 		return &((*pas)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of payment.acquirer not found", id)
+	return nil, fmt.Errorf("id %V of payment.acquirer not found", id)
 }
 
 // GetPaymentAcquirers gets payment.acquirer existing records.
@@ -132,7 +132,7 @@ func (c *Client) FindPaymentAcquirers(criteria *Criteria, options *Options) (*Pa
 	return pas, nil
 }
 
-// FindPaymentAcquirerIds finds records ids by querying it
+// FindPaymentAcquirerIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindPaymentAcquirerIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(PaymentAcquirerModel, criteria, options)

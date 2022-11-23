@@ -42,7 +42,7 @@ func (c *Client) UpdateAccountAccountType(aat *AccountAccountType) error {
 }
 
 // UpdateAccountAccountTypes updates existing account.account.type records.
-// All records (represented by ids) will be updated by aat values.
+// All records (represented by IDs) will be updated by aat values.
 func (c *Client) UpdateAccountAccountTypes(ids []int64, aat *AccountAccountType) error {
 	return c.Update(AccountAccountTypeModel, ids, aat)
 }
@@ -66,7 +66,7 @@ func (c *Client) GetAccountAccountType(id int64) (*AccountAccountType, error) {
 	if aats != nil && len(*aats) > 0 {
 		return &((*aats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.account.type not found", id)
+	return nil, fmt.Errorf("id %V of account.account.type not found", id)
 }
 
 // GetAccountAccountTypes gets account.account.type existing records.
@@ -100,7 +100,7 @@ func (c *Client) FindAccountAccountTypes(criteria *Criteria, options *Options) (
 	return aats, nil
 }
 
-// FindAccountAccountTypeIds finds records ids by querying it
+// FindAccountAccountTypeIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountAccountTypeIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountAccountTypeModel, criteria, options)

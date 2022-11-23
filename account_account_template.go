@@ -47,7 +47,7 @@ func (c *Client) UpdateAccountAccountTemplate(aat *AccountAccountTemplate) error
 }
 
 // UpdateAccountAccountTemplates updates existing account.account.template records.
-// All records (represented by ids) will be updated by aat values.
+// All records (represented by IDs) will be updated by aat values.
 func (c *Client) UpdateAccountAccountTemplates(ids []int64, aat *AccountAccountTemplate) error {
 	return c.Update(AccountAccountTemplateModel, ids, aat)
 }
@@ -71,7 +71,7 @@ func (c *Client) GetAccountAccountTemplate(id int64) (*AccountAccountTemplate, e
 	if aats != nil && len(*aats) > 0 {
 		return &((*aats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.account.template not found", id)
+	return nil, fmt.Errorf("id %V of account.account.template not found", id)
 }
 
 // GetAccountAccountTemplates gets account.account.template existing records.
@@ -105,7 +105,7 @@ func (c *Client) FindAccountAccountTemplates(criteria *Criteria, options *Option
 	return aats, nil
 }
 
-// FindAccountAccountTemplateIds finds records ids by querying it
+// FindAccountAccountTemplateIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountAccountTemplateIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountAccountTemplateModel, criteria, options)

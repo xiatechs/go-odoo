@@ -36,7 +36,7 @@ func (c *Client) UpdateAccountRoot(ar *AccountRoot) error {
 }
 
 // UpdateAccountRoots updates existing account.root records.
-// All records (represented by ids) will be updated by ar values.
+// All records (represented by IDs) will be updated by ar values.
 func (c *Client) UpdateAccountRoots(ids []int64, ar *AccountRoot) error {
 	return c.Update(AccountRootModel, ids, ar)
 }
@@ -60,7 +60,7 @@ func (c *Client) GetAccountRoot(id int64) (*AccountRoot, error) {
 	if ars != nil && len(*ars) > 0 {
 		return &((*ars)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of account.root not found", id)
+	return nil, fmt.Errorf("id %V of account.root not found", id)
 }
 
 // GetAccountRoots gets account.root existing records.
@@ -94,7 +94,7 @@ func (c *Client) FindAccountRoots(criteria *Criteria, options *Options) (*Accoun
 	return ars, nil
 }
 
-// FindAccountRootIds finds records ids by querying it
+// FindAccountRootIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindAccountRootIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(AccountRootModel, criteria, options)

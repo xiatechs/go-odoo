@@ -38,7 +38,7 @@ func (c *Client) UpdateUomCategory(uc *UomCategory) error {
 }
 
 // UpdateUomCategorys updates existing uom.category records.
-// All records (represented by ids) will be updated by uc values.
+// All records (represented by IDs) will be updated by uc values.
 func (c *Client) UpdateUomCategorys(ids []int64, uc *UomCategory) error {
 	return c.Update(UomCategoryModel, ids, uc)
 }
@@ -62,7 +62,7 @@ func (c *Client) GetUomCategory(id int64) (*UomCategory, error) {
 	if ucs != nil && len(*ucs) > 0 {
 		return &((*ucs)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of uom.category not found", id)
+	return nil, fmt.Errorf("id %V of uom.category not found", id)
 }
 
 // GetUomCategorys gets uom.category existing records.
@@ -96,7 +96,7 @@ func (c *Client) FindUomCategorys(criteria *Criteria, options *Options) (*UomCat
 	return ucs, nil
 }
 
-// FindUomCategoryIds finds records ids by querying it
+// FindUomCategoryIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindUomCategoryIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(UomCategoryModel, criteria, options)

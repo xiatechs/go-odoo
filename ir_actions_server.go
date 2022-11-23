@@ -69,7 +69,7 @@ func (c *Client) UpdateIrActionsServer(ias *IrActionsServer) error {
 }
 
 // UpdateIrActionsServers updates existing ir.actions.server records.
-// All records (represented by ids) will be updated by ias values.
+// All records (represented by IDs) will be updated by ias values.
 func (c *Client) UpdateIrActionsServers(ids []int64, ias *IrActionsServer) error {
 	return c.Update(IrActionsServerModel, ids, ias)
 }
@@ -93,7 +93,7 @@ func (c *Client) GetIrActionsServer(id int64) (*IrActionsServer, error) {
 	if iass != nil && len(*iass) > 0 {
 		return &((*iass)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.actions.server not found", id)
+	return nil, fmt.Errorf("id %V of ir.actions.server not found", id)
 }
 
 // GetIrActionsServers gets ir.actions.server existing records.
@@ -127,7 +127,7 @@ func (c *Client) FindIrActionsServers(criteria *Criteria, options *Options) (*Ir
 	return iass, nil
 }
 
-// FindIrActionsServerIds finds records ids by querying it
+// FindIrActionsServerIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrActionsServerIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrActionsServerModel, criteria, options)

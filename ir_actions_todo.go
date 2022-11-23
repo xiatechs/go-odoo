@@ -41,7 +41,7 @@ func (c *Client) UpdateIrActionsTodo(iat *IrActionsTodo) error {
 }
 
 // UpdateIrActionsTodos updates existing ir.actions.todo records.
-// All records (represented by ids) will be updated by iat values.
+// All records (represented by IDs) will be updated by iat values.
 func (c *Client) UpdateIrActionsTodos(ids []int64, iat *IrActionsTodo) error {
 	return c.Update(IrActionsTodoModel, ids, iat)
 }
@@ -65,7 +65,7 @@ func (c *Client) GetIrActionsTodo(id int64) (*IrActionsTodo, error) {
 	if iats != nil && len(*iats) > 0 {
 		return &((*iats)[0]), nil
 	}
-	return nil, fmt.Errorf("id %v of ir.actions.todo not found", id)
+	return nil, fmt.Errorf("id %V of ir.actions.todo not found", id)
 }
 
 // GetIrActionsTodos gets ir.actions.todo existing records.
@@ -99,7 +99,7 @@ func (c *Client) FindIrActionsTodos(criteria *Criteria, options *Options) (*IrAc
 	return iats, nil
 }
 
-// FindIrActionsTodoIds finds records ids by querying it
+// FindIrActionsTodoIds finds records IDs by querying it
 // and filtering it with criteria and options.
 func (c *Client) FindIrActionsTodoIds(criteria *Criteria, options *Options) ([]int64, error) {
 	ids, err := c.Search(IrActionsTodoModel, criteria, options)
