@@ -6,10 +6,10 @@ import (
 	"time"
 )
 
-func example() {
+func main() {
 	client, err := Connect(
-		"base_url",
-		"demo",
+		"http://a4a4757283b1a41fc813ec3cf1374d21-1175389737.eu-west-2.elb.amazonaws.com:8069",
+		"november_demo",
 		"admin@xiatech.co.uk",
 		"test",
 	)
@@ -35,7 +35,7 @@ func example() {
 
 	dateOrder := time.Now()
 	saleOrder := SaleOrder{
-		Name:             "This is another huge sales order",
+		Name:             "This is a big sales order",
 		PartnerId:        26,
 		DateOrder:        dateOrder.Format("2006-01-02"),
 		PricelistId:      1,
