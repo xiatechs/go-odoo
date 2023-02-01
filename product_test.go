@@ -18,5 +18,4 @@ func TestClient_Unmarshal_Products(t *testing.T) {
 	var products []odoo.Product
 	err = json.Unmarshal(productsJSON, &products)
 	assert.NoError(t, err)
-	t.Log(products)
 }
