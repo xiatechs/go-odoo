@@ -11,6 +11,7 @@ import (
 )
 
 func TestClient_Unmarshal_Products(t *testing.T) {
+	// products.json is what we get after we fetch data from Odoo and serialize it as JSON.
 	productsJSON, err := os.ReadFile("testdata/products.json")
 	assert.NoError(t, err)
 
