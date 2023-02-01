@@ -74,7 +74,7 @@ type Product struct {
 	MessageNeedactionCounter             int           `json:"message_needaction_counter"`
 	MessagePartnerIds                    []interface{} `json:"message_partner_ids"`
 	MyActivityDateDeadline               interface{}   `json:"my_activity_date_deadline"`
-	Name                                 string        `json:"name"`
+	Name                                 interface{}   `json:"name"`
 	OptionalProductIds                   []interface{} `json:"optional_product_ids"`
 	PackagingIds                         []interface{} `json:"packaging_ids"`
 	PartnerRef                           interface{}   `json:"partner_ref"`
