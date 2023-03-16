@@ -2,6 +2,7 @@ package odoo
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"time"
 )
@@ -143,4 +144,22 @@ func (c *Client) GetProduct(id int) ([]byte, error) {
 	}
 
 	return json.Marshal(product)
+}
+
+// CreateProduct takes in a type *odoo.Product and creates it in odoo
+// and returns id (int) and error
+func (c *Client) CreateProduct(pp *Product) (int, error) {
+	productMap := make(map[string]interface{})
+
+	bytes, err := json.Marshal(pp)
+	if err != nil {
+		return 0, fmt.Errorf("odoo create product error - json marshal: %w", err)
+	}
+
+	err = json.Unmarshal(bytes, &productMap)
+	if err != nil {
+		return 0, fmt.Errorf("odoo create product error - json unmarshal: %w", err)
+	}
+
+	return c.Create(ProductModelID, productMap)
 }
