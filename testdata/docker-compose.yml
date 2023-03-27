@@ -1,7 +1,6 @@
 version: '2'
 services:
   odoo_db:
-    container_name: db
     image: postgres:12
     ports:
       - "5432:5432"
@@ -14,7 +13,6 @@ services:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
 
   odoo14:
-    container_name: odoo14
     image: wbms/odoo14-multiarch
     depends_on:
       - odoo_db

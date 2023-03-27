@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"os"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 	tc "github.com/testcontainers/testcontainers-go/modules/compose"
@@ -38,6 +39,8 @@ func TestClient_CreateProduct(t *testing.T) {
 	t.Cleanup(cancel)
 
 	assert.NoError(t, compose.Up(ctx, tc.Wait(true)), "compose.Up()")
+
+	time.Sleep(5 * time.Second)
 
 	client, err := odoo.Connect(
 		"http://localhost:8091",
