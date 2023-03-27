@@ -22,7 +22,7 @@ services:
       - "8091:8069"
     volumes:
       - odoo-odoo14-data:/var/lib/odoo
-      - ./config:/etc/odoo
+      - config:/etc/odoo
     command: odoo --dev=reload
 
 volumes:
