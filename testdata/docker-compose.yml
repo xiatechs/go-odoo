@@ -21,7 +21,7 @@ services:
     volumes:
       - "./data:/var/lib/odoo"
       - "./config:/etc/odoo"
-    command: odoo --dev=reload -d xiatech_test -i all
+    command: odoo --dev=reload -d xiatech_test -i stock,sale_management
 
 volumes:
   odoo-odoo14-data:

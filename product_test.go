@@ -50,12 +50,13 @@ func TestClient_CreateProduct(t *testing.T) {
 			"admin",
 		)
 		if err != nil {
+			t.Log(err.Error())
 			return false, nil
 		}
 		return true, nil
 	}))
 
-	// Get a Product to add to our order
-	_, err = client.GetProduct(12)
+	// NOTE: Name and Type are mandatory params.
+	_, err = client.CreateProduct(odoo.ProductTemplate{Name: "test", Type: "product"})
 	assert.NoError(t, err)
 }
