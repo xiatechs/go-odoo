@@ -41,8 +41,6 @@ func TestClient_CreateProduct(t *testing.T) {
 
 	assert.NoError(t, compose.Up(ctx, tc.Wait(true)), "compose.Up()")
 
-	time.Sleep(10 * time.Second)
-
 	var client *odoo.Client
 	assert.NoError(t, testutil.WaitUntil(10000*time.Second, 5*time.Second, func() (bool, error) {
 		client, err = odoo.Connect(
