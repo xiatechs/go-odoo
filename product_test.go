@@ -9,6 +9,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	tc "github.com/testcontainers/testcontainers-go/modules/compose"
+	"github.com/xiatechs/XFuze/testutil"
 
 	"github.com/xiatechs/go-odoo/v2"
 )
@@ -40,15 +41,21 @@ func TestClient_CreateProduct(t *testing.T) {
 
 	assert.NoError(t, compose.Up(ctx, tc.Wait(true)), "compose.Up()")
 
-	time.Sleep(5 * time.Second)
+	time.Sleep(10 * time.Second)
 
-	client, err := odoo.Connect(
-		"http://localhost:8091",
-		"xiatech_test",
-		"admin",
-		"admin",
-	)
-	assert.NoError(t, err)
+	var client *odoo.Client
+	assert.NoError(t, testutil.WaitUntil(10000*time.Second, 5*time.Second, func() (bool, error) {
+		client, err = odoo.Connect(
+			"http://localhost:8091",
+			"xiatech_test",
+			"admin",
+			"admin",
+		)
+		if err != nil {
+			return false, nil
+		}
+		return true, nil
+	}))
 
 	// Get a Product to add to our order
 	_, err = client.GetProduct(12)
