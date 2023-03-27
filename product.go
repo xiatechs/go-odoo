@@ -171,7 +171,7 @@ type ProductTemplate struct {
 	Description             bool            `json:"description"`
 	DescriptionSale         bool            `json:"description_sale"`
 	RouteIds                [][]interface{} `json:"route_ids"`
-	ResponsibleId           int             `json:"responsible_id"`
+	ResponsibleId           bool            `json:"responsible_id"`
 	Weight                  int             `json:"weight"`
 	Volume                  int             `json:"volume"`
 	SaleDelay               int             `json:"sale_delay"`

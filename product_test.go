@@ -7,6 +7,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	tc "github.com/testcontainers/testcontainers-go/modules/compose"
 	"github.com/xiatechs/XFuze/testutil"
@@ -43,7 +44,7 @@ func TestClient_CreateProduct(t *testing.T) {
 
 	// The Odoo instance can take a while to boot up, keep trying every 5 seconds for 1min30
 	var client *odoo.Client
-	assert.NoError(t, testutil.WaitUntil(5*time.Second, 90*time.Second, func() (bool, error) {
+	assert.NoError(t, testutil.WaitUntil(3*time.Second, 90*time.Second, func() (bool, error) {
 		client, err = odoo.Connect(
 			"http://localhost:8091",
 			"xiatech_test",
@@ -54,10 +55,20 @@ func TestClient_CreateProduct(t *testing.T) {
 			t.Log(err.Error())
 			return false, nil
 		}
+		t.Log("successfully connected to Odoo")
 		return true, nil
 	}))
 
-	// NOTE: Name and Type are mandatory params.
-	_, err = client.CreateProduct(odoo.ProductTemplate{Name: "test", Type: "product"})
+	// NOTE: Name, Type, Category ID, Tracking, Unit of Measure ID & Unit of Measure Product ID are mandatory params.
+	_, err = client.CreateProduct(
+		odoo.ProductTemplate{
+			Name:          uuid.New().String(),
+			Type:          "product",
+			ResponsibleId: true,
+			CategId:       8,
+			UomId:         1,
+			UomPoId:       1,
+			Tracking:      "none",
+		})
 	assert.NoError(t, err)
 }
