@@ -1,6 +1,6 @@
 version: '2'
 services:
-  odoo_db:
+  db:
     image: postgres:12
     ports:
       - "5432:5432"
@@ -15,13 +15,13 @@ services:
   odoo14:
     image: wbms/odoo14-multiarch
     depends_on:
-      - odoo_db
+      - db
     ports:
       - "8091:8069"
     volumes:
       - "./data:/var/lib/odoo"
       - "./config:/etc/odoo"
-    command: odoo --dev=reload u/-i module_name/all
+    command: odoo --dev=reload -d xiatech_test -i all
 
 volumes:
   odoo-odoo14-data:
