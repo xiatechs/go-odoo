@@ -23,7 +23,6 @@ services:
     volumes:
       - odoo-odoo14-data:/var/lib/odoo
       - ./config:/etc/odoo
-      - ./addons:/mnt/xiatech_addons
     command: odoo --dev=reload
 
 volumes:
