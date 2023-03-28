@@ -42,9 +42,10 @@ func TestClient_CreateProduct(t *testing.T) {
 
 	assert.NoError(t, compose.Up(ctx, tc.Wait(true)), "compose.Up()")
 
-	// The Odoo instance can take a while to boot up, keep trying every 5 seconds for 1min30
+	// The Odoo instance can take a while to boot up, keep trying every 2 seconds for 15 minutes.
+	// It shouldn't ever take 15 mins but CI can be slow sometimes.
 	var client *odoo.Client
-	assert.NoError(t, testutil.WaitUntil(3*time.Second, 90*time.Second, func() (bool, error) {
+	assert.NoError(t, testutil.WaitUntil(2*time.Second, 900*time.Second, func() (bool, error) {
 		client, err = odoo.Connect(
 			"http://localhost:8091",
 			"xiatech_test",
