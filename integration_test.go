@@ -33,7 +33,7 @@ func setup(t *testing.T) *odoo.Client {
 
 	assert.NoError(t, compose.Up(ctx, tc.Wait(true)), "compose.Up()")
 
-	// The Odoo instance can take a while to boot up, keep trying every 5 seconds for 3 minutes.
+	// The Odoo instance can take a while to boot up, keep trying every 5 seconds for 30 minutes.
 	var client *odoo.Client
 	assert.NoError(t, testutil.WaitUntil(5*time.Second, 1800*time.Second, func() (bool, error) {
 		client, err = odoo.Connect(
