@@ -26,7 +26,7 @@ services:
     volumes:
       - "./data:/var/lib/odoo"
       - "./config:/etc/odoo"
-    command: odoo --dev=reload -d odoodb -i stock,sale_management
+    command: odoo --dev=reload -d odoodb -i base,stock,sale_management
 
 volumes:
   odoo-odoo14-data:
