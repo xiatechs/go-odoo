@@ -1,7 +1,8 @@
 version: '2'
 services:
   db:
-    image: postgres:12
+    image: postgres:14.1-alpine
+    restart: always
     ports:
       - "5432:5432"
     environment:
@@ -13,7 +14,7 @@ services:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
 
   odoo14:
-    image: odoo:14.0
+    image: wbms/odoo14-multiarch
     depends_on:
       - db
     ports:
