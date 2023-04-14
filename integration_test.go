@@ -121,21 +121,13 @@ func Test_Odoo_Integration(t *testing.T) {
 	})
 
 	t.Run("Fetch customer from email", func(t *testing.T) {
-		customer := odoo.Customer{Name: "Nick Pocock", Email: "test@test.com"}
+		customer := odoo.Customer{Name: "Nick Pocock", Email: "test@test.com", Active: true}
 
-		id, err := client.CreateCustomer(customer)
+		_, err := client.CreateCustomer(customer)
 		assert.NoError(t, err)
 
-		resp, err := client.GetCustomer(id)
+		cust, err := client.GetCustomerFromEmail("test@test.com")
 		require.NoError(t, err)
-		t.Log(string(resp))
-
-		cust, err := client.GetCustomerFromEmail("info@yourcompany.com")
-		require.NoError(t, err)
-		assert.Equal(t, "My Company (San Francisco)", cust.Name)
-
-		cust2, err := client.GetCustomerFromEmail("test@test.com")
-		require.NoError(t, err)
-		assert.Equal(t, "My Company (San Francisco)", cust2.Name)
+		assert.Equal(t, "Nick Pocock", cust.Name)
 	})
 }
