@@ -5,6 +5,7 @@ package odoo_test
 import (
 	"context"
 	"encoding/json"
+	"os"
 	"testing"
 	"time"
 
@@ -91,5 +92,30 @@ func Test_Odoo_Integration(t *testing.T) {
 		assert.NoError(t, json.Unmarshal(salesOrderBytes, &salesOrders))
 		assert.Len(t, salesOrders, 1)
 		assert.Equal(t, 0, salesOrders[0].ID)
+	})
+
+	t.Run("Create sales order from JSON", func(t *testing.T) {
+		orderJSON, err := os.ReadFile("testdata/order.json")
+		assert.NoError(t, err)
+
+		_, err = client.CreateSalesOrder(orderJSON)
+		assert.NoError(t, err)
+	})
+
+	t.Run("Create customer", func(t *testing.T) {
+		customer := odoo.Customer{Name: "Nick Pocock"}
+
+		_, err := client.CreateCustomer(customer)
+		assert.NoError(t, err)
+	})
+
+	t.Run("Fetch customer", func(t *testing.T) {
+		customer := odoo.Customer{Name: "Nick Pocock"}
+
+		id, err := client.CreateCustomer(customer)
+		assert.NoError(t, err)
+
+		_, err = client.GetCustomer(id)
+		assert.NoError(t, err)
 	})
 }
