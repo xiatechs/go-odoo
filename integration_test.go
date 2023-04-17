@@ -11,6 +11,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	tc "github.com/testcontainers/testcontainers-go/modules/compose"
 	"github.com/xiatechs/XFuze/testutil"
 
@@ -117,5 +118,16 @@ func Test_Odoo_Integration(t *testing.T) {
 
 		_, err = client.GetCustomer(id)
 		assert.NoError(t, err)
+	})
+
+	t.Run("Fetch customer from email", func(t *testing.T) {
+		customer := odoo.Customer{Name: "Nick Pocock", Email: "test@test.com", Active: true}
+
+		_, err := client.CreateCustomer(customer)
+		assert.NoError(t, err)
+
+		cust, err := client.GetCustomerFromEmail("test@test.com")
+		require.NoError(t, err)
+		assert.Equal(t, "Nick Pocock", cust.Name)
 	})
 }
