@@ -144,7 +144,15 @@ func (c *Client) GetProductsWithinWindow(t time.Time) ([]byte, error) {
 		return tempTimePlaceholder.Format(dtLayout)
 	}(), now.Format(dtLayout))
 
-	product, err := c.SearchRead(ProductModelID, List{List{"create_date", ">=", t.Format(dtLayout)}}, nil)
+	product, err := c.SearchRead(ProductModelID, List{List{"create_date", ">=", func() string {
+		if firstTime {
+			firstTime = false
+			return t.Format(dtLayout)
+		}
+
+		return tempTimePlaceholder.Format(dtLayout)
+	}()}}, nil)
+	
 	if err != nil {
 		return nil, err
 	}
