@@ -131,14 +131,14 @@ var (
 // GetProductsWithinWindow gets all product.product records that have been created within the window value.
 // For example if the window is 5 minutes and the time is 12:00, we fetch all products created from 11:55-12
 // We return encoded JSON within this method which makes it easy to use within XFuze.
-func (c *Client) GetProductsWithinWindow(t time.Time) ([]byte, error) {
+func (c *Client) GetProductsWithinWindow(_ time.Time) ([]byte, error) {
 	now := time.Now()
 
 	dtLayout := "2006-01-02 15:04:05"
 	log.Printf("looking for products created between %s & %s", func() string {
 		if firstTime {
 			firstTime = false
-			return t.Format(dtLayout)
+			return now.Format(dtLayout)
 		}
 
 		return tempTimePlaceholder.Format(dtLayout)
@@ -147,7 +147,7 @@ func (c *Client) GetProductsWithinWindow(t time.Time) ([]byte, error) {
 	product, err := c.SearchRead(ProductModelID, List{List{"create_date", ">=", func() string {
 		if firstTime {
 			firstTime = false
-			return t.Format(dtLayout)
+			return now.Format(dtLayout)
 		}
 
 		return tempTimePlaceholder.Format(dtLayout)
