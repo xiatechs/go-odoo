@@ -122,17 +122,38 @@ type Product struct {
 	WriteUid                             []interface{} `json:"write_uid"`
 }
 
+// hack - for demo
+var (
+	tempTimePlaceholder time.Time
+	firstTime = true
+)
+
 // GetProductsWithinWindow gets all product.product records that have been created within the window value.
 // For example if the window is 5 minutes and the time is 12:00, we fetch all products created from 11:55-12
 // We return encoded JSON within this method which makes it easy to use within XFuze.
-func (c *Client) GetProductsWithinWindow(t time.Time) ([]byte, error) {
-	dtLayout := "2006-01-02 15:04:05"
-	log.Printf("looking for products created between %s & %s", t.Format(dtLayout), time.Now().Format(dtLayout))
+func (c *Client) GetProductsWithinWindow(_ time.Time) ([]byte, error) {
+	now := time.Now()
 
-	product, err := c.SearchRead(ProductModelID, List{List{"create_date", ">=", t.Format(dtLayout)}}, nil)
+	dtLayout := "2006-01-02 15:04:05"
+
+	var startTime string
+
+	if firstTime {
+		firstTime = false
+		startTime = now.Format(dtLayout)
+	} else {
+		startTime = tempTimePlaceholder.Format(dtLayout)
+	}
+
+	log.Printf("looking for products created between %s & %s", startTime, now.Format(dtLayout))
+
+	product, err := c.SearchRead(ProductModelID, List{List{"create_date", ">=", startTime}}, nil)
+	
 	if err != nil {
 		return nil, err
 	}
+
+	tempTimePlaceholder = now
 
 	return json.Marshal(product)
 }
