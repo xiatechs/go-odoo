@@ -136,14 +136,14 @@ func (c *Client) GetProductsWithinWindow(_ time.Time) ([]byte, error) {
 
 	dtLayout := "2006-01-02 15:04:05"
 
-	startTime := func() string {
-		if firstTime {
-			firstTime = false
-			return now.Format(dtLayout)
-		}
+	var startTime string
 
-		return tempTimePlaceholder.Format(dtLayout)
-	}()
+	if firstTime {
+		firstTime = false
+		startTime = now.Format(dtLayout)
+	} else {
+		startTime = tempTimePlaceholder.Format(dtLayout)
+	}
 
 	log.Printf("looking for products created between %s & %s", startTime, now.Format(dtLayout))
 
