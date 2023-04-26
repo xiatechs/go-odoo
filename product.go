@@ -135,23 +135,19 @@ func (c *Client) GetProductsWithinWindow(_ time.Time) ([]byte, error) {
 	now := time.Now()
 
 	dtLayout := "2006-01-02 15:04:05"
-	log.Printf("looking for products created between %s & %s", func() string {
+
+	startTime := func() string {
 		if firstTime {
 			firstTime = false
 			return now.Format(dtLayout)
 		}
 
 		return tempTimePlaceholder.Format(dtLayout)
-	}(), now.Format(dtLayout))
+	}()
 
-	product, err := c.SearchRead(ProductModelID, List{List{"create_date", ">=", func() string {
-		if firstTime {
-			firstTime = false
-			return now.Format(dtLayout)
-		}
+	log.Printf("looking for products created between %s & %s", startTime, now.Format(dtLayout))
 
-		return tempTimePlaceholder.Format(dtLayout)
-	}()}}, nil)
+	product, err := c.SearchRead(ProductModelID, List{List{"create_date", ">=", startTime}}, nil)
 	
 	if err != nil {
 		return nil, err
