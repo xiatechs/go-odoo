@@ -16,7 +16,7 @@ type SaleOrder struct {
 	ID                       int             `json:"id"`
 	AuthorizedTransactionIds []interface{}   `json:"authorized_transaction_ids"`
 	State                    string          `json:"state"`
-	PartnerCreditWarning     string          `json:"partner_credit_warning"`
+	PartnerCreditWarning     string          `json:"partner_credit_warning,omitempty"`
 	InvoiceCount             int             `json:"invoice_count"`
 	Name                     string          `json:"name"`
 	PartnerId                interface{}     `json:"partner_id"`
