@@ -8,6 +8,7 @@ import (
 
 // SaleOrderModelID is the model identifier we use to fetch a SaleOrder from Odoo.
 const SaleOrderModelID = "sale.order"
+const SaleOrderLineModelID = "sale.order.line"
 
 // SaleOrder represents a sales order within Odoo.
 // Required fields when creating: PartnerID & DateOrder. PartnerID is the customer this order is for, they must
@@ -16,7 +17,7 @@ type SaleOrder struct {
 	ID                       int             `json:"id"`
 	AuthorizedTransactionIds []interface{}   `json:"authorized_transaction_ids"`
 	State                    string          `json:"state"`
-	PartnerCreditWarning     string          `json:"partner_credit_warning"`
+	PartnerCreditWarning     string          `json:"partner_credit_warning,omitempty"`
 	InvoiceCount             int             `json:"invoice_count"`
 	Name                     string          `json:"name"`
 	PartnerId                interface{}     `json:"partner_id"`
@@ -90,9 +91,27 @@ func (c *Client) CreateSalesOrder(order []byte) (int, error) {
 	return saleOrderID, nil
 }
 
+// CreateSalesOrderLineItem
+func (c *Client) CreateSalesOrderLineItem(orderLine []byte) (int, error) {
+	conv := converter.SelectFormat("json")
+
+	mapConversion, err := conv.BytesToMap(orderLine)
+	if err != nil {
+		return 0, nil
+	}
+
+	saleOrderID, err := c.Create(SaleOrderLineModelID, mapConversion[0])
+	if err != nil {
+		return 0, err
+	}
+
+	return saleOrderID, nil
+}
+
 // OrderLineItem is a product that gets added to an order.
 // Required fields: ProductId, ProductUom
 type OrderLineItem struct {
+	OrderID                           int             `json:"order_id"`
 	Sequence                          int             `json:"sequence"`
 	DisplayType                       bool            `json:"display_type"`
 	ProductId                         int             `json:"product_id"`
